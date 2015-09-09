@@ -1,0 +1,32 @@
+{
+  "name": "OranTicket",
+  "version": "0.0.0",
+  "description": "![Logo](https://sc-cdn.scaleengine.net/i/16fdf0408cb5ac329f672d0671bc1e0a.png)",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-haml": "^0.1.5",
+    "gulp-jade": "^1.0.1",
+    "gulp-msg": "^0.0.1",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "jade": "^1.11.0",
+    "gulp-zip": "^3.0.2",
+    "jade-php": "^0.1.4",
+    "path": "^0.11.14",
+    "plumber": "^0.4.8",
+    "gulp-notify": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

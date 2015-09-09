@@ -1,0 +1,26 @@
+// Global
+//--------------------------------------------------
+	// colors
+	$body-bg:               #fff !default;
+	$text-color:            black !default;
+	$orange : 				#FF6814;
+	$rgb_orange: 			rgba(255, 105, 20, 0.63);
+	$opa_orange: 			#FD813C;
+	$gris:					#808080;
+	$black:                 #1B1C1D;
+
+	// font
+	$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+	$font-family-lato :       'Lato', sans-serif;
+	$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+	$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+	$font-family-base:        $font-family-sans-serif !default;
+	$font-size-base:          14px !default;
+
+// Colors (btn, form)
+//--------------------------------------------------
+	$primary:         #2C3E50 !default; // #337ab7
+	$success:         #5cb85c !default;
+	$info:            #52B3D9 !default;
+	$warning:         #F89406 !default;
+	$danger:          #C5201B !default;

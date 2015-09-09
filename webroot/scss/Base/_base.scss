@@ -1,0 +1,52 @@
+body{
+	margin:0; border:0;
+	font-family: $font-family-lato;
+	background-color: $body-bg;
+	color: $text-color;
+	overflow: scroll!important; 
+}
+
+.right{
+	float: right;
+}
+
+h1,h2,h3,h4,h5{
+	color: $gris;
+}
+
+.center{
+	text-align: center;
+}
+
+.large{
+	width: 100%;
+}
+
+.select-file{
+	position: relative;
+	margin-top: -40px;
+}
+
+.page-title{
+    font-size: 16px;
+	text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    padding-bottom: 30px;
+	h1{
+		color: $orange;
+	}
+}
+
+.main-desc{
+	text-align: center;
+	font-size: 18px;
+	line-height: 35px;
+	font-weight: 300;
+}
+
+.trumbowyg-box{
+	width: 100%!important;
+}

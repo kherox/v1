@@ -1,0 +1,33 @@
+footer{
+	background: $black;
+	color: #fff;
+	bottom: 0;
+	font-family: $font-family-lato;
+	margin-top: 70px;
+	border: 0;
+	width: 100%;
+
+	h2{
+		margin-top: 10px;
+		color: $orange;
+	}
+
+	.link{
+		li{
+			display:inline-block;
+			a{
+				color: rgba(255, 255, 255, 0.5);
+				margin-top: -10px;
+			}
+			a:first-child{
+				margin-right: 15px;
+			}
+		}
+	}
+
+	p{
+		margin-top: 20px;
+		padding-bottom: 20px;
+		//text-align: center;
+	}
+}

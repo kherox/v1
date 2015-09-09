@@ -1,0 +1,50 @@
+.flash-message {
+    bottom: 10px;
+    background: #3AA93A;
+    color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    z-index: 200;
+}
+
+.flash-error{
+    background: #F53939;
+}
+
+.flash-success{
+    background: #3AA93A;
+}
+
+.flash-info{
+     background: #81CFE0;
+ }
+
+.flash{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    position: fixed;
+}
+
+@media(max-width: 600px){
+    .flash{
+        position: absolute;
+        left: 5%;
+        width: 90%;
+    }
+}
+.close {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    color: white;
+    font-size: .9em;
+    cursor: pointer;
+    padding: 2px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.close:hover {
+  color: #353535;
+}

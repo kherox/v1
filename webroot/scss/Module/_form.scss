@@ -1,0 +1,11 @@
+.form{
+    width: 100%;
+    border: solid 1px #D4D4D4;
+    padding: 12px;
+    outline: none;
+
+    &:focus{
+        @include transition(0.4s);
+        border: solid 1px $orange;
+    }
+}
