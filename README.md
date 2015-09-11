@@ -11,16 +11,33 @@
 
 Dès que vous rencontré un souci, poster un ticket et des personnes y répondrons. Sur **OranTicket** il y aura un système de permission, des administrateurs, modérateurs et membre. Les Administrateurs pourront **supprimer**/**éditer** et **fermer** des tickets et les modérateur pourrons **supprimer**(confirmation par un administrateur) / **fermer** et **éditer** les tickets.
 
-Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/*** ou autre et **OranTicket** fonctionnera à condition que vous aviez ajouté la base de données.
+Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/*** ou autre et **OranTicket** fonctionnera à condition que vous ayez ajouté la base de données.
 
 
 # Instalation
+(Vous devez avoir **intl** pour que **OranTicket** fonctionne.)
 
-Avec Composer:
+- Manuellement:
+
+```
+composer intall
+```
+
+- Composer:
 
 ```
 composer require gynidark/oranticket dev-master 
 ```
+
+- NPM(Si vous le souhaitez):
+
+```
+npm install
+```
+
+- Configuration de votre fichier **config/oranticket.php**
+- Importer le fichier OranTicket.sql *config/schema/OranTicket.sql* dans votre base de donnée.
+
 Sinon vous pouvez télécharger manulement [OranTicket](https://github.com/OranTicket/Site-Web/archive/master.zip).
 
 

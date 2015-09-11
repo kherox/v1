@@ -89,7 +89,9 @@
                                 <h4 class="media-heading"><?= $ticket->user->username; ?>
                                      | <small> 22/08/2015 22:13:54</small>
                                 </h4>
-                                <?= $client->toImage($comment['content']); ?>
+                                <p>
+                                    <?= nl2br($client->toImage($comment['content'])); ?>
+                                </p>
                             </div>
                         </div>
                     <?php endforeach; ?>

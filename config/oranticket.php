@@ -16,5 +16,6 @@ return [
             'viewUsers' => 30,
             'profileUsers' => 30
         ]
-    ]
+    ],
+
 ];
