@@ -4,10 +4,14 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Core\Configure;
+use Emojione\Client;
+use Emojione\Ruleset;
 
 class TicketsController extends AppController
 {
-
+    /**
+     * Pagination & Order
+     **/
     public $paginate = [
         'limit' => 10,
         'order' => [
@@ -21,6 +25,9 @@ class TicketsController extends AppController
         $this->loadComponent('Paginator');
     }
 
+    /**
+     * Params url /add for Admin
+     **/
     public function isAuthorized($user)
     {
         $user = $this->Auth->user();
@@ -81,6 +88,11 @@ class TicketsController extends AppController
             'contain' => ['Users', 'Comments']
         ]);
 
+        // EMOJIONE
+        $client = new Client(new Ruleset());
+        $client->imageType = 'svg';
+
+        // AJOUT D'UN COMMENTAIRE
         if ($this->request->is('post')) {
             $this->request->data['ticket_id'] = $id;
             $this->request->data['user_id'] = $user['id'];
@@ -97,6 +109,7 @@ class TicketsController extends AppController
         }
 
         // VARIABLES
+        $this->set('client', $client);
         $this->set('ticket', $ticket);
         $this->set('users', $users);
         $this->set('_serialize', ['ticket']);
@@ -105,14 +118,15 @@ class TicketsController extends AppController
     /**
      * Ajout d'un ticket
      */
-
     public function add()
     {
         $user = $this->Auth->user();
-        $ticket = $this->Tickets->newEntity($this->request->data);
+        $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
+            $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
             $ticket->user_id = $user['id'];
+
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
                 return $this->redirect(['action' => 'index']);
@@ -120,11 +134,10 @@ class TicketsController extends AppController
                 $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
             }
         }
-
-
-        $this->set(compact('ticket', 'user'));
+        $this->set('ticket', $ticket);
         $this->set('_serialize', ['ticket']);
     }
+
     /**
      * Édition du ticket
      */
@@ -182,6 +195,7 @@ class TicketsController extends AppController
         };
         $this->set('_serialize', ['ticket']);
     }
+
     /**
      * Suppression du ticket
      */

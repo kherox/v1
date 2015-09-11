@@ -10,7 +10,7 @@
     <?= $this->Form->create($ticket) ?>
         <div class="grid-12">
             <?= $this->Form->input('subjects', ['class' => 'form', 'required' => false]); ?>
-            <?= $this->Form->input('content', ['class' => 'form', 'id' => 'trumbowyg']); ?>
+            <?= $this->Form->input('content', ['class' => 'form', 'id' => 'emoji']); ?>
         </div>
 
     <br>

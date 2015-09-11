@@ -10,7 +10,7 @@
 
             <div class="post-content" style="border: none!important;">
 
-                <?= $this->Form->textarea('content', ['id' => 'trumbowyg']); ?>
+                <?= $this->Form->textarea('content', ['id' => 'emoji', 'class' => 'form']); ?>
             </div>
             <?= $this->Form->button(__('Édité'), ['class' => 'btn btn-success pull-right']) ?>
             <?= $this->Form->end() ?>

@@ -59,7 +59,7 @@
             </div>
 
             <div class="post-content">
-                <p><?= nl2br(h($ticket->content)); ?></p>
+                <p><?= nl2br($client->toImage($ticket->content)); ?></p>
                 <?php
                 if($ticket->user_id == $this->request->session()->read('Auth.User.id') || $this->request->session()->read('Auth.User.role') == 'admin'):
                 ?>
@@ -89,13 +89,11 @@
                                 <h4 class="media-heading"><?= $ticket->user->username; ?>
                                      | <small> 22/08/2015 22:13:54</small>
                                 </h4>
-                                <?= $comment['content']; ?>
+                                <?= $client->toImage($comment['content']); ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
-
-
 
                 <?php
                 if(!empty($this->request->session()->read('Auth.User'))){ ?>
@@ -104,10 +102,10 @@
                         <div class="form-group" style="margin-top: 30px;">
                             <?php echo $this->Form->input('user_id', ['type' => 'hidden']); ?>
                             <?php
-                                echo $this->Form->input('content', ['type' => 'textarea', 'id' => 'trumbowyg', 'label' => false]);
+                                echo $this->Form->input('content', ['type' => 'textarea', 'class' => 'form', 'id' => 'emoji', 'label' => false]);
                             ?>
                         </div>
-                    <?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success right', 'style' => 'margin-right: 25px;']) ?>
+                    <?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success']) ?>
                     <?= $this->Form->end(); ?>
 
                 <?php
@@ -116,6 +114,9 @@
                     <div class="post-label">
                         <div id="flash-message" class="flash-message flash-info">
                             <button type="button" class="close"><i class="fa fa-times"></i></button><strong>Attention!</strong> Vous devez être connecté pour envoyer un commentaire.
+                            <?= $this->Html->link(__('Se connecter'),
+                                ['controller' => 'Users', 'action' => 'login']) ?>
+
                         </div>
                     </div>
                 <?php

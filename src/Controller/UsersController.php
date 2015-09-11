@@ -18,11 +18,13 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         $this->Auth->allow(['login', 'add', 'logout']);
     }
+
     public function initialize() {
         parent::initialize();
 
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
+
     /**
      * Visualisations de tout les tickets pour les admins/modos
      **/
@@ -188,6 +190,9 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    /**
+     * Déconnexion
+     */
     public function logout()
     {
         $this->Flash->success(__('Vous êtes bien déconnecté'));

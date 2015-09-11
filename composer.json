@@ -12,7 +12,8 @@
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
         "intervention/image": "^2.3@dev",
-        "vmcms/akismet-php": "dev-master"
+        "vmcms/akismet-php": "dev-master",
+        "emojione/emojione": "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",
