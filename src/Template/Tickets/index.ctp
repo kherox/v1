@@ -27,7 +27,13 @@ foreach ($tickets as $ticket): ?>
                 </div>
                 <div class="ticket-info grid-3 grid-m-5">
                     <div class="author right">
-                        <img src="http://perlbal.hi-pi.com/blog-images/55444/gd/1225116859/presentation-de-ma-star-prefere.jpg" alt="Photo de profil Gynidark" width="120">
+                        <?php
+                        foreach($users as $user){
+                            if($ticket->user_id == $user->id){
+                                echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']);
+                            }
+                        }
+                        ?>
                         <span class="name">
                             <?php
                                 foreach($users as $user){
