@@ -36,9 +36,8 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-bottom: 13px;
-  background-color: #1b1c1d;
   padding-top: 10px;
-  color: #FF6814;
+  color: #1b1c1d;
 }
 
 .main-desc {

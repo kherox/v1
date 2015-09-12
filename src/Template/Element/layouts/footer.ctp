@@ -5,7 +5,7 @@
             <p>
                 - Vous avez une idée, aucune idée nest bête. Proposé là sur le chan General <a href="https://discord.gg/0TXt7JbSm9fnbttA">Discord</a> de OranTicket.<br>
                 - Vous souhaitez améliorer le code de OranTicket ou ajouter des fonctionnalités,
-                voici le <a href="#">dépôt Github</a>
+                voici le <a href="https://github.com/OranTicket">dépôt Github</a>
             <p>
         </div>
         <div class="grid-4">
