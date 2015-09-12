@@ -3488,6 +3488,35 @@ footer p {
   border: solid 1px #52B3D9 !important;
 }
 
+.btn-small {
+  padding: 0px 4px;
+  color: #fff;
+}
+.btn-small.btn-default {
+  background-color: #FF6814 !important;
+  border: solid 1px #FF6814 !important;
+}
+.btn-small.btn-warning {
+  background-color: #F89406 !important;
+  border: solid 1px #F89406 !important;
+}
+.btn-small.btn-danger {
+  background-color: #C5201B !important;
+  border: solid 1px #C5201B !important;
+}
+.btn-small.btn-success {
+  background-color: #5cb85c !important;
+  border: solid 1px #5cb85c !important;
+}
+.btn-small.btn-primary {
+  background-color: #2C3E50 !important;
+  border: solid 1px #2C3E50 !important;
+}
+.btn-small.btn-info {
+  background-color: #52B3D9 !important;
+  border: solid 1px #52B3D9 !important;
+}
+
 .label {
   display: inline;
   padding: .2em .6em .3em;

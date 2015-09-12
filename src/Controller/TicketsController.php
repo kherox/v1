@@ -212,4 +212,55 @@ class TicketsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * Suppression d'un commentaire
+     */
+    public function deleteComment($id = null)
+    {
+        $this->loadModel('Comments');
+        $this->request->allowMethod(['post', 'delete']);
+        $comment = $this->Comments->get($id);
+
+        if ($this->Comments->delete($comment)) {
+            $this->Flash->success(__('Votre commentaire à bien était supprimé'));
+        } else {
+            $this->Flash->error(__('Votre commentaire n\'a pas pu être supprimé'));
+        }
+        return $this->redirect(['action' => 'index']);
+    }
+
+    /**
+     * Édition d'un commentaire
+     */
+    public function editComment($id = null){
+        $this->loadModel('Comments');
+
+        if($this->request->session()->read('Auth.User.role') == 'admin'){
+            $comment = $this->Comments->get($id, [
+                'contain' => ['Users']
+            ]);
+        }else{
+            $comment = $this->Comments->get($id, [
+                'contain' => ['Users'],
+                'conditions' => [
+                    'Comments.user_id' => $this->request->session()->read('Auth.User.id')
+                ]
+            ]);
+        }
+
+        if ($this->request->is(['post', 'put'])) {
+            $ticket = $this->Comments->patchEntity($comment, $this->request->data);
+            if ($this->Comments->save($comment)) {
+                $this->Flash->success(__('Votre commentaire a bien été édité'));
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('Votre commentaire n\'a pas pu être édité, veuillez recommencer.'));
+            }
+        }
+
+        $users = $this->Comments->Users->find('list', ['limit' => 200]);
+        $this->set(compact('comment', 'users'));
+        $this->set('_serialize', ['comment']);
+    }
 }

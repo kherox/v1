@@ -41,3 +41,37 @@
         border: solid 1px $info!important;
     }
 }
+
+
+.btn-small{
+    padding: 0px 4px;
+    color: #fff;
+
+    &.btn-default{
+        background-color: $orange!important;
+        border: solid 1px $orange!important;
+    }
+
+    &.btn-warning{
+        background-color: $warning!important;
+        border: solid 1px $warning!important;
+    }
+
+    &.btn-danger{
+        background-color: $danger!important;
+        border: solid 1px $danger!important;
+    }
+
+    &.btn-success{
+        background-color: $success!important;
+        border: solid 1px $success!important;
+    }
+    &.btn-primary{
+        background-color: $primary!important;
+        border: solid 1px $primary!important;
+    }
+    &.btn-info{
+        background-color: $info!important;
+        border: solid 1px $info!important;
+    }
+}
