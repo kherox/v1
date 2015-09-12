@@ -1,4 +1,6 @@
-
+<h1 class="page-title">
+    Tout les tickets
+</h1>
 <div class="container">
     <?= $this->Html->link(__('Ajouter un ticket'), [
         'controller' => 'Tickets',

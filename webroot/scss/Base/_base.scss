@@ -1,6 +1,6 @@
 body{
 	margin:0; border:0;
-	font-family: $font-family-lato;
+	font-family: $font-family-lato!important;
 	background-color: $body-bg;
 	color: $text-color;
 	overflow: scroll!important; 
@@ -28,16 +28,15 @@ h1,h2,h3,h4,h5{
 }
 
 .page-title{
-    font-size: 16px;
+	font-size: 16px;
 	text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    padding-bottom: 30px;
-	h1{
-		color: $orange;
-	}
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding-bottom: 13px;
+	background-color: rgb(27, 28, 29);
+	padding-top: 10px;
+	color: $orange;
 }
 
 .main-desc{

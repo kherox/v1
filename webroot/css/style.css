@@ -2,7 +2,7 @@
 body {
   margin: 0;
   border: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif !important;
   background-color: #fff;
   color: black;
   overflow: scroll !important;
@@ -34,11 +34,10 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-  margin-top: 10px;
   letter-spacing: 1px;
-  padding-bottom: 30px;
-}
-.page-title h1 {
+  padding-bottom: 13px;
+  background-color: #1b1c1d;
+  padding-top: 10px;
   color: #FF6814;
 }
 
@@ -3465,9 +3464,6 @@ footer p {
   border: solid 1px #c8c8c8 !important;
   cursor: not-allowed;
 }
-.btn:last-child {
-  margin-right: 30px;
-}
 .btn.btn-default {
   background-color: #FF6814 !important;
   border: solid 1px #FF6814 !important;
@@ -4448,7 +4444,7 @@ table th[class*="col-"] {
 }
 .tickets li .ticket-title a:first-child {
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media (max-width: 600px) {

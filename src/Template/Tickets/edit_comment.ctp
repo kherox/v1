@@ -1,8 +1,10 @@
+<h1 class="page-title">
+	Commentaire - Édition du commentaire
+</h1>
 <div class="container">
 	<div class="posts">
 		<div class="post">
 			<?= $this->Form->create($comment) ?>
-			<h2>Édition de votre commentaire</h2>
 			<div class="post-content" style="border: none!important;">
 				<?= $this->Form->textarea('content', ['id' => 'emoji', 'class' => 'form']); ?>
 			</div>

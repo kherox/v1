@@ -1,3 +1,7 @@
+<h1 class="page-title">
+    Tout les membres
+</h1>
+
 <div class="container">
     <ul class='users'>
         <?php foreach ($users as $user): ?>

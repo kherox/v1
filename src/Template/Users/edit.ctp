@@ -1,11 +1,7 @@
+<h1 class="page-title">
+    Espace Membre - Éditer mon compte
+</h1>
 <div class="container">
-    <div class="row">
-        <div class="grid-12">
-            <h1 class="page-header">
-                Users - Édition du profil
-            </h1>
-        </div>
-    </div>
     <?= $this->Form->create($user, ['enctype' => 'multipart/form-data']) ?>
             <div class="grid-12">
                 <?php

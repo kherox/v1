@@ -1,18 +1,31 @@
+<h1 class="page-title">
+    Tickets - Édition du ticket
+</h1>
 <div class="container">
     <div class="posts">
         <div class="post">
             <?= $this->Form->create($ticket) ?>
-            <div class="post-title">
-                <!--  Si le ticket est résolu, icon star -->
-                <h1><?= $this->Form->input('subjects', ['class' => 'text', 'label' => false]); ?></h1>
+            <div class="container">
+                <div class="grid-1">
+                    <h2>Sujet</h2>
+                </div>
+                <div class="grid-11">
+                    <?= $this->Form->input('subjects', ['class' => 'form', 'label' => false]); ?>
+                </div>
+                <div class="grid-1">
+                    <h2>Contenu</h2>
+                </div>
+                <div class="grid-11">
+                    <?= $this->Form->input('content', ['class' => 'form', 'id' => 'emoji', 'label' => false]); ?>
+                </div>
 
+                <div class="grid-1">
+                </div>
+                <div class="grid-11">
+                    <input type="checkbox"> Recevoir une copie de votre contenu sur votre boîte mail.
+                </div>
             </div>
-
-            <div class="post-content" style="border: none!important;">
-
-                <?= $this->Form->textarea('content', ['id' => 'emoji', 'class' => 'form']); ?>
-            </div>
-            <?= $this->Form->button(__('Édité'), ['class' => 'btn btn-success pull-right']) ?>
+            <?= $this->Form->button(__('Édité'), ['class' => 'btn btn-success sendButton right']) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

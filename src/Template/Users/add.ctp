@@ -1,3 +1,6 @@
+<h1 class="page-title">
+    Espace Membre - S'inscrire
+</h1>
 <div class="container">
     <?= $this->Form->create($user) ?>
         <?php
