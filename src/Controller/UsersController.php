@@ -90,21 +90,21 @@ class UsersController extends AppController
      **/
      public function add()
     {
-    $user = $this->Users->newEntity();
+        $user = $this->Users->newEntity();
 
-    if ($this->request->is('post')) {
-        $user = $this->Users->patchEntity($user, $this->request->data);
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
 
-        if ($this->Users->save($user)) {
-            $this->Flash->success(__('Votre compte à bien était créé.'));
-            return $this->redirect(['action' => 'index']);
-        } else {
-            $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('Votre compte à bien était créé.'));
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
+            }
         }
-    }
 
-    $this->set(compact('user'));
-    $this->set('_serialize', ['user']);
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
     }
     /**
      * Mon profile

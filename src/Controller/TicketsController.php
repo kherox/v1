@@ -58,7 +58,6 @@ class TicketsController extends AppController
 
         $u = $this->loadModel('Users');
         $users = $u->find('all');
-        $user = $this->Auth->user();
 
         $this->paginate = [
             'maxLimit' =>  Configure::read('Paginate.Ticket.indexTickets')

@@ -30,7 +30,16 @@ foreach ($tickets as $ticket): ?>
                         <?php
                         foreach($users as $user){
                             if($ticket->user_id == $user->id){
-                                echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']);
+
+                                echo
+                                $this->Html->link(
+                                    $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']),
+                                    [
+                                        'controller' => 'Users',
+                                        'action'     => 'view',
+                                        $user->id
+                                    ], ['escape' => false]
+                                );
                             }
                         }
                         ?>

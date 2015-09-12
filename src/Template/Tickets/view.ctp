@@ -43,11 +43,19 @@
 
 			<div class="post-author">
 				<?php
-				if(!empty($user->avatar)){
-					echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']);
-				}else{
-					echo $this->Html->image('upload/avatars/avatar_default.png',['width' => '65']);
-				}
+                    foreach($users as $user){
+                        if($ticket->user_id == $user->id){
+							echo
+							$this->Html->link(
+								$this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']),
+								[
+									'controller' => 'Users',
+									'action'     => 'view',
+									$user->id
+								], ['escape' => false]
+							);
+						}
+					}
 				?>
                 <span>
                 <?php

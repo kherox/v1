@@ -4411,7 +4411,6 @@ table th[class*="col-"] {
 }
 .tickets .ticket .ticket-info a {
   margin-top: 10px;
-  position: absolute;
 }
 .tickets .ticket .ticket-info .author img {
   width: 40px;
