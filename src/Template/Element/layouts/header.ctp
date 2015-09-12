@@ -21,4 +21,4 @@
     <?= $this->fetch('script') ?>
 </head>
 <body>
-<?= $this->element('menu'); ?>
+<?= $this->element('layouts/menu'); ?>
