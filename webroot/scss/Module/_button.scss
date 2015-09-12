@@ -9,6 +9,13 @@
     color: #fff!important;
     cursor: pointer;
     outline: none;
+
+    &:disabled {
+        background: #c8c8c8 !important;
+        border: solid 1px #c8c8c8!important;
+        cursor: not-allowed;
+    }
+
     &:last-child{
         margin-right: 30px;
     }
@@ -29,20 +36,24 @@
     }
 
     &.btn-success{
-        background-color: $success!important;
-        border: solid 1px $success!important;
+        background-color: $success;
+        border: solid 1px $success;
     }
+
     &.btn-primary{
         background-color: $primary!important;
         border: solid 1px $primary!important;
     }
+
     &.btn-info{
         background-color: $info!important;
         border: solid 1px $info!important;
     }
 }
 
-
+/**
+ * SMALL BUTTON
+ **/
 .btn-small{
     padding: 0px 4px;
     color: #fff;

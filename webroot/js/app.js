@@ -91,3 +91,14 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function(){
+    $('.sendButton').attr('disabled', true);
+
+    $('#emoji').keyup(function(){
+        if($(this).val().length > 10){
+            $('.sendButton').attr('disabled', false);
+        }else{
+            $('.sendButton').attr('disabled', true);
+        }
+    })
+});

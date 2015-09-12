@@ -40,13 +40,13 @@
 			</div>
 			<?php endif; ?>
 
+
 			<div class="post-author">
 				<?php
-                    if(!empty($user->avatar)){
-				echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']);
-
+				if(!empty($user->avatar)){
+					echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']);
 				}else{
-				echo $this->Html->image('upload/avatars/avatar_default.png',['width' => '65']);
+					echo $this->Html->image('upload/avatars/avatar_default.png',['width' => '65']);
 				}
 				?>
                 <span>
