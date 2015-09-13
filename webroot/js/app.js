@@ -91,6 +91,7 @@ $(document).ready(function() {
 });
 
 
+// verification text for comment
 $(document).ready(function(){
     $('.sendButton').attr('disabled', true);
 
@@ -101,4 +102,9 @@ $(document).ready(function(){
             $('.sendButton').attr('disabled', true);
         }
     })
+});
+
+// LOAD
+$(window).load(function() {
+    $(".se-pre-con").fadeOut("slow");
 });
