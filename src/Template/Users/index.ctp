@@ -9,10 +9,10 @@
                 <div class="avatar">
                     <div class="grid-12 grid-m-6">
                         <?php
-                        $alt = 'Photo de profil à'. $user->username;
+                            $alt = 'Photo de profil à'. $user->username;
+
                             if(!empty($user->avatar)){
                                 echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '120', 'alt' => $alt]);
-
                             }else{
                                 echo $this->Html->image('upload/avatars/avatar_default.png', ['width' => '120', 'alt' => $alt]);
                             }

@@ -21,6 +21,7 @@
     <?= $this->Html->script([
         'https://code.jquery.com/jquery-2.1.4.min.js',
         'https://rawgit.com/nathco/jQuery.scrollSpeed/master/jQuery.scrollSpeed.js',
+        'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js',
         'http://yuku-t.com/jquery-overlay/jquery.overlay.js',
         'http://yuku-t.com/jquery-textcomplete/media/javascripts/jquery.textcomplete.js',
         '//cdn.jsdelivr.net/emojione/1.5.0/lib/js/emojione.min.js',

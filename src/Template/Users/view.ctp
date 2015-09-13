@@ -82,17 +82,26 @@
                     <div class="profil-about">
                         <div class="container">
                             <div class="grid-6">
-                                <?= $this->Html->link(__('Éditer mon compte'), [
-                                'controller' => 'Users',
-                                'action' => 'edit',
-                                $user->id],
-                                ['class' => 'btn btn-info large ', 'style' => 'margin-top: 14px;margin-bottom: 10px;']) ?>
+                                <?=
+                                $this->Html->link(__('Éditer mon compte'), [
+                                    'controller' => 'Users',
+                                    'action' => 'edit',
+                                    $user->id
+                                ],
+                                [
+                                    'class' => 'btn btn-info large ',
+                                    'style' => 'margin-top: 14px;margin-bottom: 10px;'
+                                ]); ?>
                             </div>
                             <div class="grid-6">
-                                <?= $this->Html->link(__('Déconnexion'), [
-                                'controller' => 'Users',
-                                'action' => 'logout'],
-                                ['class' => 'btn btn-danger large', 'style' => 'margin-top: 14px;margin-bottom: 10px;']) ?>
+                                <?=
+                                $this->Html->link(__('Déconnexion'), [
+                                    'controller' => 'Users',
+                                    'action' => 'logout'],
+                                [
+                                    'class' => 'btn btn-danger large',
+                                    'style' => 'margin-top: 14px;margin-bottom: 10px;'
+                                ]); ?>
                             </div>
                         </div>
                     </div>
@@ -101,36 +110,36 @@
             </section>
             <section>
                 <p>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Sujet</th>
-                        <th>Statut</th>
-                        <th>Date</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($tickets as $ticket): ?>
-                    <tr>
-                        <td><a href="#"><?= $ticket->subjects ?></a></td>
-                        <td>
-                            <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
-                        </td>
-                        <td><?= h($ticket->created->format('d/m/Y G:i:s')) ?></td>
-                        <td class="action">
-                            <?= $this->Html->link(__('Regarder'), ['controller' => 'Tickets', 'action' => 'view', $ticket->id], ['class' => 'btn-action btn-info']) ?>
-                            <?php
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sujet</th>
+                                <th>Statut</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($tickets as $ticket): ?>
+                            <tr>
+                                <td><a href="#"><?= $ticket->subjects ?></a></td>
+                                <td>
+                                    <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
+                                </td>
+                                <td><?= h($ticket->created->format('d/m/Y G:i:s')) ?></td>
+                                <td class="action">
+                                    <?= $this->Html->link(__('Regarder'), ['controller' => 'Tickets', 'action' => 'view', $ticket->id], ['class' => 'btn-action btn-info']) ?>
+                                    <?php
                                         if($ticket->user_id == $this->request->session()->read('Auth.User.id') || $this->request->session()->read('Auth.User.role') == 'admin'):
-                            ?>
-                            <?= $this->Html->link(__('Éditer'), ['controller' => 'Tickets', 'action' => 'edit', $ticket->id], ['class' => 'btn-action btn-warning']) ?>
-                            <?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Tickets', 'action' => 'delete', $ticket->id], ['class' => 'btn-action btn-danger', 'confirm' => __('Voulez vous vraiment supprimer ce ticket? '. "\n" . $ticket->subjects)]) ?>
-                            <?php endif?>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                </table>
+                                    ?>
+                                    <?= $this->Html->link(__('Éditer'), ['controller' => 'Tickets', 'action' => 'edit', $ticket->id], ['class' => 'btn-action btn-warning']) ?>
+                                    <?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Tickets', 'action' => 'delete', $ticket->id], ['class' => 'btn-action btn-danger', 'confirm' => __('Voulez vous vraiment supprimer ce ticket? '. "\n" . $ticket->subjects)]) ?>
+                                    <?php endif?>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </p>
             </section>
         </div>

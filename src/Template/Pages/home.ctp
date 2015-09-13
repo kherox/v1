@@ -33,9 +33,11 @@
 
 <div class="home-start">
     <h2>Postez, recevez, validé</h2>
-    <?= $this->Html->link(__('Voir les tickets'), [
-        'controller' => 'Tickets',
-        'action' => 'index'
-    ]) ?>
+    <?=
+        $this->Html->link(__('Voir les tickets'), [
+            'controller' => 'Tickets',
+            'action' => 'index'
+        ]) 
+    ?>
 
 </div>

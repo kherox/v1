@@ -5,7 +5,11 @@
     <?= $this->Html->link(__('Ajouter un ticket'), [
         'controller' => 'Tickets',
         'action' => 'add'],
-        ['class' => 'right btn  btn-info', 'style' => 'margin-top: 14px;margin-bottom: 10px;']) ?>
+        [
+            'class' => 'right btn  btn-info',
+            'style' => 'margin-top: 14px;margin-bottom: 10px;'
+        ]);
+    ?>
 
 <?php
 foreach ($tickets as $ticket): ?>
@@ -38,7 +42,10 @@ foreach ($tickets as $ticket): ?>
                                         'controller' => 'Users',
                                         'action'     => 'view',
                                         $user->id
-                                    ], ['escape' => false]
+                                    ],
+                                    [
+                                        'escape' => false
+                                    ]
                                 );
                             }
                         }

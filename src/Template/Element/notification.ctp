@@ -1,15 +1,3 @@
-<!--
-
-<li>
-    <div class="notif">
-        <div class="label label-notif-menu">2</div>
-        <a href="#" class="launch">
-            <i class="fa fa-bell-o"></i>
-        </a>
-    </div>
-</li>
-
--->
 <div class="modal-overlay">
     <div class="container modal grid-m-12">
         <h2><span class="label label-notif">2</span><i class="fa fa-bell-o fa-1x"></i> Notifications</h2>

@@ -6,7 +6,6 @@
                         <?php
                             if(!empty($user->avatar)){
                                 echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '110']);
-
                             }else{
                                 echo $this->Html->image('upload/avatars/avatar_default.png', ['width' => '110']);
                             }
@@ -72,8 +71,12 @@
                                         <span>Adresse mail</span>
                                     </div>
                                     <div class="grid-8 grid-m-8">
-                                        <span><a href="#"><i class="fa fa-reply"></i>
-                                            <?= $user->mail; ?></a></span>
+                                        <span>
+                                            <a href="#">
+                                                <i class="fa fa-reply"></i>
+                                                <?= $user->mail; ?>
+                                            </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -83,17 +86,26 @@
                             <div class="profil-about">
                                 <div class="container">
                                     <div class="grid-6">
-                                        <?= $this->Html->link(__('Éditer mon compte'), [
-                                        'controller' => 'Users',
-                                        'action' => 'edit',
-                                        $user->id],
-                                        ['class' => 'btn btn-info large ', 'style' => 'margin-top: 14px;margin-bottom: 10px;']) ?>
+                                        <?=
+                                        $this->Html->link(__('Éditer mon compte'), [
+                                            'controller' => 'Users',
+                                            'action' => 'edit',
+                                            $user->id
+                                        ],
+                                        [
+                                            'class' => 'btn btn-info large ',
+                                            'style' => 'margin-top: 14px;margin-bottom: 10px;'
+                                        ]); ?>
                                     </div>
                                     <div class="grid-6">
-                                        <?= $this->Html->link(__('Déconnexion'), [
-                                        'controller' => 'Users',
-                                        'action' => 'logout'],
-                                        ['class' => 'btn btn-danger large', 'style' => 'margin-top: 14px;margin-bottom: 10px;']) ?>
+                                        <?=
+                                        $this->Html->link(__('Déconnexion'), [
+                                            'controller' => 'Users',
+                                            'action' => 'logout'],
+                                        [
+                                            'class' => 'btn btn-danger large',
+                                            'style' => 'margin-top: 14px;margin-bottom: 10px;'
+                                        ]); ?>
                                     </div>
                                 </div>
                             </div>
@@ -134,11 +146,10 @@
 
                             </tbody>
                         </table>
-                    <?= $this->element('paginate'); ?>
+                        
+                        <?= $this->element('paginate'); ?>
                     </p>
                 </section>
             </div>
         </div>
     </div>
-
-

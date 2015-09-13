@@ -17,8 +17,7 @@
                 <?= $this->Form->input('content', ['class' => 'form', 'id' => 'emoji', 'label' => false]); ?>
             </div>
 
-            <div class="grid-1">
-            </div>
+            <div class="grid-1"></div>
             <div class="grid-11">
                 <input type="checkbox"> Recevoir une copie de votre contenu sur votre boîte mail.
             </div>
