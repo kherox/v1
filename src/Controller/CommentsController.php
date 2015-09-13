@@ -58,6 +58,7 @@ class CommentsController extends AppController
                 $this->Flash->error(__('The comment could not be saved. Please, try again.'));
             }
         }
+
         $users = $this->Comments->Users->find('list', ['limit' => 200]);
         $tickets = $this->Comments->Tickets->find('list', ['limit' => 200]);
         $this->set(compact('comment', 'users', 'tickets'));
@@ -73,7 +74,6 @@ class CommentsController extends AppController
      */
     public function edit($id = null)
     {
-
         if($this->request->session()->read('Auth.User.role') == 'admin'){
             $comment = $this->Comments->get($id, [
                 'contain' => ['Users']

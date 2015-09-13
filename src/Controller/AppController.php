@@ -53,10 +53,13 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->loginError = "This message shows up when the wrong credentials are used";
         $this->Auth->authError = "Vous devez vous connecter pour accéder à cette page.";
 
-        $this->Auth->allow(['index', 'view', 'display']);
+        $this->Auth->allow([
+            'index',
+            'view',
+            'display'
+        ]);
     }
 
     public function isAuthorized($user)

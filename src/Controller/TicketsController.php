@@ -37,10 +37,10 @@ class TicketsController extends AppController
 
         if (in_array($this->request->action, ['edit', 'delete'])) {
             $ticketId = (int)$this->request->params['pass'][0];
+
             if ($this->Tickets->isOwnedBy($ticketId, $user['id'])) {
                 return true;
             }
-
             if($user['role'] == 'admin'){
                 return true;
             }
@@ -66,7 +66,9 @@ class TicketsController extends AppController
         $tickets = $this->Tickets
             ->find()
             ->contain(['Comments'])
-            ->order(['created' => 'desc']);
+            ->order([
+                'created' => 'desc'
+            ]);
 
         $tickets = $this->paginate($tickets);
 
@@ -105,6 +107,7 @@ class TicketsController extends AppController
             } else {
                 $this->Flash->error(__('Votre commentaire n\'a pas plus être sauvegarder, veuillez recommencer.'));
             }
+
             return $this->redirect($this->referer());
         }
 
@@ -135,6 +138,7 @@ class TicketsController extends AppController
                 $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
             }
         }
+
         $this->set('ticket', $ticket);
         $this->set('_serialize', ['ticket']);
     }
@@ -186,7 +190,8 @@ class TicketsController extends AppController
 
         if ($this->request->is(['post', 'put'])) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
-             $this->Tickets->patchEntity($ticket, ['label' => 1]);
+            $this->Tickets->patchEntity($ticket, ['label' => 1]);
+
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('Votre ticket a bien été résolu'));
                 return $this->redirect(['action' => 'index']);
@@ -194,6 +199,7 @@ class TicketsController extends AppController
                 $this->Flash->error(__('Votre ticket n\'a pas pu être résolu, veuillez recommencer.'));
             }
         };
+
         $this->set('_serialize', ['ticket']);
     }
 
@@ -210,6 +216,7 @@ class TicketsController extends AppController
         } else {
             $this->Flash->error(__('Votre ticket n\'a pas pu être supprimé'));
         }
+
         return $this->redirect(['action' => 'index']);
     }
 
@@ -227,6 +234,7 @@ class TicketsController extends AppController
         } else {
             $this->Flash->error(__('Votre commentaire n\'a pas pu être supprimé'));
         }
+
         return $this->redirect(['action' => 'index']);
     }
 
@@ -235,6 +243,8 @@ class TicketsController extends AppController
      */
     public function editComment($id = null){
         $this->loadModel('Comments');
+
+        $users = $this->Comments->Users->find('list', ['limit' => 200]);
 
         if($this->request->session()->read('Auth.User.role') == 'admin'){
             $comment = $this->Comments->get($id, [
@@ -253,13 +263,13 @@ class TicketsController extends AppController
             $ticket = $this->Comments->patchEntity($comment, $this->request->data);
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('Votre commentaire a bien été édité'));
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Votre commentaire n\'a pas pu être édité, veuillez recommencer.'));
             }
         }
 
-        $users = $this->Comments->Users->find('list', ['limit' => 200]);
         $this->set(compact('comment', 'users'));
         $this->set('_serialize', ['comment']);
     }

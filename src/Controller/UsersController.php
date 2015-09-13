@@ -14,7 +14,6 @@ class UsersController extends AppController
 {
     public function beforeFilter(Event $event)
     {
-
         parent::beforeFilter($event);
         $this->Auth->allow(['login', 'add', 'logout']);
     }
@@ -22,7 +21,7 @@ class UsersController extends AppController
     public function initialize() {
         parent::initialize();
 
-        $this->loadComponent('Flash'); // Include the FlashComponent
+        $this->loadComponent('Flash');
     }
 
     /**
@@ -31,12 +30,12 @@ class UsersController extends AppController
     public function index()
     {
         $this->loadModel('Tickets');
-        $user = $this->Auth->user();
 
+        $user = $this->Auth->user();
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);
-
         $this->set('users', $this->paginate($this->Users));
         $this->set('_serialize', ['users']);
     }
@@ -46,16 +45,17 @@ class UsersController extends AppController
     public function login()
     {
         $userLogin = $this->Auth->identify();
+
         if ($userLogin) {
             $this->Auth->setUser($userLogin);
             $user = $this->Users->newEntity($userLogin);
             $user->isNew(false);
             $user->last_login = new Time();
-            $this->Users->save($user);
+            $url = $this->Auth->redirectUrl();
 
+            $this->Users->save($user);
             $this->request->session()->write('Auth.User', $user);
 
-            $url = $this->Auth->redirectUrl();
             return $this->redirect($url);
         }
     }
@@ -65,18 +65,24 @@ class UsersController extends AppController
      **/
     public function view($id = null)
     {
-        $user = $this->Auth->user();
         $this->loadModel('Tickets');
+
+        $user = $this->Auth->user();
+        $tickets_count = $this->Tickets->find('all', [
+            'conditions' => [
+                'Tickets.user_id' => $user['id']
+            ]
+        ])->count();
 
         $user = $this->Users->get($id, [
             'contain' => ['Tickets']
         ]);
 
-        $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
-
         $this->paginate = [
             'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
-            'conditions' => ['Tickets.user_id' => $user['id']]
+            'conditions' => [
+                'Tickets.user_id' => $user['id']
+            ]
         ];
 
         $this->set('user', $user);
@@ -110,10 +116,9 @@ class UsersController extends AppController
      * Mon profile
      */
     public function profile(){
-        $user = $this->Auth->user();
-
         $this->loadModel('Tickets');
 
+        $user = $this->Auth->user();
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
 
         $this->paginate = [
@@ -133,44 +138,48 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id);
-        if ($this->request->is(['patch', 'post', 'put'])) {
 
-            $extension = ''; $name_image = '';
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            $extension = '';
+            $name_image = '';
             $repertoire = WWW_ROOT . 'img/upload/avatars/';
-            $all_extension = ['jpg','gif','png','jpeg'];
+            $all_extension = ['jpg','gif','png','jpeg','svg'];
 
             // Upload
             if(isset($this->request->data['avatar_file']) && !empty($this->request->data['avatar_file'])){
                 $extension  = pathinfo($this->request->data['avatar_file']['name'], PATHINFO_EXTENSION);
                 if(in_array(strtolower($extension), $all_extension)){
                     $name_image = $user['id']. '-' . $user['username'] . '.' . $extension;
+
                     if(
                         move_uploaded_file($this->request->data['avatar_file']['tmp_name'] , $repertoire . $name_image)
-
                     ){
                         // Intervention
                         $manager = new ImageManager();
                         // Répertoire de l'avatar
                         $manager->make($repertoire . $name_image)
-                        // Roger et redimensionner l'avatar
+                        // Rogner et redimensionner l'avatar
                         ->fit(170)
                         // Sauvegarde de l'avatar
                         ->save($repertoire . $name_image);
 
                         $this->Users->patchEntity($user, ['avatar' => $name_image]);
+
                         return $this->redirect(['action' => 'profile']);
                     }
                 }
             }
 
-            $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Votre compte a bien été édité.'));
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Votre compte n\'a pas pu être édité.'));
             }
         }
+        
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
@@ -182,11 +191,13 @@ class UsersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
+
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('Votre compte à bien était supprimé'));
         } else {
             $this->Flash->error(__('Votre compte n\'a pas pu être supprimé'));
         }
+
         return $this->redirect(['action' => 'index']);
     }
 
@@ -196,6 +207,7 @@ class UsersController extends AppController
     public function logout()
     {
         $this->Flash->success(__('Vous êtes bien déconnecté'));
+
         return $this->redirect($this->Auth->logout());
     }
 }
