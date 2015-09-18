@@ -37,14 +37,14 @@ composer intall
 composer require gynidark/oranticket dev-master
 ```
 
-- NPM(Si vous le souhaitez):
+- NPM(Si vous le souhaitez utiliser **Gulp**):
 
 ```
 npm install
 ```
 
 - Configuration de votre fichier **config/oranticket.php**
-- Importer le fichier OranTicket.sql *config/schema/OranTicket.sql* dans votre base de donnée. ou par terminal ```bin/cake migrations migrate```
+- Importer le fichier OranTicket.sql *config/schema/OranTicket.sql* dans votre base de donnée. **ou** par terminal ```bin/cake migrations migrate```
 
 
 Sinon vous pouvez télécharger manulement [OranTicket](https://github.com/OranTicket/Site-Web/archive/master.zip).
