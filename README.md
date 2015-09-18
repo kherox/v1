@@ -18,6 +18,7 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
 - Compte existant
 
 Utilisateur  : admin
+
 Mot de passe : admin
 
 # Instalation
