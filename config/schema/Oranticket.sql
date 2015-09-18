@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.13
+-- version 4.4.14.1
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 08 Septembre 2015 à 11:41
+-- Généré le :  Ven 18 Septembre 2015 à 17:27
 -- Version du serveur :  5.6.25-0ubuntu0.15.04.1
 -- Version de PHP :  5.6.4-4ubuntu6.2
 
@@ -17,8 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `OranTicket`
+-- Base de données :  `oranticket`
 --
+CREATE DATABASE IF NOT EXISTS `oranticket` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `oranticket`;
 
 -- --------------------------------------------------------
 
