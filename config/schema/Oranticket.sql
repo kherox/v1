@@ -103,8 +103,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created`, `modified`, `avatar`, `website`, `mail`, `role`, `bio`) VALUES
-(6, 'Gynidark', '$2y$10$Ot9Gl8zChyWDP5yHN1LxceC9NQQn7qpjKgEAfHYJBYoyqf2CBqEKu', '2015-08-22 01:10:05', '2015-08-23 21:19:40', '6-Gynidark.png', 'http://gynidark.github.io', 'gynidark@gmail.com', 'member', ''),
-(7, 'admin', '$2y$10$8EBzpkHxcCx7OOtVD1AoWOuZSZr/Dl2pdgd/ULVLOTLsiKLsOPO8.', '2015-08-22 08:04:21', '2015-08-24 21:27:30', '7-admin.png', 'http://gynidark.github.io', 'kkk', 'admin', '');
+(1, 'admin', '$2y$10$8EBzpkHxcCx7OOtVD1AoWOuZSZr/Dl2pdgd/ULVLOTLsiKLsOPO8.', '2015-08-22 08:04:21', '2015-08-24 21:27:30', '7-admin.png', 'http://gynidark.github.io', 'kkk', 'admin', '');
 
 --
 -- Index pour les tables exportées
