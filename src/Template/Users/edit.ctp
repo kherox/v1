@@ -4,10 +4,8 @@
 <div class="container">
     <?= $this->Form->create($user, ['enctype' => 'multipart/form-data']) ?>
             <div class="grid-12">
-                <?=
-                    $this->Form->input('username', ['class' => 'form']);
-                    $this->Form->input('password', ['class' => 'form', 'style' => "margin-bottom: 10px"]);
-                ?>
+                <?= $this->Form->input('username', ['class' => 'form']); ?>
+                <?= $this->Form->input('password', ['class' => 'form', 'style' => "margin-bottom: 10px"]); ?>
             </div>
             <div class="gird-2">
                 <?php
