@@ -179,7 +179,7 @@ class UsersController extends AppController
                 $this->Flash->error(__('Votre compte n\'a pas pu être édité.'));
             }
         }
-        
+
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
