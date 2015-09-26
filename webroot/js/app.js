@@ -95,17 +95,13 @@ $(document).ready(function(){
     $('.sendButton').attr('disabled', true);
 
     $('#emoji').keyup(function(){
-        if($(this).val().length > 10){
+        if($(this).val().length > 10 && $(this).val().length < 550){
             $('.sendButton').attr('disabled', false);
         }else{
             $('.sendButton').attr('disabled', true);
         }
 
-        if($(this).val().length < 350){
-            $('.sendButton').attr('disabled', false);
-        }else{
-            $('.sendButton').attr('disabled', true);
-        }
+
     })
 });
 
