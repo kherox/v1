@@ -1,7 +1,7 @@
 <?php
 return [
     'Site' => [
-        'base_url'  => 'http://local.dev/OranTicket/',
+        'base_url'  => 'http://127.0.0.1/OranTicket/',
         'name' => 'OranTicket',
         'description' => 'Créé des tickets afin de résoudre vos soucis/problèmes ',
         'github_url' => 'https://github.com/OranTicket/Site-Web',

@@ -3,13 +3,7 @@
             <div class="container">
                 <div class="grid-4 center">
                     <div class="grid-6 grid-m-5">
-                        <?php
-                            if(!empty($user->avatar)){
-                                echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '110']);
-                            }else{
-                                echo $this->Html->image('upload/avatars/avatar_default.png', ['width' => '110']);
-                            }
-                        ?>
+                        <img src="<?php echo $grav_url; ?>" alt="" />
                     </div>
                     <div class="grid-6 grid-m-7">
                         <div class="profil-name">
