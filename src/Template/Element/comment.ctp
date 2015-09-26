@@ -8,9 +8,7 @@
 					<?php
 						foreach($users as $user){
 							if($comment->user_id == $user->id){
-								$avatar_img = $user->avatar;
-
-								echo $this->Html->image('upload/avatars/'. $avatar_img , [
+								echo $this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))) , [
 									'class' => 'media-object',
 									'width' => '64'
 								]);

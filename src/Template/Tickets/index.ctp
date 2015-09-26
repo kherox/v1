@@ -37,15 +37,12 @@ foreach ($tickets as $ticket): ?>
 
                                 echo
                                 $this->Html->link(
-                                    $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '65']),
+                                    $this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))), ['width' => '65']),
                                     [
                                         'controller' => 'Users',
                                         'action'     => 'view',
                                         $user->id
-                                    ],
-                                    [
-                                        'escape' => false
-                                    ]
+                                    ], ['escape' => false]
                                 );
                             }
                         }
