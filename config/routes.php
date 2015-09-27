@@ -38,6 +38,22 @@ Router::scope('/', function ($routes) {
         ]
     );
 
+    $routes->connect(
+        '/users/reset_password/:code.:id',
+        [
+            'controller' => 'Users',
+            'action' => 'reset_password'
+        ],
+        [
+            '_name' => 'users-resetpassword',
+            'pass' => [
+                'id',
+                'code'
+            ],
+            'id' => '[0-9]+'
+        ]
+    );
+
     /**
      * Inscription
      */

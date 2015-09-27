@@ -59,7 +59,8 @@ class AppController extends Controller
             'index',
             'view',
             'display',
-            'forgot_password'
+            'forgot_password',
+            'reset_password'
         ]);
     }
 

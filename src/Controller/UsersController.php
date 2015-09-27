@@ -218,7 +218,6 @@ class UsersController extends AppController
     /**
      * Mot de passe oublié
      */
-
     public function forgot_password(){
         if($this->Auth->user()) {
             $this->Flash->error(__('Vous êtes déjà connecté'));
@@ -250,7 +249,7 @@ class UsersController extends AppController
                 ->template('forgotPassword', 'default')
                 ->emailFormat('html')
                 ->from(['contact@oranticket.fr' => 'Mot de passe oublié'])
-                ->subject(__('OranTicket Mot de passe oublié'))
+                ->subject(__('[OranTicket] Mot de passe oublié'))
                 ->to($user->mail)
                 ->viewVars($viewVars)
                 ->send();
@@ -258,5 +257,45 @@ class UsersController extends AppController
             $this->Flash->success("Votre email à bien était envoyer.");
         }
         $this->set(compact('user'));
+    }
+
+    /**
+     * Nouveaux mot de passe
+     */
+    public function reset_password(){
+        if($this->Auth->user()) {
+            $this->Flash->error(__('Vous êtes déjà connecté'));
+            return $this->redirect(['action' => 'profile']);
+        }
+
+        $user = $this->Users
+            ->find()
+            ->where([
+                'Users.password_code' => $this->request->code,
+                'Users.id' => $this->request->id
+            ])
+            ->first();
+
+        $expire = $user->password_code_expire->timestamp + (Configure::read('Settings.User.ResetPassword.expire_code') * 60);
+
+        if ($expire < time()) {
+            $this->Flash->error(__("Le code est expiré, veuillez renvoyez un mail."));
+            return $this->redirect(['action' => 'forgot_password']);
+        }
+        if ($this->request->is(['post', 'put'])) {
+            $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $this->Flash->success('Votre mot de passe à bien était modifier');
+
+                $user->password_code = null;
+                $user->password_code_expire = new Time();
+                $user->password_reset_count = $user->password_reset_count + 1;
+
+                $this->Users->save($user);
+                return $this->redirect(['controller' => 'users', 'action' => 'login']);
+            }
+        }
+        $this->set(compact('user'));
+
     }
 }

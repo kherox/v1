@@ -18,4 +18,12 @@ return [
         ]
     ],
 
+    'Settings' => [
+        'User' => [
+            'ResetPassword' => [
+                'expire_code' => 10 // Minutes
+            ],
+        ]
+    ]
+
 ];

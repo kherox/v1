@@ -13,7 +13,7 @@
                 'error' => false
             ]
         ) ?>
-        <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success pull-right']) ?>
+        <?= $this->Form->button(__('Envoyer'), ['class' => 'btn btn-success pull-right']) ?>
     <?= $this->Form->end(); ?>
 </div>
 
