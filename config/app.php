@@ -148,11 +148,11 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => 'localhost',
-            
-            'username' => 'root',
-            'password' => 'azeqsd',
-            'database' => 'oranticket',
+            'host' => '_HOST_',
+            _PORT_
+            'username' => '_USERNAME_',
+            'password' => '_PASSWORD_',
+            'database' => '_DATABASENAME_',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
