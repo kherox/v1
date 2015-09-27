@@ -4,11 +4,21 @@
             <div class="grid-4 center">
                 <div class="grid-6 grid-m-5">
                     <?php
-                        if(!empty($user->avatar)){
-                            echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '110']);
-                        }else{
-                            echo $this->Html->image('upload/avatars/avatar_default.png', ['width' => '110']);
+                    foreach ($tickets as $ticket):
+                        if($ticket->user_id == $user->id){
+
+                            echo
+                            $this->Html->link(
+                                $this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))), ['width' => '65']),
+                                [
+                                    'controller' => 'Users',
+                                    'action'     => 'view',
+                                    $user->id
+                                ], ['escape' => false]
+                            );
                         }
+                    endforeach;
+                    ?>
                     ?>
                 </div>
                 <div class="grid-6 grid-m-7">

@@ -85,7 +85,7 @@ class UsersController extends AppController
                 'Tickets.user_id' => $user['id']
             ]
         ];
-
+        $user = $this->Auth->user();
         $this->set('user', $user);
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);

@@ -11,11 +11,15 @@
                         <?php
                             $alt = 'Photo de profil à'. $user->username;
 
-                            if(!empty($user->avatar)){
-                                echo $this->Html->image('upload/avatars/'. $user->avatar, ['width' => '120', 'alt' => $alt]);
-                            }else{
-                                echo $this->Html->image('upload/avatars/avatar_default.png', ['width' => '120', 'alt' => $alt]);
-                            }
+                            echo
+                            $this->Html->link(
+                                $this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))), ['width' => '65']),
+                                [
+                                    'controller' => 'Users',
+                                    'action'     => 'view',
+                                    $user->id
+                                ], ['escape' => false]
+                            );
                         ?>
                     </div>
                 </div>
