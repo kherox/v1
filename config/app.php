@@ -149,9 +149,9 @@ return [
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => 'localhost',
-            //'port' => 'nonstandard_port_number',
+            
             'username' => 'root',
-            'password' => 'root',
+            'password' => 'azeqsd',
             'database' => 'oranticket',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
