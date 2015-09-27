@@ -16,6 +16,7 @@
 
                 <div class="grid-12 center">
                     <?= $this->Form->button(__('Se connecter'), ['class' => 'btn btn-success right']) ?>
+                    <?= $this->Html->link('Mot de passe oublié', ['controller' => 'Users','action' => 'forgot_password'], ['class' => 'right btn btn-danger']);?>
                     <?= $this->Html->link("S'inscrire", ['controller' => 'Users','action' => 'add'], ['class' => 'right btn btn-info']);?>
                 </div>
             <?= $this->Form->end() ?>

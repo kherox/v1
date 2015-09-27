@@ -6,7 +6,7 @@ use Cake\Auth\DefaultPasswordHasher;
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\I18n\Time;
-use Cake\Network\Email\Email;
+use Cake\Mailer\Email;
 use Identicon\Identicon;
 use Intervention\Image\ImageManager;
 
@@ -213,5 +213,50 @@ class UsersController extends AppController
         $this->Flash->success(__('Vous êtes bien déconnecté'));
 
         return $this->redirect($this->Auth->logout());
+    }
+
+    /**
+     * Mot de passe oublié
+     */
+
+    public function forgot_password(){
+        if($this->Auth->user()) {
+            $this->Flash->error(__('Vous êtes déjà connecté'));
+            return $this->redirect(['action' => 'profile']);
+        }
+
+        $user = $this->Users->newEntity($this->request->data);
+
+        if($this->request->is('post')){
+            $user = $this->Users->find()->where(['Users.mail' => $this->request->data['email']])->first();
+
+            $code = md5(rand() . uniqid());
+
+            $user->password_code = $code;
+            $user->password_code_expire = new Time();
+
+
+            $this->Users->save($user);
+
+            $viewVars = [
+                'userID' => $user->id,
+                'name' => $user->username,
+                'code' => $code
+            ];
+
+            $email = new Email();
+
+            $email->profile('default')
+                ->template('forgotPassword', 'default')
+                ->emailFormat('html')
+                ->from(['contact@oranticket.fr' => 'Mot de passe oublié'])
+                ->subject(__('OranTicket Mot de passe oublié'))
+                ->to($user->mail)
+                ->viewVars($viewVars)
+                ->send();
+
+            $this->Flash->success("Votre email à bien était envoyer.");
+        }
+        $this->set(compact('user'));
     }
 }

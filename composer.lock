@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "30d38f02de2b33dd485f445582c8a2d4",
-    "content-hash": "29cf1c9482b09e2ded8a2c92fa3adec3",
+    "hash": "688debc330dda3e4e4839263c9f41081",
+    "content-hash": "47b75b70d029604c4bcf36c59bcc2946",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -1098,56 +1098,6 @@
                 "MIT"
             ],
             "time": "2014-08-28 12:37:43"
-        },
-        {
-            "name": "yzalis/identicon",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yzalis/Identicon.git",
-                "reference": "a99fc2a3d018512f7914bc6f972952536c0f309b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yzalis/Identicon/zipball/a99fc2a3d018512f7914bc6f972952536c0f309b",
-                "reference": "a99fc2a3d018512f7914bc6f972952536c0f309b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "fzaninotto/faker": "1.2.*@dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Identicon": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Laugueux",
-                    "email": "benjamin@yzalis.com"
-                }
-            ],
-            "description": "Create awesome unique avatar.",
-            "homepage": "http://identicon-php.org",
-            "keywords": [
-                "avatar",
-                "identicon",
-                "image"
-            ],
-            "time": "2014-07-13 09:19:12"
         }
     ],
     "packages-dev": [
