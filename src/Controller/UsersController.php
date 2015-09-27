@@ -66,26 +66,16 @@ class UsersController extends AppController
      **/
     public function view($id = null)
     {
-        $this->loadModel('Tickets');
-
         $user = $this->Auth->user();
-        $tickets_count = $this->Tickets->find('all', [
-            'conditions' => [
-                'Tickets.user_id' => $user['id']
-            ]
-        ])->count();
-
+        $this->loadModel('Tickets');
         $user = $this->Users->get($id, [
             'contain' => ['Tickets']
         ]);
-
+        $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
         $this->paginate = [
             'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
-            'conditions' => [
-                'Tickets.user_id' => $user['id']
-            ]
+            'conditions' => ['Tickets.user_id' => $user['id']]
         ];
-        $user = $this->Auth->user();
         $this->set('user', $user);
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);

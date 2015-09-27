@@ -37,4 +37,10 @@ class AppView extends View
         return \Cake\Core\Configure::read('Site.base_url');
     }
 
+    function gravatar($email, $size='80')
+    {
+        $gravatar_link = 'http://www.gravatar.com/avatar/' . md5($email) . '?s='. $size;
+        return $gravatar_link;
+    }
+
 }

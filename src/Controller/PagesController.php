@@ -44,6 +44,9 @@ class PagesController extends AppController
         $Users = $this->Users->find('all')->count();
         $Tickets = $this->Tickets->find('all')->count();
 
+
+
+        $user = $this->Users->find('all');
         $path = func_get_args();
         $count = count($path);
         $page = $subpage = null;
@@ -62,6 +65,7 @@ class PagesController extends AppController
         }
 
         $this->set('Users', $Users);
+        $this->set('user', $user);
         $this->set('Tickets', $Tickets);
         $this->set(compact('page', 'subpage'));
         $this->set('tickets', $this->paginate($this->Tickets));

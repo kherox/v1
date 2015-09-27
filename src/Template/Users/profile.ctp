@@ -3,7 +3,20 @@
             <div class="container">
                 <div class="grid-4 center">
                     <div class="grid-6 grid-m-5">
-                        <img src="<?php echo $grav_url; ?>" alt="" />
+                        <?php
+                        $alt = 'Photo de profil à '. $user->username;
+
+                        echo
+                        $this->Html->link(
+                            $this->Html->image($this->gravatar($user->mail), ['width' => '85', 'alt' => $alt]),
+                            [
+                                'controller' => 'Users',
+                                'action'     => 'view',
+                                $user->id
+                            ],
+                            ['escape' => false]
+                        );
+                        ?>
                     </div>
                     <div class="grid-6 grid-m-7">
                         <div class="profil-name">

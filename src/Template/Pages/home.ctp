@@ -37,7 +37,7 @@
         $this->Html->link(__('Voir les tickets'), [
             'controller' => 'Tickets',
             'action' => 'index'
-        ]) 
+        ]);
     ?>
 
 </div>

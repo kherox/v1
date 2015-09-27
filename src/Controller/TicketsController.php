@@ -86,32 +86,25 @@ class TicketsController extends AppController
         $u = $this->loadModel('Users');
         $users = $u->find('all');
         $user = $this->Auth->user();
-
         $ticket = $this->Tickets->get($id, [
             'contain' => ['Users', 'Comments']
         ]);
-
         // EMOJIONE
         $client = new Client(new Ruleset());
         $client->imageType = 'svg';
-
         // AJOUT D'UN COMMENTAIRE
         if ($this->request->is('post')) {
             $this->request->data['ticket_id'] = $id;
             $this->request->data['user_id'] = $user['id'];
-
             $comment = $this->Tickets->Comments->newEntity();
             $comment = $this->Tickets->Comments->patchEntity($comment, $this->request->data);
-
             if ($this->Tickets->Comments->save($comment)) {
                 $this->Flash->success(__('Votre commentaire à bien était sauvegarder.'));
             } else {
                 $this->Flash->error(__('Votre commentaire n\'a pas plus être sauvegarder, veuillez recommencer.'));
             }
-
             return $this->redirect($this->referer());
         }
-
         // VARIABLES
         $this->set('client', $client);
         $this->set('ticket', $ticket);

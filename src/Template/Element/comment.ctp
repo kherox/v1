@@ -8,10 +8,16 @@
 					<?php
 						foreach($users as $user){
 							if($comment->user_id == $user->id){
-								echo $this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))) , [
-									'class' => 'media-object',
-									'width' => '64'
-								]);
+								echo
+                                $this->Html->link(
+									$this->Html->image($this->gravatar($user->mail), ['width' => '55']),
+									[
+										'controller' => 'Users',
+										'action'     => 'view',
+										$user->id
+									],
+									['escape' => false]
+								);
 							}
 						}
 					?>

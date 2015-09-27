@@ -1,30 +1,29 @@
+<?= ""; //die(); ?>
+
 <div class="profil">
     <div class="profil-header">
         <div class="container">
             <div class="grid-4 center">
                 <div class="grid-6 grid-m-5">
                     <?php
-                    foreach ($tickets as $ticket):
-                        if($ticket->user_id == $user->id){
+                        $alt = 'Photo de profil à '. $user->username;
 
-                            echo
-                            $this->Html->link(
-                                $this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))), ['width' => '65']),
-                                [
-                                    'controller' => 'Users',
-                                    'action'     => 'view',
-                                    $user->id
-                                ], ['escape' => false]
-                            );
-                        }
-                    endforeach;
-                    ?>
+                        echo
+                        $this->Html->link(
+                            $this->Html->image($this->gravatar($user->mail, '100'), ['alt' => $alt]),
+                            [
+                                'controller' => 'Users',
+                                'action'     => 'view',
+                                $user->id
+                            ],
+                            ['escape' => false]
+                        );
                     ?>
                 </div>
                 <div class="grid-6 grid-m-7">
                     <div class="profil-name">
                         <h2><?= $user->username; ?></h2>
-                        <span><?= $user->role; ?></span>
+                        <span><?php if(!$user->role == 'admin'){ echo "Member"; }; ?></span>
                     </div>
                 </div>
             </div>

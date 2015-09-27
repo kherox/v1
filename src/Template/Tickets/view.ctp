@@ -46,12 +46,13 @@
                         if($ticket->user_id == $user->id){
 							echo
 							$this->Html->link(
-								$this->Html->image("http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))), ['width' => '65']),
+								$this->Html->image($this->gravatar($user->mail), ['width' => '65']),
 								[
 									'controller' => 'Users',
 									'action'     => 'view',
 									$user->id
-								], ['escape' => false]
+								],
+								['escape' => false]
 							);
 						}
 					}

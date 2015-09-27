@@ -18,8 +18,8 @@
                                 </li>
 
                                 <li>
-                                    <a href="<?= $this->url(); ?>users/profile">
-                                        <i class="fa fa-user"></i>
+                                    <a href="<?= $this->url(); ?>users/">
+                                        <i class="fa fa-users"></i>
                                     </a>
                                 </li>
                                 <li>
