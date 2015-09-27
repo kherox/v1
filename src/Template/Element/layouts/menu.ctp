@@ -27,16 +27,6 @@
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </li>
-                                <!--
-                                <li>
-                                    <div class="notif">
-                                        <div class="label label-notif-menu">2</div>
-                                        <a href="#" class="launch">
-                                            <i class="fa fa-bell-o"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                                -->
                             </ul>
                         </nav>
                     </div>

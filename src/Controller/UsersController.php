@@ -46,7 +46,10 @@ class UsersController extends AppController
     public function login()
     {
         $userLogin = $this->Auth->identify();
-
+        if($this->Auth->user()){
+            $this->Flash->error(__('Vous êtes déjà connecté'));
+            return $this->redirect(['action' => 'profile']);
+        }
         if ($userLogin) {
             $this->Auth->setUser($userLogin);
             $user = $this->Users->newEntity($userLogin);
@@ -88,6 +91,11 @@ class UsersController extends AppController
      public function add()
     {
         $user = $this->Users->newEntity();
+
+        if($this->Auth->user()){
+            $this->Flash->error(__('Vous êtes déjà connecté'));
+            return $this->redirect(['action' => 'profile']);
+        }
 
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
