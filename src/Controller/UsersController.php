@@ -191,18 +191,16 @@ class UsersController extends AppController
     /**
      * Supression de votre compte
      **/
-    public function delete($id = null)
+    public function delete()
     {
-        $this->request->allowMethod(['post', 'delete']);
-        $user = $this->Users->get($id);
+        $user = $this->Users->get($this->Auth->user('id'));
 
-        if ($this->Users->delete($user)) {
-            $this->Flash->success(__('Votre compte à bien était supprimé'));
-        } else {
-            $this->Flash->error(__('Votre compte n\'a pas pu être supprimé'));
+        $user->is_deleted = true;
+
+        if($this->Users->save($user)){
+            $this->Flash->success("Votre compte à bien été supprimer!");
+            return $this->redirect($this->Auth->logout());
         }
-
-        return $this->redirect(['action' => 'index']);
     }
 
     /**
@@ -228,6 +226,11 @@ class UsersController extends AppController
 
         if($this->request->is('post')){
             $user = $this->Users->find()->where(['Users.mail' => $this->request->data['email']])->first();
+
+            if(is_null($user)){
+                $this->Flash->error(__("Ce code est incorrect."));
+                $this->redirect(['controller' => 'pages', 'action' => 'home']);
+            }
 
             $code = md5(rand() . uniqid());
 
@@ -282,6 +285,13 @@ class UsersController extends AppController
             $this->Flash->error(__("Le code est expiré, veuillez renvoyez un mail."));
             return $this->redirect(['action' => 'forgot_password']);
         }
+
+        if(empty(trim($this->request->code))){
+            $this->Flash->error(__("Vous n'avez pas envoyer de mail de récupération pour votre mot de passe."));
+            $this->redirect(['controller' => 'pages', 'action' => 'home']);
+        }
+
+
         if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {

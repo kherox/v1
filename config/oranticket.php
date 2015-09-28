@@ -21,7 +21,7 @@ return [
     'Settings' => [
         'User' => [
             'ResetPassword' => [
-                'expire_code' => 10 // Minutes
+                'expire_code' => 30 // Minutes
             ],
         ]
     ]

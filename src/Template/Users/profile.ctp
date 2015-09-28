@@ -92,19 +92,30 @@
                         <div class="grid-6">
                             <div class="profil-about">
                                 <div class="container">
-                                    <div class="grid-6">
+                                    <div class="grid-4">
+                                        <?=
+                                        $this->Html->link(__('Supprimer mon compte'), [
+                                            'controller' => 'Users',
+                                            'action' => 'delete'
+                                        ],
+                                            [
+                                                'class' => 'btn btn-danger large ',
+                                                'style' => 'margin-top: 14px;margin-bottom: 10px;'
+                                            ]); ?>
+                                    </div>
+                                    <div class="grid-4">
                                         <?=
                                         $this->Html->link(__('Éditer mon compte'), [
                                             'controller' => 'Users',
                                             'action' => 'edit',
                                             $user->id
                                         ],
-                                        [
-                                            'class' => 'btn btn-info large ',
-                                            'style' => 'margin-top: 14px;margin-bottom: 10px;'
-                                        ]); ?>
+                                            [
+                                                'class' => 'btn btn-info large ',
+                                                'style' => 'margin-top: 14px;margin-bottom: 10px;'
+                                            ]); ?>
                                     </div>
-                                    <div class="grid-6">
+                                    <div class="grid-4">
                                         <?=
                                         $this->Html->link(__('Déconnexion'), [
                                             'controller' => 'Users',
