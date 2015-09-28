@@ -82,6 +82,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Auth->user();
+
         $this->loadModel('Tickets');
         $user = $this->Users->get($id, [
             'contain' => ['Tickets']
@@ -91,6 +92,7 @@ class UsersController extends AppController
             'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
+
         $this->set('user', $user);
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);
@@ -133,17 +135,10 @@ class UsersController extends AppController
 
         $user = $this->Auth->user();
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
-
-        // GRAVATAR
-        $email = trim($user['email']);
-        $size = 40;
-        $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ). "&s=" . $size;
-
         $this->paginate = [
             'limit' => 5,
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
-        $this->set('grav_url', $grav_url);
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);
         $this->set('user', $user);

@@ -1,5 +1,3 @@
-<?= ""; //die(); ?>
-
 <div class="profil">
     <div class="profil-header">
         <div class="container">
@@ -54,6 +52,14 @@
 
 <div class="tab">
     <div class="container">
+        <?php if($user['is_deleted'] == true): ?>
+            <div class="container">
+                <div id="flash-message" class="flash-message flash-info fadeInDown animated">
+                    <button type="button" class="close"><i class="fa fa-times"></i></button><strong>Attention</strong> Ce compte à était désactiver.
+                </div>
+            </div>
+        <?php endif; ?>
+
         <ul class="tabs">
             <li class="active">
                 <a href="#">A propos</a>
