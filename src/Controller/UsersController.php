@@ -154,39 +154,9 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
-            $extension = '';
-            $name_image = '';
-            $repertoire = WWW_ROOT . 'img/upload/avatars/';
-            $all_extension = ['jpg','gif','png','jpeg','svg'];
-
-            // Upload
-            if(isset($this->request->data['avatar_file']) && !empty($this->request->data['avatar_file'])){
-                $extension  = pathinfo($this->request->data['avatar_file']['name'], PATHINFO_EXTENSION);
-                if(in_array(strtolower($extension), $all_extension)){
-                    $name_image = $user['id']. '-' . $user['username'] . '.' . $extension;
-
-                    if(
-                        move_uploaded_file($this->request->data['avatar_file']['tmp_name'] , $repertoire . $name_image)
-                    ){
-                        // Intervention
-                        $manager = new ImageManager();
-                        // Répertoire de l'avatar
-                        $manager->make($repertoire . $name_image)
-                        // Rogner et redimensionner l'avatar
-                        ->fit(170)
-                        // Sauvegarde de l'avatar
-                        ->save($repertoire . $name_image);
-
-                        $this->Users->patchEntity($user, ['avatar' => $name_image]);
-
-                        return $this->redirect(['action' => 'profile']);
-                    }
-                }
-            }
 
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Votre compte a bien été édité.'));
-
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Votre compte n\'a pas pu être édité.'));
