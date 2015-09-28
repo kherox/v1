@@ -46,21 +46,31 @@ class UsersController extends AppController
     public function login()
     {
         $userLogin = $this->Auth->identify();
+
         if($this->Auth->user()){
             $this->Flash->error(__('Vous êtes déjà connecté'));
             return $this->redirect(['action' => 'profile']);
         }
+
         if ($userLogin) {
-            $this->Auth->setUser($userLogin);
-            $user = $this->Users->newEntity($userLogin);
-            $user->isNew(false);
-            $user->last_login = new Time();
-            $url = $this->Auth->redirectUrl();
+            if(!$userLogin['is_deleted'] == true){
 
-            $this->Users->save($user);
-            $this->request->session()->write('Auth.User', $user);
+                $this->Auth->setUser($userLogin);
 
-            return $this->redirect($url);
+                $user = $this->Users->newEntity($userLogin);
+                $user->isNew(false);
+                $user->last_login = new Time();
+
+                $url = $this->Auth->redirectUrl();
+
+                $this->Users->save($user);
+                $this->request->session()->write('Auth.User', $user);
+
+                return $this->redirect($url);
+
+            }else{
+                $this->Flash->error(__('Ce compte à été supprimer'));
+            }
         }
     }
 
