@@ -58,8 +58,10 @@ class UsersController extends AppController
                 $this->Auth->setUser($userLogin);
 
                 $user = $this->Users->newEntity($userLogin);
+
                 $user->isNew(false);
                 $user->last_login = new Time();
+                $user->last_ip    = $this->request->clientIp();
 
                 $url = $this->Auth->redirectUrl();
 
@@ -101,6 +103,8 @@ class UsersController extends AppController
      public function add()
     {
         $user = $this->Users->newEntity();
+        $user->last_login = new Time();
+        $user->last_ip    = $this->request->clientIp();
 
         if($this->Auth->user()){
             $this->Flash->error(__('Vous êtes déjà connecté'));
