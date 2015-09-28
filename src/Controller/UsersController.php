@@ -304,7 +304,7 @@ class UsersController extends AppController
         if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success('Votre mot de passe à bien était modifier');
+                $this->Flash->success('Votre mot de passe à bien été modifié');
 
                 $user->password_code = null;
                 $user->password_code_expire = new Time();
