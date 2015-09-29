@@ -1,6 +1,6 @@
 // ANIMATION SCROLL
 $(function() {
-    jQuery.scrollSpeed(130, 800, 'easeOutCubic');
+    jQuery.scrollSpeed(570, 2400);
 });
 
 // MESSAGE FLASH
