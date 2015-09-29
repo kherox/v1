@@ -18,16 +18,25 @@
     <p class="center">Gratuit et Open-source par <a href="gynidark.github.io">Gynidark</a></p>
 </footer>
 
-    <?= $this->Html->script([
-        'https://code.jquery.com/jquery-2.1.4.min.js',
-        'https://rawgit.com/nathco/jQuery.scrollSpeed/master/jQuery.scrollSpeed.js',
-        'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js',
-        'http://yuku-t.com/jquery-overlay/jquery.overlay.js',
-        'http://yuku-t.com/jquery-textcomplete/media/javascripts/jquery.textcomplete.js',
-        '//cdn.jsdelivr.net/emojione/1.5.0/lib/js/emojione.min.js',
-        'app.js'
+    <?=
+    // LIB
+    $this->Html->script([
+        'inc/jquery.js',
+        'inc/scrollspeed.js',
+        'inc/overlay.js',
+        'inc/textcomplete.js',
+        'inc/emojione.js'
     ]); ?>
 
+    <?=
+    // FILE
+    $this->Html->script([
+        'inc/global.js',
+        'inc/emojione.js',
+        'inc/comment.js',
+        'inc/profile.js',
+        'inc/modal.js',
+    ]); ?>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
 </body>

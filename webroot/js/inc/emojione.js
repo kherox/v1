@@ -1,51 +1,3 @@
-// MODAL NOTIFICATION
-;(function($, undefined) {
-    'use strict';
-
-    var $launch = $('.launch'),
-    $modal = $('.modal');
-
-    $launch.on('click', function(e) {
-        e && e.preventDefault();
-
-        $('.modal-overlay').show();
-        window.setTimeout(function() {
-            $modal.addClass('open');
-        }, 0);
-    });
-
-    $modal.on('click', '.close', function(e) {
-        e && e.preventDefault();
-        $('.modal-overlay').css('display', 'none');
-        $modal.removeClass('open').one('transitionend', function() {
-        });
-    });
-}(jQuery));
-
-// ANIMATION SCROLL
-$(function() {
-    jQuery.scrollSpeed(130, 800, 'easeOutCubic');
-});
-
-
-// MESSAGE FLASH
-$("#flash-message").on('click', '.close', function() {
-    $(this).parent("#flash-message").fadeOut(250);
-});
-
-// PROFIL - TAB
-$("ul.tabs a").click(function (e) {
-    e.preventDefault();
-    $(this).closest("li").addClass("active").siblings().removeClass("active");
-    var i = $(this).closest("li").index();
-    $("#container section:eq(" + i + ")").show().siblings().hide();
-});
-
-// PROFIL - EDIT
-$(".btn").click(function() {
-    $("#avatar-input").focus().click();
-});
-
 
 $(document).ready(function() {
     $("#emoji").textcomplete([ {
@@ -82,27 +34,9 @@ $(document).ready(function() {
             return ':'+shortname+': ';
         },
         index: 1,
-        maxCount: 10
+        maxCount: 20
     }
-    ],{
-        footer: '<a href="http://www.emoji.codes" target="_blank">Browse All<span class="arrow">»</span></a>'
-    });
-});
-
-
-// verification text for comment
-$(document).ready(function(){
-    $('.sendButton').attr('disabled', true);
-
-    $('#emoji').keyup(function(){
-        if($(this).val().length > 10 && $(this).val().length < 550){
-            $('.sendButton').attr('disabled', false);
-        }else{
-            $('.sendButton').attr('disabled', true);
-        }
-
-
-    })
+    ]);
 });
 
 // LOAD
