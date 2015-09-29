@@ -22,4 +22,4 @@
 </head>
 <body>
 
-<?= $this->element('layouts/menu'); ?>
+<?= $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>

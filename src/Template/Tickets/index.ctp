@@ -63,5 +63,5 @@ foreach ($tickets as $ticket): ?>
         </li>
     </ul>
 <?php endforeach; ?>
-<?= $this->element('paginate'); ?>
+<?= $this->element('paginate', [], ['cache' => ['config' => 'paginate']]); ?>
 </div>

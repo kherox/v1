@@ -21,11 +21,11 @@
     <?=
     // LIB
     $this->Html->script([
-        'inc/jquery.js',
-        'inc/scrollspeed.js',
-        'inc/overlay.js',
-        'inc/textcomplete.js',
-        'inc/emojione.js'
+        'src/jquery.js',
+        'src/scrollspeed.js',
+        'src/overlay.js',
+        'src/textcomplete.js',
+        'src/emojione.js'
     ]); ?>
 
     <?=
