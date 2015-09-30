@@ -229,7 +229,7 @@ class TicketsController extends AppController
             $this->Flash->error(__('Votre commentaire n\'a pas pu être supprimé'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect($this->referer());
     }
 
     /**

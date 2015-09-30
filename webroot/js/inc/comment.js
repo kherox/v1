@@ -5,8 +5,10 @@ $(document).ready(function(){
 
     $('#emoji').keyup(function(){
         if($(this).val().length > 10 && $(this).val().length < 550){
+            //$('.sendButton').attr('disabled', false);
             document.getElementById('sendButton').style.display = 'inline-block';
         }else{
+            //$('.sendButton').attr('disabled', true);
             document.getElementById('sendButton').style.display = 'none';
         }
     })

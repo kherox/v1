@@ -24,6 +24,6 @@
         </div>
 
     <br>
-    <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success sendButton right']) ?>
+    <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success right']) ?>
     <?= $this->Form->end() ?>
 </div>
