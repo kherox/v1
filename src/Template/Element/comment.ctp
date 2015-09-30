@@ -72,10 +72,10 @@
 			<div class="form-group" style="margin-top: 30px;">
 				<?php echo $this->Form->input('user_id', ['type' => 'hidden']); ?>
 				<?php
-		            echo $this->Form->input('content', ['type' => 'textarea', 'class' => 'form', 'id' => 'emoji', 'label' => false]);
+		            echo $this->Form->input('content', ['placeholder' => 'Votre commentaire...', 'type' => 'textarea', 'class' => 'form', 'id' => 'emoji', 'label' => false]);
 				?>
 			</div>
-		<?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success sendButton']) ?>
+		<?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success sendButton', 'id' => 'sendButton']) ?>
 		<?= $this->Form->end(); ?>
 
 	<?php }else{ ?>
