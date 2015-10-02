@@ -62,6 +62,14 @@ class AppController extends Controller
             'forgot_password',
             'reset_password'
         ]);
+
+        if(isset($this->request->params['prefix'])){
+            $prefix = explode('/', $this->request->params['prefix'])[0];
+
+            if($prefix == 'admin'){
+                $this->viewBuilder()->layout('admin');
+            }
+        }
     }
 
     public function isAuthorized($user)

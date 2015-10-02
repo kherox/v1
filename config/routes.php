@@ -6,6 +6,29 @@ use Cake\Routing\Router;
 Router::defaultRouteClass('Route');
 Router::extensions('json', 'xml');
 
+Router::prefix('Admin', function ($routes) {
+    /**
+     * Accueil
+     */
+    $routes->connect(
+        '/',
+        [
+            'controller' => 'admin',
+            'action' => 'index'
+        ]
+    );
+
+    /**
+     * Suppression
+     */
+
+    /**
+     * Édition
+     */
+
+    $routes->fallbacks('InflectedRoute');
+});
+
 Router::scope('/', function ($routes) {
 
     /**
@@ -19,7 +42,10 @@ Router::scope('/', function ($routes) {
             'home'
         ]
     );
-    
+
+    /**
+     * Page
+     */
     $routes->connect(
         '/pages/*',
         [
@@ -90,6 +116,10 @@ Router::scope('/', function ($routes) {
             'action' => 'logout'
         ]
     );
+
+    /**
+     * ADMINISTRATION
+     */
 
     $routes->fallbacks('InflectedRoute');
 });
