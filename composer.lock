@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "688debc330dda3e4e4839263c9f41081",
-    "content-hash": "47b75b70d029604c4bcf36c59bcc2946",
+    "hash": "8cd1f2b1e0a1682eb76751e4ae78df28",
+    "content-hash": "edbd6f29dfc41fa6b8ae4ddbe96eb024",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -125,6 +125,38 @@
                 "localization"
             ],
             "time": "2014-08-24 00:00:00"
+        },
+        {
+            "name": "cakemanager/cakephp-notifier",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cakemanager/cakephp-notifier.git",
+                "reference": "05a92348ad95b76d86018ae16ff991874d5beb5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cakemanager/cakephp-notifier/zipball/05a92348ad95b76d86018ae16ff991874d5beb5e",
+                "reference": "05a92348ad95b76d86018ae16ff991874d5beb5e",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.0",
+                "php": ">=5.4.16"
+            },
+            "require-dev": {
+                "cakephp/cakephp-codesniffer": "2.*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Notifier\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Notifier plugin for CakePHP",
+            "time": "2015-09-30 14:45:09"
         },
         {
             "name": "cakephp/cakephp",
@@ -1557,6 +1589,7 @@
         "intervention/image": 20,
         "vmcms/akismet-php": 20,
         "emojione/emojione": 20,
+        "cakemanager/cakephp-notifier": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,

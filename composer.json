@@ -13,7 +13,8 @@
         "cakephp/plugin-installer": "*",
         "intervention/image": "^2.3@dev",
         "vmcms/akismet-php": "dev-master",
-        "emojione/emojione": "dev-master"
+        "emojione/emojione": "dev-master",
+        "cakemanager/cakephp-notifier": "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",

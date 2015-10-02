@@ -5,27 +5,28 @@ $(document).ready(function(){
 
     $('#emoji').keyup(function(){
         if($(this).val().length > 10 && $(this).val().length < 550){
-            //$('.sendButton').attr('disabled', false);
+            $('.sendButton').attr('disabled', false);
             document.getElementById('sendButton').style.display = 'inline-block';
         }else{
-            //$('.sendButton').attr('disabled', true);
+            $('.sendButton').attr('disabled', true);
             document.getElementById('sendButton').style.display = 'none';
         }
     })
 });
 
 
-
-//
 /**
 function post_comment(){
     $.ajax({
-        url: "http://127.0.0.1/OranTicket/tickets/view/3",
+        method:"post",
+        url: "http://127.0.0.1/OranTicket/comments/add",
         data: {
-            comment: $('#emoji').val()
+            content: $('#emoji').val()
         },
         dataType: 'html',
         success: function (response) {
+            console.log(response);
+            return false;
             $("#emoji").empty();
             document.getElementById("comments").innerHTML=response+document.getElementById("comments").innerHTML;
             $("#emoji").value="";

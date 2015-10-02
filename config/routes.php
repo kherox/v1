@@ -39,6 +39,9 @@ Router::scope('/', function ($routes) {
         ]
     );
 
+    /**
+     * Récupération mot de passe
+     */
     $routes->connect(
         '/users/reset_password/:code.:id',
         [

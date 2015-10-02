@@ -17,7 +17,6 @@
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-    <script data-main="scripts/app" src="<?= APP; ?>js/require.js"></script>
 </head>
 <body>
     <?= $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
