@@ -6,7 +6,7 @@ use Cake\Routing\Router;
 Router::defaultRouteClass('Route');
 Router::extensions('json', 'xml');
 
-Router::prefix('Admin', function ($routes) {
+Router::prefix('admin', function ($routes) {
     /**
      * Accueil
      */
@@ -26,7 +26,7 @@ Router::prefix('Admin', function ($routes) {
      * Édition
      */
 
-    $routes->fallbacks('InflectedRoute');
+    $routes->fallbacks();
 });
 
 Router::scope('/', function ($routes) {

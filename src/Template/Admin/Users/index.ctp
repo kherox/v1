@@ -1,5 +1,6 @@
 <div class="box-header">
     <h3 class="box-title">Utilisateurs</h3>
+    <span class="label label-primary"><?= $userss ?></span>
 </div>
 
 <div class="box-body table-responsive no-padding">

@@ -63,11 +63,11 @@
                     <a href="#">
                         <i class="fa fa-ticket"></i>
                         <span>Tickets</span>
-                        <span class="label label-primary pull-right">102</span>
+
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-ticket"></i> Tout les tickets</a></li>
-                        <li><a href="#"><i class="fa fa-plus"></i> Ajouter un ticket</a></li>
+                        <li><a href="<?= $this->url(); ?>admin/Tickets"><i class="fa fa-ticket"></i> Tout les tickets</a></li>
+                        <li><a href="<?= $this->url(); ?>admin/Tickets/add"><i class="fa fa-plus"></i> Ajouter un ticket</a></li>
                     </ul>
                 </li>
 
@@ -75,11 +75,10 @@
                     <a href="#">
                         <i class="fa fa-user"></i>
                         <span>Utilisateurs</span>
-                        <span class="label label-primary pull-right">2</span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-users"></i> Tout les utilisateurs</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus"></i> Ajouter un utilisateur</a></li>
+                        <li><a href="<?= $this->url(); ?>admin/Users"><i class="fa fa-users"></i> Tout les utilisateurs</a></li>
+                        <li><a href="<?= $this->url(); ?>admin/Users/add"><i class="fa fa-user-plus"></i> Ajouter un utilisateur</a></li>
                     </ul>
                 </li>
 
