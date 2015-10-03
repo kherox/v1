@@ -86,7 +86,6 @@
                     <a href="#">
                         <i class="fa fa-comment"></i>
                         <span>Commentaires</span>
-                        <span class="label label-primary pull-right">8</span>
                     </a>
                 </li>
             </ul>
