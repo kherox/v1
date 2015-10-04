@@ -115,15 +115,28 @@
                                                 'style' => 'margin-top: 14px;margin-bottom: 10px;'
                                             ]); ?>
                                     </div>
-                                    <div class="grid-12">
+                                    <div class="grid-6">
+                                        <?php
+                                        if($this->request->session()->read('Auth.User.role') == 'admin'): ?>
+                                            <?= $this->Html->link(__('Administration'), [
+                                                'controller' => 'Admin',
+                                                'action' => 'Users'],
+                                                [
+                                                    'class' => 'btn btn-info large',
+                                                    'style' => 'margin-top: 14px;text-align:center;margin-bottom: 10px;'
+                                                ]);
+                                            ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="grid-6">
                                         <?=
                                         $this->Html->link(__('Déconnexion'), [
                                             'controller' => 'Users',
                                             'action' => 'logout'],
-                                        [
-                                            'class' => 'btn btn-danger large',
-                                            'style' => 'margin-top: 14px;text-align:center;margin-bottom: 10px;'
-                                        ]); ?>
+                                            [
+                                                'class' => 'btn btn-danger large',
+                                                'style' => 'margin-top: 14px;text-align:center;margin-bottom: 10px;'
+                                            ]); ?>
                                     </div>
                                 </div>
                             </div>

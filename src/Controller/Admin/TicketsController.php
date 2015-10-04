@@ -7,6 +7,10 @@ use Cake\I18n\Time;
 
 class TicketsController extends AppController
 {
+    public function beforeFilter(Event $event){
+        parent::beforeFilter($event);
+    }
+
     public function index(){
         $ticketss = $this->Tickets->find('all')->count();
         $tickets = $this->Tickets->find('all');
@@ -14,22 +18,25 @@ class TicketsController extends AppController
         $this->set(compact('ticketss'));
     }
 
-    public function add(){
-        $this->loadModel('TicketModel');
-
-        $user = $this->Tickets->newEntity($this->request->data);
+    public function add()
+    {
+        $user = $this->Auth->user();
+        $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
-            $user = $this->Tickets->patchEntity($user, $this->request->data);
+            $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
+            $ticket->user_id = $user['id'];
 
-            if ($this->Tickets->save($user)) {
-                $this->Flash->success(__('Votre compte à bien était créé.'));
+            // SAUVEGARDE TICKET
+            if ($this->Tickets->save($ticket)) {
+                $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
+                $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
             }
         }
 
-        $this->set(compact('Tickets'));
+        $this->set('ticket', $ticket);
+        $this->set('_serialize', ['ticket']);
     }
 }

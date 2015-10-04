@@ -3,10 +3,16 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 use Cake\I18n\Time;
+
 
 class UsersController extends AppController
 {
+    public function beforeFilter(Event $event){
+        parent::beforeFilter($event);
+    }
+
     public function index(){
         $userss = $this->Users->find('all')->count();
         $users = $this->Users->find('all');
@@ -31,25 +37,5 @@ class UsersController extends AppController
         }
 
         $this->set(compact('user'));
-    }
-
-    public function edit(){
-
-    }
-
-    public function delete(){
-        $user = $this->Users
-            ->find()
-            ->where([
-                'Users.id' => $this->request->id
-            ])
-            ->first();
-
-        $user->is_deleted = true;
-
-        if($this->Users->save($user)){
-            $this->Flash->success("Votre compte à bien été supprimer!");
-            return $this->redirect($this->Auth->logout());
-        }
     }
 }

@@ -13,7 +13,7 @@ Router::prefix('admin', function ($routes) {
     $routes->connect(
         '/',
         [
-            'controller' => 'admin',
+            'controller' => 'Users',
             'action' => 'index'
         ]
     );
@@ -120,7 +120,6 @@ Router::scope('/', function ($routes) {
     /**
      * ADMINISTRATION
      */
-
     $routes->fallbacks('InflectedRoute');
 });
 

@@ -16,24 +16,10 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-/**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
- */
+use Cake\Network\Exception\NotFoundException;
+
 class AppController extends Controller
 {
-
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading components.
-     *
-     * @return void
-     */
     public function initialize()
     {
         parent::initialize();
@@ -41,11 +27,17 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authError' => 'Vous devez être connecter pour allez sur cette page.',
             'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index'
+                'controller' => 'users',
+                'action' => 'index',
+                'prefix' => false
+            ],
+            'loginAction' => [
+                'controller' => 'users',
+                'action' => 'login',
+                'prefix' => false
             ],
             'logoutRedirect' => [
-                'controller' => 'Pages',
+                'controller' => 'pages',
                 'action' => 'index'
             ]
         ]);
@@ -67,19 +59,21 @@ class AppController extends Controller
             $prefix = explode('/', $this->request->params['prefix'])[0];
 
             if($prefix == 'admin'){
-                $this->viewBuilder()->layout('admin');
+                if(empty($this->request->session()->read('Auth.User.role'))) {
+                    throw new NotFoundException();
+                }else{
+                    $this->viewBuilder()->layout('admin');
+                }
             }
         }
     }
 
     public function isAuthorized($user)
     {
-        // Admin peuvent accéder à chaque action
         if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
         }
 
-        // Par défaut refuser
         return false;
     }
 }

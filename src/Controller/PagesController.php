@@ -45,7 +45,6 @@ class PagesController extends AppController
         $Tickets = $this->Tickets->find('all')->count();
 
 
-
         $user = $this->Users->find('all');
         $path = func_get_args();
         $count = count($path);

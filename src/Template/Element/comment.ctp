@@ -32,7 +32,10 @@
 						}
 						?>
 						|
-						<small> 22/08/2015 22:13:54</small>
+						<small>
+							<?=h($comment->modified->format('d/m/Y G:i:s')) ?>
+						</small>
+
 						<small style="display: inline-block">
 							<?php
 	                        if($comment->user_id == $this->request->session()->read('Auth.User.id') ||
