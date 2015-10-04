@@ -35,6 +35,12 @@
                         <a href="#"><i class="fa fa-sign-out"></i></a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <!-- Site web -->
+                    <li>
+                        <a href="<?= \Cake\Core\Configure::read('Site.base_url') ?>"><i class="fa fa-link"></i></a>
+                    </li>
+                </ul>
             </div>
         </nav>
 
@@ -46,7 +52,7 @@
                     <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Gynidark</p>
+                    <p><?= $this->request->session()->read('Auth.User.username') ?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Connecté</a>
                 </div>
             </div>
@@ -67,7 +73,6 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?= $this->url(); ?>admin/Tickets"><i class="fa fa-ticket"></i> Tout les tickets</a></li>
-                        <li><a href="<?= $this->url(); ?>admin/Tickets/add"><i class="fa fa-plus"></i> Ajouter un ticket</a></li>
                     </ul>
                 </li>
 
@@ -78,7 +83,6 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?= $this->url(); ?>admin/Users"><i class="fa fa-users"></i> Tout les utilisateurs</a></li>
-                        <li><a href="<?= $this->url(); ?>admin/Users/add"><i class="fa fa-user-plus"></i> Ajouter un utilisateur</a></li>
                     </ul>
                 </li>
 

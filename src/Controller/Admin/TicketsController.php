@@ -14,26 +14,4 @@ class TicketsController extends AppController
         $this->set(compact('tickets'));;
         $this->set(compact('ticketss'));
     }
-
-    public function add()
-    {
-        $user = $this->Auth->user();
-        $ticket = $this->Tickets->newEntity();
-
-        if ($this->request->is('post')) {
-            $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
-            $ticket->user_id = $user['id'];
-
-            // SAUVEGARDE TICKET
-            if ($this->Tickets->save($ticket)) {
-                $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
-            }
-        }
-
-        $this->set('ticket', $ticket);
-        $this->set('_serialize', ['ticket']);
-    }
 }
