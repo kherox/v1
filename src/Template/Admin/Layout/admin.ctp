@@ -32,13 +32,13 @@
                 <ul class="nav navbar-nav">
                     <!-- Déconnexion -->
                     <li>
-                        <a href="#"><i class="fa fa-sign-out"></i></a>
+                        <a href="<?= \Cake\Core\Configure::read('Site.base_url') ?>Users/logout"><i class="fa fa-sign-out"></i></a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <!-- Site web -->
                     <li>
-                        <a href="<?= \Cake\Core\Configure::read('Site.base_url') ?>"><i class="fa fa-link"></i></a>
+                        <a target="_blank" href="<?= \Cake\Core\Configure::read('Site.base_url') ?>"><i class="fa fa-link"></i></a>
                     </li>
                 </ul>
             </div>
@@ -61,29 +61,23 @@
                 <li class="header">Menu</li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-th"></i> <span>Options</span>
+                        <i class="fa fa-cogs"></i> <span>Options</span>
                         <small class="label pull-right bg-green">new</small>
                     </a>
                 </li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="<?= $this->url(); ?>admin/Tickets">
                         <i class="fa fa-ticket"></i>
                         <span>Tickets</span>
 
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?= $this->url(); ?>admin/Tickets"><i class="fa fa-ticket"></i> Tout les tickets</a></li>
-                    </ul>
                 </li>
 
                 <li class="treeview">
-                    <a href="#">
+                    <a href="<?= $this->url(); ?>admin/Users">
                         <i class="fa fa-user"></i>
                         <span>Utilisateurs</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?= $this->url(); ?>admin/Users"><i class="fa fa-users"></i> Tout les utilisateurs</a></li>
-                    </ul>
                 </li>
 
                 <li class="treeview">
