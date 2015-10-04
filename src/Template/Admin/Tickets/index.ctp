@@ -21,19 +21,45 @@
                 <td><?= $ticket->subjects ?></td>
                 <td><?= $ticket->created ?></td>
                 <td><?= $ticket->comment_count ?></td>
-                <td><span class="label label-danger"><?= $ticket->label ?></span></td>
+                <td>
+                    <?= h($ticket->label == '0') ? '<span class="label label-danger">Non</span>' : '<span class="label label-success">Oui</span>' ?>
+                </td>
 
                 <td>
-                    <a href="#">
-                        <i style="color: rgb(233, 109, 109);font-size: 16px;" class="fa fa-trash-o"></i>
-                    </a>
-                    <a href="#">
-                        <i style="font-size: 16px;"  class="fa fa-pencil-square-o"></i>
+
+
+                    <a
+                        class="btn-small btn-success"
+                        style="padding: 3px 8px;margin-right: 3px;"
+                        href="
+                            <?= $this->url(); ?>Tickets/view/<?= $ticket->id ?>
+                        ">
+
+                        Regardé
                     </a>
 
-                    <a href="#">
-                        <i style="font-size: 16px;"  class="fa fa-eye"></i>
-                    </a>
+                    <?= $this->Html->link(__('Éditer'), [
+                        'controller' => 'Tickets',
+                        'action' => 'edit',
+                        $ticket->id
+                    ],
+                    [
+                        'class' => 'btn-small btn-warning',
+                        'confirm' => __('Voulez vous vraiment éditer ce commentaire?'. $ticket->id),
+                        'style' => 'padding: 3px 8px;'
+                    ]); ?>
+
+                    <?= $this->Form->postLink(__('Supprimer'), [
+                        'controller' => 'Tickets',
+                        'action' => 'delete',
+                        $ticket->id
+                    ],
+                    [
+                        'class' => 'btn-small btn-danger',
+                        'confirm' => __('Voulez vous vraiment supprimer ce commentaire?'. $ticket->id),
+                        'style' => 'padding: 3px 8px;'
+                    ]); ?>
+
                 </td>
             </tr>
         <?php endforeach; ?>
