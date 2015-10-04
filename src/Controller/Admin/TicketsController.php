@@ -7,9 +7,6 @@ use Cake\I18n\Time;
 
 class TicketsController extends AppController
 {
-    public function beforeFilter(Event $event){
-        parent::beforeFilter($event);
-    }
 
     public function index(){
         $ticketss = $this->Tickets->find('all')->count();

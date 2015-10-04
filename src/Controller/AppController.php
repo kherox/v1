@@ -59,9 +59,11 @@ class AppController extends Controller
             $prefix = explode('/', $this->request->params['prefix'])[0];
 
             if($prefix == 'admin'){
+                // Si le role est vide, je rend une erreur
                 if(empty($this->request->session()->read('Auth.User.role'))) {
                     throw new NotFoundException();
                 }else{
+                    // Je change mon layout, en utilisant Admin
                     $this->viewBuilder()->layout('admin');
                 }
             }
@@ -70,10 +72,10 @@ class AppController extends Controller
 
     public function isAuthorized($user)
     {
+        // Si mon role et égal à Admin, je return true
         if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
         }
-
         return false;
     }
 }

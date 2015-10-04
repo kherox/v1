@@ -9,9 +9,6 @@ use Cake\I18n\Time;
 
 class UsersController extends AppController
 {
-    public function beforeFilter(Event $event){
-        parent::beforeFilter($event);
-    }
 
     public function index(){
         $userss = $this->Users->find('all')->count();
