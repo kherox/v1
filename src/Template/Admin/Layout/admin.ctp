@@ -60,7 +60,7 @@
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
                 <li>
-                    <a href="#">
+                    <a href="<?= $this->url(); ?>admin/Options">
                         <i class="fa fa-cogs"></i> <span>Options</span>
                         <small class="label pull-right bg-green">new</small>
                     </a>
