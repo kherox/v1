@@ -31,6 +31,11 @@ class AppController extends Controller
                 'action' => 'index',
                 'prefix' => false
             ],
+            'unauthorizeRedirect' => [
+                'controller' => 'pages',
+                'action' => 'index',
+                'prefix' => false
+            ],
             'loginAction' => [
                 'controller' => 'users',
                 'action' => 'login',
@@ -61,7 +66,9 @@ class AppController extends Controller
             if($prefix == 'admin'){
                 // Si le role est vide, je rend une erreur
                 if(empty($this->request->session()->read('Auth.User.role'))) {
-                    throw new NotFoundException();
+                    //throw new NotFoundException();
+                    $this->redirect($this->referer());
+                    $this->Flash->error('Vous ne pouvez pas accédez à cette page');
                 }else{
                     // Je change mon layout, en utilisant Admin
                     $this->viewBuilder()->layout('admin');

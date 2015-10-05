@@ -55,11 +55,22 @@
                                 style="padding: 3px 8px;margin-right: 3px;"
                                 confirm="Voulez vous vraiment désactiver ce compte?"
                                 href="
-                            <?= $this->url(); ?>Users/delete/<?= $user->id ?>
-                        ">
+                                    <?= $this->url(); ?>Users/delete/<?= $user->id ?>
+                                ">
                                 Désactivé
                             </a>
-                        <?php endif; ?>
+                        <?php else: ?>
+                            <a
+                                class="btn-small btn-info"
+                                target="_blank"
+                                style="padding: 3px 12px;margin-right: 3px;"
+                                confirm="Voulez vous vraiment réactivé ce compte?"
+                                href="
+                                    <?= $this->url(); ?>Users/active/<?= $user->id ?>
+                                ">
+                                Réactivé
+                            </a>
+                        <?php endif?>
                     </td>
                 </tr>
             <?php endforeach; ?>
