@@ -183,6 +183,19 @@ class UsersController extends AppController
     }
 
     /**
+     * Réactivé votre compte
+     */
+    public function active($id = null){
+        $user = $this->Users->get($id);
+
+        $user->is_deleted = null;
+
+        if($this->Users->save($user)){
+            $this->Flash->success("Votre compte à bien été réactiver!");
+            return $this->redirect(['controller' => 'Pages', 'action' => 'index']);
+        }
+    }
+    /**
      * Déconnexion
      */
     public function logout()
