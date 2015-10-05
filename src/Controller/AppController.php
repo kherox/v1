@@ -65,14 +65,14 @@ class AppController extends Controller
 
             if($prefix == 'admin'){
                 // Si le role est vide, je rend une erreur
-                if(empty($this->request->session()->read('Auth.User.role'))) {
+                if($this->request->session()->read('Auth.User.role') == 'admin') {
+                    // Je change mon layout, en utilisant Admin
+                    $this->viewBuilder()->layout('admin');
+                }else{
                     // Je reste sur la même page
                     $this->redirect($this->referer());
                     // J'envoie une error
                     $this->Flash->error('Vous ne pouvez pas accédez à cette page');
-                }else{
-                    // Je change mon layout, en utilisant Admin
-                    $this->viewBuilder()->layout('admin');
                 }
             }
         }
