@@ -71,7 +71,7 @@ class AppController extends Controller
                 }else{
                     // Je reste sur la même page
                     $this->redirect($this->referer());
-                    // J'envoie une error
+                    // J'envoie une erreur
                     $this->Flash->error('Vous ne pouvez pas accédez à cette page');
                 }
             }
