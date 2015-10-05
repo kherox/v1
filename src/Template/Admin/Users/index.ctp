@@ -28,16 +28,38 @@
                     <td><?= $user->role ?></td>
 
                     <td>
-                        <a href="#">
-                            <i style="color: rgb(233, 109, 109);font-size: 16px;" class="fa fa-trash-o"></i>
-                        </a>
-                        <a href="#">
-                            <i style="font-size: 16px;"  class="fa fa-pencil-square-o"></i>
+                        <a
+                            class="btn-small btn-success"
+                            target="_blank"
+                            style="padding: 3px 8px;margin-right: 3px;"
+                            href="
+                            <?= $this->url(); ?>Users/view/<?= $user->id ?>
+                        ">
+                            Regardé
                         </a>
 
-                        <a href="#">
-                            <i style="font-size: 16px;"  class="fa fa-eye"></i>
+                        <a
+                            class="btn-small btn-warning"
+                            target="_blank"
+                            style="padding: 3px 8px;margin-right: 3px;"
+                            href="
+                            <?= $this->url(); ?>Users/edit/<?= $user->id ?>
+                        ">
+                            Édité
                         </a>
+
+                        <?php if(!$user->is_deleted): ?>
+                            <a
+                                class="btn-small btn-danger"
+                                target="_blank"
+                                style="padding: 3px 8px;margin-right: 3px;"
+                                confirm="Voulez vous vraiment désactiver ce compte?"
+                                href="
+                            <?= $this->url(); ?>Users/delete/<?= $user->id ?>
+                        ">
+                                Désactivé
+                            </a>
+                        <?php endif; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

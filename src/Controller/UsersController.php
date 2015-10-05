@@ -168,17 +168,17 @@ class UsersController extends AppController
     }
 
     /**
-     * Supression de votre compte
+     * Désactivé votre compte
      **/
-    public function delete()
+    public function delete($id = null)
     {
-        $user = $this->Users->get($this->Auth->user('id'));
+        $user = $this->Users->get($id);
 
         $user->is_deleted = true;
 
         if($this->Users->save($user)){
-            $this->Flash->success("Votre compte à bien été supprimer!");
-            return $this->redirect($this->Auth->logout());
+            $this->Flash->success("Votre compte à bien été désactiver!");
+            return $this->redirect(['controller' => 'Pages', 'action' => 'index']);
         }
     }
 
