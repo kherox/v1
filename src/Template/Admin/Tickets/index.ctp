@@ -30,6 +30,7 @@
 
                     <a
                         class="btn-small btn-success"
+                        target="_blank"
                         style="padding: 3px 8px;margin-right: 3px;"
                         href="
                             <?= $this->url(); ?>Tickets/view/<?= $ticket->id ?>
