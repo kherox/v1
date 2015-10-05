@@ -10,7 +10,7 @@
             <th>ID</th>
             <th>Sujet</th>
             <th>Date de création</th>
-            <th>N commentaires</th>
+            <th title="Nombre de commentaire">N commentaires</th>
             <th>Résolu?</th>
             <th>Action</th>
         </tr>
@@ -26,8 +26,6 @@
                 </td>
 
                 <td>
-
-
                     <a
                         class="btn-small btn-success"
                         target="_blank"
@@ -35,32 +33,29 @@
                         href="
                             <?= $this->url(); ?>Tickets/view/<?= $ticket->id ?>
                         ">
-
                         Regardé
                     </a>
 
-                    <?= $this->Html->link(__('Éditer'), [
-                        'controller' => 'Tickets',
-                        'action' => 'edit',
-                        $ticket->id
-                    ],
-                    [
-                        'class' => 'btn-small btn-warning',
-                        'confirm' => __('Voulez vous vraiment éditer ce commentaire?'. $ticket->id),
-                        'style' => 'padding: 3px 8px;'
-                    ]); ?>
+                    <a
+                        class="btn-small btn-warning"
+                        target="_blank"
+                        style="padding: 3px 8px;margin-right: 3px;"
+                        href="
+                            <?= $this->url(); ?>Tickets/edit/<?= $ticket->id ?>
+                        ">
+                        Édité
+                    </a>
 
-                    <?= $this->Form->postLink(__('Supprimer'), [
-                        'controller' => 'Tickets',
-                        'action' => 'delete',
-                        $ticket->id
-                    ],
-                    [
-                        'class' => 'btn-small btn-danger',
-                        'confirm' => __('Voulez vous vraiment supprimer ce commentaire?'. $ticket->id),
-                        'style' => 'padding: 3px 8px;'
-                    ]); ?>
-
+                    <a
+                        class="btn-small btn-danger"
+                        target="_blank"
+                        style="padding: 3px 8px;margin-right: 3px;"
+                        confirm="<?= "Voulez vous vraiment supprimer ce ticket" . $ticket->subjects ?>"
+                        href="
+                            <?= $this->url(); ?>Tickets/delete/<?= $ticket->id ?>
+                        ">
+                        Supprimé
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
