@@ -17,7 +17,7 @@
   width: 300px;
   z-index: 1000;
   background-color: $black;
-  border-left: 3px solid rgba(29, 29, 29, 0.78);
+  border-left: 3px solid #fff;
   transition: left 0.3s;
   @include transition(0.6s);
 
@@ -112,3 +112,9 @@
   }
 }
 
+.circle-new-message {
+  margin-top: 13px;
+  position: absolute;
+  left: 220px;
+  color: rgb(100, 216, 93);
+}

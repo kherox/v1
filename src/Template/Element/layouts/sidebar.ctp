@@ -10,15 +10,22 @@
     </div>
     <div class="sidebar-menu">
         <a href="#">
+            <i class="fa fa-user"></i>
             Mon compte
         </a>
 
         <a href="#">
+            <i class="fa fa-ticket"></i>
             Mes tickets
         </a>
 
         <a href="#">
-            Message privée
+            <!--
+               si message =  <i class="fa fa-envelope"></i>
+               si vide    =  <i class="fa fa-envelope-o"></i>
+            -->
+            <i class="fa fa-envelope" style="color: rgb(71, 141, 40)"></i>
+            Messagerie
         </a>
     </div>
 

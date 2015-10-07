@@ -3488,7 +3488,7 @@ footer p {
   width: 300px;
   z-index: 1000;
   background-color: #1B1C1D;
-  border-left: 3px solid rgba(29, 29, 29, 0.78);
+  border-left: 3px solid #fff;
   transition: left 0.3s;
   -moz-transition: 0.6s;
   -o-transition: 0.6s;
@@ -3588,6 +3588,14 @@ footer p {
 /* line 107, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin a:hover {
   text-decoration: none;
+}
+
+/* line 115, ../scss/Layout/_sidebar.scss */
+.circle-new-message {
+  margin-top: 13px;
+  position: absolute;
+  left: 220px;
+  color: #64d85d;
 }
 
 /****************** MODULE *****************/
