@@ -28,7 +28,7 @@ Mot de passe : admin
 - Manuellement:
 
 ```
-composer intall
+composer install
 ```
 
 - Composer:
