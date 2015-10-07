@@ -3487,18 +3487,19 @@ footer p {
   right: -300px;
   width: 300px;
   z-index: 1000;
-  background-color: #D9D9D9;
+  background-color: #1B1C1D;
+  border-left: 3px solid rgba(29, 29, 29, 0.78);
   transition: left 0.3s;
   -moz-transition: 0.6s;
   -o-transition: 0.6s;
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
-/* line 25, ../scss/Layout/_sidebar.scss */
+/* line 24, ../scss/Layout/_sidebar.scss */
 .sidebar.sidebar-animation {
   right: 0 !important;
 }
-/* line 29, ../scss/Layout/_sidebar.scss */
+/* line 28, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-close {
   right: 0;
   position: absolute;
@@ -3506,49 +3507,49 @@ footer p {
   font-size: 23px;
   cursor: pointer !important;
 }
-/* line 36, ../scss/Layout/_sidebar.scss */
+/* line 35, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-close a {
   cursor: pointer !important;
 }
-/* line 41, ../scss/Layout/_sidebar.scss */
+/* line 40, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-avatar {
   text-align: center;
   margin-top: 30px;
   color: #FF6814;
 }
-/* line 46, ../scss/Layout/_sidebar.scss */
+/* line 45, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-avatar img {
   border-radius: 50%;
 }
-/* line 49, ../scss/Layout/_sidebar.scss */
+/* line 48, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-avatar .sidebar-name {
   text-align: center;
   font-size: 35px;
   font-weight: 200;
 }
-/* line 55, ../scss/Layout/_sidebar.scss */
+/* line 54, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu {
   margin-top: 20px;
 }
-/* line 58, ../scss/Layout/_sidebar.scss */
+/* line 56, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu a {
   text-transform: uppercase;
   display: block;
   border-top: solid 1px #888888;
   letter-spacing: 2px;
   height: 50px;
-  color: #4B4B4B;
+  color: #CBCBCB;
   line-height: 50px;
   font-weight: 600;
   text-align: center;
 }
-/* line 70, ../scss/Layout/_sidebar.scss */
+/* line 68, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu a:hover {
   text-decoration: none;
-  background-color: #B3B3B3;
+  background-color: #0C0C0C;
   color: #fff;
 }
-/* line 78, ../scss/Layout/_sidebar.scss */
+/* line 76, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer {
   bottom: 0;
   width: 100%;
@@ -3556,7 +3557,7 @@ footer p {
   font-weight: 500;
   text-transform: uppercase;
 }
-/* line 84, ../scss/Layout/_sidebar.scss */
+/* line 82, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-deco {
   background-color: #C51F1F;
   color: white;
@@ -3564,15 +3565,15 @@ footer p {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-/* line 91, ../scss/Layout/_sidebar.scss */
+/* line 89, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-deco a {
   color: #fff;
 }
-/* line 94, ../scss/Layout/_sidebar.scss */
+/* line 92, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-deco a:hover {
   text-decoration: none;
 }
-/* line 100, ../scss/Layout/_sidebar.scss */
+/* line 98, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin {
   background-color: #2b2c2d;
   color: #FFF;
@@ -3580,11 +3581,11 @@ footer p {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-/* line 107, ../scss/Layout/_sidebar.scss */
+/* line 105, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin a {
   color: #fff;
 }
-/* line 109, ../scss/Layout/_sidebar.scss */
+/* line 107, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin a:hover {
   text-decoration: none;
 }
