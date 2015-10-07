@@ -1,14 +1,3 @@
-<h1 class="page-title">
-    <a style="margin-right: 40px;" href="<?= $this->url(); ?>users/add/">
-        <i class="fa fa-user-plus"></i> S'inscrire
-    </a>
-    Tout les membres
-    <?php $profile_id = $this->request->session()->read('Auth.User.id'); ?>
-    <a style="margin-left: 40px;" href="<?= $this->url(); ?>users/profile/<?= $profile_id; ?>">
-        <i class="fa fa-user"></i> Mon compte
-    </a>
-</h1>
-
 <div class="container">
     <ul class='users'>
         <?php foreach ($users as $user): ?>
