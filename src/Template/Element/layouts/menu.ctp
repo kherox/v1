@@ -23,7 +23,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="#" id="sidebar--trigger" class="sidebar-trigger">
                                         <i class="fa fa-user"></i>
                                     </a>
                                 </li>

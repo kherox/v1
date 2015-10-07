@@ -22,7 +22,6 @@
     // LIB
     $this->Html->script([
         'src/jquery.js',
-        'src/sidebar.js',
         'src/scrollspeed.js',
         'src/overlay.js',
         'src/textcomplete.js',
@@ -34,6 +33,7 @@
     $this->Html->script([
         'inc/global.js',
         'inc/emojione.js',
+        'inc/sidebar.js',
         'inc/comment.js',
         'inc/profile.js',
         'inc/modal.js',

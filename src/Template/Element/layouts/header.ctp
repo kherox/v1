@@ -19,7 +19,8 @@
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <?= $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
+    <?= $this->element('layouts/menu'); ?>
+    <?= ""// $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
     <?= $this->element('layouts/sidebar'); ?>
 
     <?= ""//$this->element('layouts/sidebar', [], ['cache' => ['config' => 'sidebar']]); ?>

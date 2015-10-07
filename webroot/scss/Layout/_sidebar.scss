@@ -1,12 +1,41 @@
+.sidebar--trigger{
+  display: inline;
+  height: inherit;
+  line-height: 50px;
+  cursor: pointer!important;
+
+  a{
+    cursor: pointer!important;
+  }
+}
+
 .sidebar{
   position: fixed;
   top: 0px;
   bottom: 0px;
-  right: 0px;
+  right: -300px;
+  //right: 0px;
   width: 300px;
   z-index: 1000;
   background-color: $black;
   border-left: 3px solid #FFF;
+  transition: left 0.3s;
+
+  &.sidebar-animation{
+    right:0!important;
+  }
+
+  .sidebar-close{
+    right: 0;
+    position: absolute;
+    padding: 5px 15px;
+    font-size: 23px;
+    cursor: pointer!important;
+
+    a{
+      cursor: pointer!important;
+    }
+  }
 
   .sidebar-avatar{
     text-align: center;
@@ -83,3 +112,4 @@
     }
   }
 }
+

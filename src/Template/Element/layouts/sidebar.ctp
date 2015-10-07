@@ -1,4 +1,7 @@
-<div class="sidebar" style="display: none;">
+<div class="sidebar" id="sidebar">
+    <a id="sidebar--trigger" class="sidebar-trigger">
+        <i class="fa fa-close sidebar-close" id="sidebar-close"></i>
+    </a>
     <div class="sidebar-avatar">
         <img src="http://www.gravatar.com/avatar/35e7862d29684dc79145f7a356c82bac?s=80" alt="Photo de profil à Gynidark" width="85">
         <p class="sidebar-name">
