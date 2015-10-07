@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `oranticket`
 --
-CREATE DATABASE IF NOT EXISTS `oranticket` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `oranticket`;
+CREATE DATABASE IF NOT EXISTS `_DATABASE_` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `_DATABASE_`;
 
 -- --------------------------------------------------------
 

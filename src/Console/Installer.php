@@ -16,6 +16,7 @@ namespace App\Console;
 
 use Composer\Script\Event;
 use Exception;
+use \mysqli;
 
 /**
  * Provides installation hooks for when this application is installed via
@@ -23,6 +24,13 @@ use Exception;
  */
 class Installer
 {
+
+    protected static $_hostName = 'localhost';
+    protected static $_userName = 'root';
+    protected static $_password = '';
+    protected static $_databaseName = 'oranticket';
+    protected static $_port = false;
+    
 
     /**
      * Does some routine installation tasks so people don't have to.
@@ -39,6 +47,9 @@ class Installer
 
         static::createAppConfig($rootDir, $io);
         static::createWritableDirectories($rootDir, $io);
+        if(static::setDatabase($rootDir, $io)) {
+            static::generateDatabase($rootDir, $io);
+        }
 
         // ask if the permissions should be changed
         if ($io->isInteractive()) {
@@ -67,6 +78,7 @@ class Installer
         if (class_exists('\Cake\Codeception\Console\Installer')) {
             \Cake\Codeception\Console\Installer::customizeCodeceptionBinary($event);
         }
+
     }
 
     /**
@@ -188,5 +200,141 @@ class Installer
             return;
         }
         $io->write('Unable to update Security.salt value.');
+    }
+
+    /**
+     * setDatabase
+     * Set info for database configuration
+     * @param string $dir The application's root directory.
+     * @param \Composer\IO\IOInterface $io IO interface to write to console.
+     * @return boolean
+     */
+    public static function setDatabase($dir, $io)
+    {
+        $config = $dir . '/config/app.php';
+
+        $content = file_get_contents($config);
+
+        static::$_databaseName = $databaseName = $io->ask('What is your new database name ? [<comment>oranticket</comment>] ', 'oranticket');
+
+        $content = str_replace('_DATABASENAME_', $databaseName, $content, $count);
+
+        if ($count == 0) {
+            $io->write('No Datasources.default.database placeholder to replace.');
+            return false;
+        }
+
+        $result = file_put_contents($config, $content);
+        if (!$result) {
+            $io->write('Unable to update Datasources.default.database value.');
+            return false;
+        }
+        $io->write('Updated Datasources.default.database value in config/app.php');
+
+        static::$_hostName = $hostName = $io->ask('What is your database host ip ? [<comment>localhost</comment>] ', 'localhost');
+
+        $content = str_replace('_HOST_', $hostName, $content, $count);
+
+        if ($count == 0) {
+            $io->write('No Datasources.default.host placeholder to replace.');
+            return false;
+        }
+
+        $result = file_put_contents($config, $content);
+        if (!$result) {
+            $io->write('Unable to update Datasources.default.host value.');
+            return false;
+        }
+        $io->write('Updated Datasources.default.host value in config/app.php');
+
+        static::$_port = $port = $io->ask('What is your database port number ?[<comment>leave empty for no port</comment>] ', '');
+
+        if(empty($port)) {
+            $content = str_replace('_PORT_', '', $content);
+            static::$_port = false;
+        }
+        else {
+             $content = str_replace('_PORT_', "'port' => ". $port .",", $content);
+        }
+
+        $result = file_put_contents($config, $content);
+        if (!$result) {
+            $io->write('Unable to update Datasources.default.port value.');
+            return false;
+        }
+        $io->write('Updated Datasources.default.port value in config/app.php');
+
+        static::$_userName =$userName = $io->ask('What is your database login ?  [<comment>root</comment>] ', 'root');
+
+        $content = str_replace('_USERNAME_', $userName, $content, $count);
+
+        if ($count == 0) {
+            $io->write('No Datasources.default.username placeholder to replace.');
+            return false;
+        }
+
+        $result = file_put_contents($config, $content);
+        if (!$result) {
+            $io->write('Unable to update Datasources.default.username value.');
+            return false;
+        }
+        $io->write('Updated Datasources.default.username value in config/app.php');
+
+        static::$_password = $password = $io->ask('What is your database password ? ', '');
+
+        $content = str_replace('_PASSWORD_', $password, $content, $count);
+
+        $result = file_put_contents($config, $content);
+        if (!$result) {
+            $io->write('Unable to update Datasources.default.password value.');
+            return false;
+        }
+        $io->write('Updated Datasources.default.password value in config/app.php');
+        return true;
+    }
+
+    /**
+     * generateDatabase
+     * Execute OranticketSql for application
+     * @param string $dir The application's root directory.
+     * @param \Composer\IO\IOInterface $io IO interface to write to console.
+     * @return void
+     */
+    public static function generateDatabase($rootDir, $io)
+    {
+        $installDatabase = $io->ask('Install OranTicket database automatically ? </info> [<comment>Y,n</comment>]? ', 'Y', 'Y');
+
+        if($installDatabase !== 'N' || $installDatabase !== 'n') {
+
+            $oranTicketConfig = $rootDir . '/config/schema/Oranticket.sql';
+            $content = file_get_contents($oranTicketConfig);
+
+            $content = str_replace('_DATABASE_', static::$_databaseName, $content);
+
+            $result = file_put_contents($oranTicketConfig, $content);
+            if (!$result) {
+                $io->write('Unable to update Database value on sql file.');
+                return;
+            }
+
+            $mysqli = null;
+            if(static::$_port) {
+                $mysqli = new Mysqli(static::$_hostName, static::$_userName, static::$_password, "", static::$_port);
+            } else {
+                $mysqli = new Mysqli(static::$_hostName, static::$_userName, static::$_password);
+            }
+
+            if ($mysqli->connect_errno) {
+                $io->write("<error>Connection fail : " . $mysqli->connect_error .'</error>');
+                return;
+            }
+
+            if(!$mysqli->multi_query($content)) {
+                $io->write('<error>Unable to install database, do it manually please</error>');
+            }
+
+            $mysqli->close();
+            $io->write('<info>Set up database Oranticket is a success.</info>');
+        }
     }
 }
