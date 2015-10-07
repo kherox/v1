@@ -1,0 +1,1 @@
+document.getElementById('sendButton').style.display = 'none';

@@ -18,13 +18,13 @@
                                 </li>
 
                                 <li>
-                                    <a href="<?= $this->url(); ?>users/">
-                                        <i class="fa fa-users"></i>
+                                    <a href="<?= $this->url(); ?>tickets/add">
+                                        <i class="fa fa-plus"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= $this->url(); ?>tickets/add">
-                                        <i class="fa fa-plus"></i>
+                                    <a href="">
+                                        <i class="fa fa-user"></i>
                                     </a>
                                 </li>
                             </ul>

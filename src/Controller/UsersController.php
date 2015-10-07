@@ -33,11 +33,22 @@ class UsersController extends AppController
         $this->loadModel('Tickets');
 
         $user = $this->Auth->user();
-        $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+        $tickets_count = $this->Tickets
+            ->find('all', [
+                'conditions' => [
+                    'Tickets.user_id' => $user['id']
+                ]
+            ])
+            ->count();
+        $users = $this->Users
+            ->find('all')
+            ->order(['created' => 'DESC']);
+        ;
+
 
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);
-        $this->set('users', $this->paginate($this->Users));
+        $this->set('users', $this->paginate($users));
         $this->set('_serialize', ['users']);
     }
     /**

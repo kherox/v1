@@ -46,6 +46,13 @@ return [
             'duration' => '+1 days',
         ],
 
+        'sidebar' => [
+            'className' => 'File',
+            'prefix' => 'OranTicket_sidebar_',
+            'path' => CACHE . 'sidebar/',
+            'duration' => '+1 days',
+        ],
+
         'footer' => [
             'className' => 'File',
             'prefix' => 'OranTicket_footer_',

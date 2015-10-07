@@ -78,6 +78,7 @@ class CommentsController extends AppController
      */
     public function edit($id = null)
     {
+
         if($this->request->session()->read('Auth.User.role') == 'admin'){
             $comment = $this->Comments->get($id, [
                 'contain' => ['Users']
