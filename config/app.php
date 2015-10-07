@@ -156,7 +156,7 @@ return [
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => '_HOST_',
-            _PORT_
+            'port' => '_PORT_',
             'username' => '_USERNAME_',
             'password' => '_PASSWORD_',
             'database' => '_DATABASENAME_',
