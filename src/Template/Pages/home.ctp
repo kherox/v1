@@ -32,7 +32,7 @@
 </div>
 
 <div class="home-start">
-    <h2>Postez, recevez, validé</h2>
+    <h2>Postez, recevez, validez</h2>
     <?=
         $this->Html->link(__('Voir les tickets'), [
             'controller' => 'Tickets',
