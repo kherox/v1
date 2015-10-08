@@ -4748,33 +4748,41 @@ table th[class*="col-"] {
   /* line 39, ../scss/Pages/_profil.scss */
   .profil span {
     color: #FF6814;
-    font-size: 13px !important;
+    font-size: 15px !important;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
   }
   /* line 45, ../scss/Pages/_profil.scss */
   .profil .profil-stats {
     text-align: center;
     margin-top: -40px;
   }
+  /* line 50, ../scss/Pages/_profil.scss */
+  .profil .profil-img {
+    display: none;
+  }
+  /* line 54, ../scss/Pages/_profil.scss */
+  .profil .profil-name h2 {
+    margin-top: -110px;
+  }
 }
-/* line 53, ../scss/Pages/_profil.scss */
+/* line 62, ../scss/Pages/_profil.scss */
 .profil-about {
   list-style-type: none;
   padding: 20px;
   border: 1px solid #dedede;
 }
-/* line 59, ../scss/Pages/_profil.scss */
+/* line 68, ../scss/Pages/_profil.scss */
 .profil-about span i {
   color: #FF6814;
   margin-right: 10px;
 }
-/* line 63, ../scss/Pages/_profil.scss */
+/* line 72, ../scss/Pages/_profil.scss */
 .profil-about span a {
   color: #808080;
   text-decoration: none;
 }
-/* line 67, ../scss/Pages/_profil.scss */
+/* line 76, ../scss/Pages/_profil.scss */
 .profil-about span a:hover {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -4782,22 +4790,22 @@ table th[class*="col-"] {
   transition: 0.4s;
   color: #3C3C3C;
 }
-/* line 74, ../scss/Pages/_profil.scss */
+/* line 83, ../scss/Pages/_profil.scss */
 .profil-about h4 {
   margin-bottom: 30px;
 }
 
-/* line 80, ../scss/Pages/_profil.scss */
+/* line 89, ../scss/Pages/_profil.scss */
 .action i {
   font-size: 20px;
   color: #808080;
 }
-/* line 84, ../scss/Pages/_profil.scss */
+/* line 93, ../scss/Pages/_profil.scss */
 .action i:hover {
   color: #FF6814;
 }
 
-/* line 90, ../scss/Pages/_profil.scss */
+/* line 99, ../scss/Pages/_profil.scss */
 .profil_upload {
   border: 1px solid #D7E0E2;
   display: inline-block;

@@ -1,14 +1,14 @@
 <div class="profil">
         <div class="profil-header">
             <div class="container">
-                <div class="grid-4 center">
+                <div class="grid-4 grid-m-12 center">
                     <div class="grid-6 grid-m-5">
                         <?php
                         $alt = 'Photo de profil à '. $user->username;
 
                         echo
                         $this->Html->link(
-                            $this->Html->image($this->gravatar($user->mail), ['width' => '85', 'alt' => $alt]),
+                            $this->Html->image($this->gravatar($user->mail), ['class' => 'profil-img', 'width' => '85', 'alt' => $alt]),
                             [
                                 'controller' => 'Users',
                                 'action'     => 'view',
@@ -18,7 +18,7 @@
                         );
                         ?>
                     </div>
-                    <div class="grid-6 grid-m-7">
+                    <div class="grid-6 grid-m-12">
                         <div class="profil-name">
                             <h2><?= $user->username; ?></h2>
                             <span><?= $user->role; ?></span>
@@ -30,16 +30,16 @@
                     <div class="grid-12">
                         <div class="profil-stats">
 
-                            <div class="grid-3 grid-m-4">
+                            <div class="grid-3 grid-m-12">
                                 <h2>4</h2>
                                 <span>Commentaires</span>
                             </div>
-                            <div class="grid-3 grid-m-4">
+                            <div class="grid-3 grid-m-12">
                                 <h2><?= $tickets_count; ?></h2>
                                 <span>Tickets</span>
                             </div>
 
-                            <div class="grid-3 grid-m-4">
+                            <div class="grid-3 grid-m-12">
                                 <h2>3</h2>
                                 <span>Tickets résolus</span>
                             </div>
@@ -66,18 +66,18 @@
                         <div class="grid-6">
                             <div class="grid-12 profil-about">
                                 <div class="container">
-                                    <div class="grid-4 grid-m-4">
+                                    <div class="grid-4 grid-m-12">
                                         <span>Site web</span>
                                     </div>
-                                    <div class="grid-8 grid-m-8">
+                                    <div class="grid-8 grid-m-12">
                                         <span><a href="#"><i class="fa fa-link"></i> <?= $user->website; ?></a></span>
                                     </div>
                                 </div>
                                 <div class="container">
-                                    <div class="grid-4 grid-m-4">
+                                    <div class="grid-4 grid-m-12">
                                         <span>Adresse mail</span>
                                     </div>
-                                    <div class="grid-8 grid-m-8">
+                                    <div class="grid-8 grid-m-12">
                                         <span>
                                             <a href="#">
                                                 <i class="fa fa-reply"></i>

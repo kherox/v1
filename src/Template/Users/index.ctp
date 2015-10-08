@@ -3,7 +3,7 @@
         <?php foreach ($users as $user): ?>
             <li class="user grid-m-12">
                 <div class="avatar">
-                    <div class="grid-12 grid-m-6">
+                    <div style="margin-top: 35px;" class="grid-12 grid-m-6">
                         <?php
                             $alt = 'Photo de profil à '. $user->username;
 
@@ -29,24 +29,6 @@
                             <?php else: ?>
                                 <a href="<?= $this->url(); ?>users/view/<?= $user->id ?>"><?= h($user->username) ?></a>
                             <?php endif; ?>
-                        </div>
-                        <div class="grid-4 grid-m-4">
-                            <div class="user-stats-info">
-                                <i class="fa fa-ticket"></i>
-                                <span>2</span>
-                            </div>
-                        </div>
-                        <div class="grid-4 grid-m-4">
-                            <div class="user-stats-info">
-                                <i class="fa fa-comment-o"></i>
-                                <span>2</span>
-                            </div>
-                        </div>
-                        <div class="grid-4 grid-m-4">
-                            <div class="user-stats-info">
-                                <i class="fa fa-commenting-o"></i>
-                                <span>95</span>
-                            </div>
                         </div>
                     </div>
                 </div>
