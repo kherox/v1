@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Emojione\Client;
+use Emojione\Ruleset;
 
 /**
  * Messages Controller
@@ -10,6 +12,21 @@ use App\Controller\AppController;
  */
 class MessagesController extends AppController
 {
+    /**
+     * Pagination & Order
+     **/
+    public $paginate = [
+        'limit' => 10,
+        'order' => [
+            'Messages.created' => 'asc'
+        ]
+    ];
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
 
     /**
      * Index method
