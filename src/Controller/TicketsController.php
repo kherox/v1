@@ -147,10 +147,13 @@ class TicketsController extends AppController
     public function me($id = null){
         $user = $this->Auth->user();
         $ticketss = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+
+
         $this->paginate = [
-            'limit' => 5,
+            'maxLimit' =>  Configure::read('Paginate.TicketMe.indexTicketMe'),
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
+
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set(compact('ticketss'));
         $this->set('user', $user);

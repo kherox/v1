@@ -16,9 +16,8 @@ return [
             'viewUsers' => 30,
             'profileUsers' => 30
         ],
-        'Messages' => [
-            'indexMessages' =>10,
-            'viewMessages' => 30,
+        'TicketMe' => [
+            'indexTicketMe' =>10,
         ]
     ],
 
