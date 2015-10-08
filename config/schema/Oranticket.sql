@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14.1
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 18 Septembre 2015 à 17:27
+-- Généré le :  Jeu 08 Octobre 2015 à 07:22
 -- Version du serveur :  5.6.25-0ubuntu0.15.04.1
--- Version de PHP :  5.6.4-4ubuntu6.2
+-- Version de PHP :  5.6.4-4ubuntu6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,7 +28,7 @@ USE `oranticket`;
 -- Structure de la table `comments`
 --
 
-CREATE TABLE IF NOT EXISTS `comments` (
+CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `ticket_id` int(11) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `content` tinytext NOT NULL,
   `modified` datetime NOT NULL,
   `is_spam` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- Structure de la table `tags`
 --
 
-CREATE TABLE IF NOT EXISTS `tags` (
+CREATE TABLE `tags` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
 -- Structure de la table `tickets`
 --
 
-CREATE TABLE IF NOT EXISTS `tickets` (
+CREATE TABLE `tickets` (
   `id` int(11) NOT NULL,
   `subjects` varchar(155) NOT NULL,
   `content` text NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `tickets` (
   `modified` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
   `comment_count` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `tickets` (
 -- Structure de la table `tickets_tags`
 --
 
-CREATE TABLE IF NOT EXISTS `tickets_tags` (
+CREATE TABLE `tickets_tags` (
   `id` int(11) NOT NULL,
   `ticket_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `tickets_tags` (
 -- Structure de la table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -94,16 +94,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `avatar` varchar(255) NOT NULL,
   `website` varchar(255) NOT NULL,
   `mail` varchar(150) NOT NULL,
+  `last_ip` varchar(15) DEFAULT NULL,
   `role` varchar(20) NOT NULL,
-  `bio` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `created`, `modified`, `avatar`, `website`, `mail`, `role`, `bio`) VALUES
-(1, 'admin', '$2y$10$8EBzpkHxcCx7OOtVD1AoWOuZSZr/Dl2pdgd/ULVLOTLsiKLsOPO8.', '2015-08-22 08:04:21', '2015-08-24 21:27:30', '7-admin.png', 'http://gynidark.github.io', 'kkk', 'admin', '');
+  `bio` text NOT NULL,
+  `password_code` varchar(50) NOT NULL,
+  `password_code_expire` datetime NOT NULL,
+  `password_reset_count` mediumint(9) NOT NULL,
+  `is_deleted` tinyint(4) DEFAULT NULL,
+  `last_login` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Index pour les tables exportées
@@ -147,7 +146,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 --
 -- AUTO_INCREMENT pour la table `tags`
 --
@@ -157,7 +156,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `tickets_tags`
 --
@@ -167,7 +166,7 @@ ALTER TABLE `tickets_tags`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
