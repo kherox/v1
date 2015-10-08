@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 08 Octobre 2015 à 07:22
+-- Généré le :  Jeu 08 Octobre 2015 à 07:34
 -- Version du serveur :  5.6.25-0ubuntu0.15.04.1
 -- Version de PHP :  5.6.4-4ubuntu6.3
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `oranticket`
 --
-CREATE DATABASE IF NOT EXISTS `oranticket` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `oranticket`;
 
 -- --------------------------------------------------------
 
@@ -38,6 +36,21 @@ CREATE TABLE `comments` (
   `modified` datetime NOT NULL,
   `is_spam` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `id_expediteur` int(11) NOT NULL,
+  `id_destinataire` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `title` text COLLATE utf8_bin NOT NULL,
+  `message` text COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -115,6 +128,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `tags`
 --
 ALTER TABLE `tags`
@@ -147,6 +166,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+--
+-- AUTO_INCREMENT pour la table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `tags`
 --
