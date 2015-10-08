@@ -153,7 +153,6 @@ class UsersController extends AppController
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('tickets_count', $tickets_count);
         $this->set('user', $user);
-
     }
 
     /**

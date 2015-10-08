@@ -18,8 +18,7 @@
   z-index: 1000;
   background-color: $black;
   border-left: 3px solid #fff;
-  transition: left 0.3s;
-  @include transition(0.6s);
+  transition:0.4s;
 
   &.sidebar-animation{
     right:0!important;

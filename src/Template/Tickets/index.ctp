@@ -2,15 +2,6 @@
     Tout les tickets
 </h1>
 <div class="container">
-    <?= $this->Html->link(__('Ajouter un ticket'), [
-        'controller' => 'Tickets',
-        'action' => 'add'],
-        [
-            'class' => 'right btn  btn-info',
-            'style' => 'margin-top: 14px;margin-bottom: 10px;'
-        ]);
-    ?>
-
 <?php
 foreach ($tickets as $ticket): ?>
     <ul class="tickets">
