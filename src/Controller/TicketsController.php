@@ -26,30 +26,6 @@ class TicketsController extends AppController
     }
 
     /**
-     * Params url /add for Admin
-     **/
-    public function isAuthorized($user)
-    {
-        $user = $this->Auth->user();
-        if ($this->request->action === 'add') {
-            return true;
-        }
-
-        if (in_array($this->request->action, ['edit', 'delete'])) {
-            $ticketId = (int)$this->request->params['pass'][0];
-
-            if ($this->Tickets->isOwnedBy($ticketId, $user['id'])) {
-                return true;
-            }
-            if($user['role'] == 'admin'){
-                return true;
-            }
-        }
-
-        return parent::isAuthorized($user);
-    }
-
-    /**
      * Visualisation de tout les tickets pour les admins/modos
      **/
     public function index()
