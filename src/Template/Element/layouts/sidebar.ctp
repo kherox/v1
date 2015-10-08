@@ -27,7 +27,7 @@
             Mes tickets
         </a>
 
-        <a href="<?= $this->url(); ?>message">
+        <a href="<?= $this->url(); ?>Messages/">
             <!--
                si message =  <i class="fa fa-envelope"></i>
                si vide    =  <i class="fa fa-envelope-o"></i>
