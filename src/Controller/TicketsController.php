@@ -144,6 +144,18 @@ class TicketsController extends AppController
         $this->set('_serialize', ['ticket']);
     }
 
+    public function me($id = null){
+        $user = $this->Auth->user();
+        $ticketss = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+        $this->paginate = [
+            'limit' => 5,
+            'conditions' => ['Tickets.user_id' => $user['id']]
+        ];
+        $this->set('tickets', $this->paginate($this->Tickets));
+        $this->set(compact('ticketss'));
+        $this->set('user', $user);
+    }
+
     /**
      * Résoudre un ticket
      */
@@ -189,6 +201,11 @@ class TicketsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+    /**
+     * COMMENTAIRES
+     */
 
     /**
      * Suppression d'un commentaire
