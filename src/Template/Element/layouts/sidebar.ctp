@@ -16,14 +16,10 @@
     </div>
     <div class="sidebar-menu">
         <?php $profile_id = $this->request->session()->read('Auth.User.id'); ?>
-            <a href="<?= $this->url(); ?>users/login">
-                <i class="fa fa-user"></i>
-                Se connecter
-            </a>
-            <a href="<?= $this->url(); ?>users/profile/<?= $profile_id; ?>">
-                <i class="fa fa-user"></i>
-                Mon compte
-            </a>
+        <a href="<?= $this->url(); ?>users/profile/<?= $profile_id; ?>">
+            <i class="fa fa-user"></i>
+            Mon compte
+        </a>
         <a href="<?= $this->url(); ?>Tickets/">
             <i class="fa fa-ticket"></i>
             Mes tickets
