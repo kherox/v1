@@ -20,7 +20,7 @@
             <i class="fa fa-user"></i>
             Mon compte
         </a>
-        <a href="<?= $this->url(); ?>Tickets/">
+        <a href="<?= $this->url(); ?>Tickets/me">
             <i class="fa fa-ticket"></i>
             Mes tickets
         </a>

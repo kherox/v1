@@ -57,4 +57,10 @@
             }
         }
     }
+    .tickets .ticket .ticket-info .author img{
+        display: none;
+    }
+    .tickets .ticket .ticket-info .author .name {
+        margin-right: 0!important;
+    }
 }

@@ -5027,4 +5027,14 @@ table th[class*="col-"] {
     margin-top: -2px !important;
     font-size: 32px;
   }
+
+  /* line 60, ../scss/Pages/_ticket.scss */
+  .tickets .ticket .ticket-info .author img {
+    display: none;
+  }
+
+  /* line 63, ../scss/Pages/_ticket.scss */
+  .tickets .ticket .ticket-info .author .name {
+    margin-right: 0 !important;
+  }
 }
