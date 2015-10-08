@@ -35,6 +35,10 @@ class MessagesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'maxLimit' =>  Configure::read('Paginate.Messages.indexMessages')
+        ];
+        
         $this->set('messages', $this->paginate($this->Messages));
         $this->set('_serialize', ['messages']);
     }

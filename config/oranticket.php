@@ -15,6 +15,10 @@ return [
             'indexTickets' =>10,
             'viewUsers' => 30,
             'profileUsers' => 30
+        ],
+        'Messages' => [
+            'indexMessages' =>10,
+            'viewMessages' => 30,
         ]
     ],
 
