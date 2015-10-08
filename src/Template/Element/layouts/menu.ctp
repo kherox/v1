@@ -16,17 +16,24 @@
                                         <i class="fa fa-ticket"></i>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="<?= $this->url(); ?>tickets/add">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" id="sidebar--trigger" class="sidebar-trigger">
-                                        <i class="fa fa-user"></i>
-                                    </a>
-                                </li>
+                                <?php if(!empty($this->request->session()->read('Auth.User'))): ?>
+                                    <li>
+                                        <a href="<?= $this->url(); ?>tickets/add">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" id="sidebar--trigger" class="sidebar-trigger">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                    </li>
+                                <?php else: ?>
+                                    <li>
+                                        <a href="<?= $this->url(); ?>Users/login">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </nav>
                     </div>
