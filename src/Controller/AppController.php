@@ -50,8 +50,10 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
+        // Si il est pas connecté, une erreur arrive.
         $this->Auth->authError = "Vous devez vous connecter pour accéder à cette page.";
 
+        // J'autorise aux utilisateurs non inscrit à accédez à c'est pages.
         $this->Auth->allow([
             'index',
             'view',
