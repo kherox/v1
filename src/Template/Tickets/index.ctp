@@ -47,7 +47,10 @@ foreach ($tickets as $ticket): ?>
                                 }
                             ?>
                         </span>
-                        <span class="date"><?= h($ticket->created->format('d/m/Y G:i:s')) ?></span>
+
+                        <span class="date" >
+                            <?= $this->time($ticket->created) ?>
+                        </span>
                     </div>
                 </div>
             </div>
