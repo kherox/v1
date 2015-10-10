@@ -21,7 +21,7 @@
                 <tr>
                     <td><?= $user->id ?></td>
                     <td><?= $user->username ?></td>
-                    <td><?= $user->created ?></td>
+                    <td><?= $this->time($user->created) ?></td>
                     <td><?= $user->last_ip ?></td>
                     <td><?= $user->mail ?></td>
                     <td><span class="label label-danger">Oui</span></td>

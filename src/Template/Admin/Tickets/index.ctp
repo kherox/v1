@@ -19,7 +19,7 @@
             <tr>
                 <td><?= $ticket->id ?></td>
                 <td><?= $ticket->subjects ?></td>
-                <td><?= $ticket->created ?></td>
+                <td><?= $this->time($ticket->created) ?></td>
                 <td><?= $ticket->comment_count ?></td>
                 <td>
                     <?= h($ticket->label == '0') ? '<span class="label label-danger">Non</span>' : '<span class="label label-success">Oui</span>' ?>
