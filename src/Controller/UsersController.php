@@ -133,10 +133,11 @@ class UsersController extends AppController
                     $this->Flash->success(__('Votre compte à bien était créé.'));
                     return $this->redirect(['action' => 'index']);
                 }else{
-                    $this->Flash->error('Veuillez remplir le Recaptcha');
+                    $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
                 }
             } else {
-                $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
+
+                $this->Flash->error('Veuillez valider le Recaptcha');
             }
 
         }
