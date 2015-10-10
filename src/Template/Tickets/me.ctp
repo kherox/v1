@@ -19,7 +19,7 @@
                 <td>
                     <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
                 </td>
-                <td><?= h($ticket->created->format('d/m/Y G:i:s')) ?></td>
+                <td><?= $this->time($ticket->created) ?></td>
                 <td class="action">
                     <?= $this->Html->link(__('Regarder'), ['controller' => 'Tickets', 'action' => 'view', $ticket->id], ['class' => 'btn btn-info']) ?>
                     <?php
