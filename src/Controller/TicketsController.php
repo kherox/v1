@@ -22,6 +22,7 @@ class TicketsController extends AppController
     public function initialize()
     {
         parent::initialize();
+        $this->loadComponent('Recaptcha.Recaptcha');
         $this->loadComponent('Paginator');
     }
 
@@ -97,15 +98,20 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
-            $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
-            $ticket->user_id = $user['id'];
+            if ($this->Recaptcha->verify()) {
+                $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
+                $ticket->user_id = $user['id'];
 
-            // SAUVEGARDE TICKET
-            if ($this->Tickets->save($ticket)) {
-                $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
-                return $this->redirect(['action' => 'index']);
+                // SAUVEGARDE TICKET
+                if ($this->Tickets->save($ticket)) {
+                    $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
+                    return $this->redirect(['action' => 'index']);
+                } else {
+                    $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
+                }
             } else {
-                $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
+
+                $this->Flash->error('Veuillez valider le Recaptcha');
             }
         }
 
