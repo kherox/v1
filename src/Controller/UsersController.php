@@ -23,10 +23,7 @@ class UsersController extends AppController
         parent::initialize();
 
         $this->loadComponent('Flash');
-
-        if ($this->request->action === 'register' ) {
-            $this->loadComponent('Recaptcha.Recaptcha');
-        }
+        $this->loadComponent('Recaptcha.Recaptcha');
     }
 
     /**

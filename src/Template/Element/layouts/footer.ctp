@@ -22,6 +22,7 @@
     // LIB
     $this->Html->script([
         'src/jquery.js',
+        'https://www.google.com/recaptcha/api.js',
         'src/scrollspeed.js',
         'src/overlay.js',
         'src/textcomplete.js',
