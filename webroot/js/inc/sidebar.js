@@ -14,6 +14,6 @@
     }, false);
 
     document.querySelector('#sidebar-close').addEventListener('click', function() {
-        document.querySelector('#sidebar').classList.remove('sidebar-animation');
+        menu.classList.remove('sidebar-animation');
     }, false);
 })();
