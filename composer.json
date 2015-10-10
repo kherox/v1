@@ -14,7 +14,8 @@
         "intervention/image": "^2.3@dev",
         "vmcms/akismet-php": "dev-master",
         "emojione/emojione": "dev-master",
-        "cakemanager/cakephp-notifier": "dev-master"
+        "cakemanager/cakephp-notifier": "dev-master",
+        "cake17/cakephp-recaptcha": "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",
