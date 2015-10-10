@@ -163,10 +163,12 @@ class TicketsController extends AppController
             ->order([
                 'created' => 'desc'
             ]);
+        $ticketss = $this->Tickets->find('all')->count();
 
         $tickets = $this->paginate($tickets);
 
         $this->set(compact('tickets'));
+        $this->set(compact('ticketss'));
         $this->set('user', $user);
     }
 
