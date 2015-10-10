@@ -182,6 +182,7 @@ Request::addDetector('tablet', function ($request) {
  */
 
 Plugin::load('Migrations');
+Plugin::load('Recaptcha', ['routes' => true, 'bootstrap' => true]);
 // Debug Kit should not be installed on a production system
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);

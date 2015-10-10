@@ -8,6 +8,7 @@
 
         <?= $this->Form->input('website', ['class' => 'form']); ?>
         <?= $this->Form->input('password', ['class' => 'form']); ?>
+        <?= $this->Recaptcha->display() ?>
     <br>
     <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success pull-right']) ?>
     <?= $this->Form->end() ?>

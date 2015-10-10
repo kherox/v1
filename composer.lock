@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8cd1f2b1e0a1682eb76751e4ae78df28",
-    "content-hash": "edbd6f29dfc41fa6b8ae4ddbe96eb024",
+    "hash": "543c5eac8fbf6f360cfac3a154a95513",
+    "content-hash": "a566c7dd906e56948de010ed6efedd19",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -125,6 +125,58 @@
                 "localization"
             ],
             "time": "2014-08-24 00:00:00"
+        },
+        {
+            "name": "cake17/cakephp-recaptcha",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cake17/cakephp-recaptcha.git",
+                "reference": "c3b63034557fdc1cf44cd22c01aa2106bd2db9a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cake17/cakephp-recaptcha/zipball/c3b63034557fdc1cf44cd22c01aa2106bd2db9a6",
+                "reference": "c3b63034557fdc1cf44cd22c01aa2106bd2db9a6",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "cakephp/cakephp-codesniffer": "2.*",
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "friendsofcake/search": "dev-master"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Recaptcha\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "cake17",
+                    "email": "cake17@cake-websites.com"
+                }
+            ],
+            "description": "To easily use Google Recaptcha (free CAPTCHA service that protect websites from spam and abuse) in CakePHP projects",
+            "homepage": "https://github.com/cake17/cakephp-recaptcha",
+            "keywords": [
+                "bootstrap",
+                "cakephp",
+                "captcha",
+                "google",
+                "recaptcha"
+            ],
+            "time": "2015-06-23 15:35:05"
         },
         {
             "name": "cakemanager/cakephp-notifier",
@@ -1585,6 +1637,7 @@
         "vmcms/akismet-php": 20,
         "emojione/emojione": 20,
         "cakemanager/cakephp-notifier": 20,
+        "cake17/cakephp-recaptcha": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,

@@ -23,6 +23,10 @@ class UsersController extends AppController
         parent::initialize();
 
         $this->loadComponent('Flash');
+
+        if ($this->request->action === 'register' ) {
+            $this->loadComponent('Recaptcha.Recaptcha');
+        }
     }
 
     /**
@@ -125,14 +129,19 @@ class UsersController extends AppController
         }
 
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Recaptcha->verify()) {
+                $user = $this->Users->patchEntity($user, $this->request->data);
 
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('Votre compte à bien était créé.'));
-                return $this->redirect(['action' => 'index']);
+                if ($this->Users->save($user)) {
+                    $this->Flash->success(__('Votre compte à bien était créé.'));
+                    return $this->redirect(['action' => 'index']);
+                }else{
+                    $this->Flash->error('Veuillez remplir le Recaptcha');
+                }
             } else {
                 $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
             }
+
         }
 
         $this->set(compact('user'));
