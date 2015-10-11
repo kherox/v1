@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Core\Configure;
+use Cake\Mailer\Email;
 use Emojione\Client;
 use Emojione\Ruleset;
 
@@ -102,15 +103,31 @@ class TicketsController extends AppController
                 $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
                 $ticket->user_id = $user['id'];
 
+                // Je passe mes variables à mon template mail
+                $viewVars = [
+                    'subject' => $ticket->subjects,
+                    'content' => $ticket->content
+                ];
+
                 // SAUVEGARDE TICKET
                 if ($this->Tickets->save($ticket)) {
+                    $email = new Email();
+
+                    $email->profile('default')
+                        ->template('ticket', 'default')
+                        ->emailFormat('html')
+                        ->from(['contact@oranticket.fr' => 'Copie Ticket'])
+                        ->subject(__('[OranTicket] Copie Ticket'))
+                        ->to($user->mail)
+                        ->viewVars($viewVars)
+                        ->send();
+
                     $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
                     return $this->redirect(['action' => 'index']);
                 } else {
                     $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
                 }
             } else {
-
                 $this->Flash->error('Veuillez valider le Recaptcha');
             }
         }
