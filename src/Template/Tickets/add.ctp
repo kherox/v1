@@ -24,7 +24,7 @@
             <div class="grid-1"></div>
 
             <div class="grid-11">
-                <input type="checkbox"> Recevoir une copie de votre contenu sur votre boîte mail.
+                <input type="checkbox" name="mail"> Recevoir une copie de votre contenu sur votre boîte mail.
             </div>
     <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success right']) ?>
     <?= $this->Form->end() ?>

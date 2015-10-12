@@ -67,9 +67,11 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->get($id, [
             'contain' => ['Users', 'Comments']
         ]);
+
         // EMOJIONE
         $client = new Client(new Ruleset());
         $client->imageType = 'svg';
+
         // AJOUT D'UN COMMENTAIRE
         if ($this->request->is('post')) {
             $this->request->data['ticket_id'] = $id;
@@ -83,6 +85,7 @@ class TicketsController extends AppController
             }
             return $this->redirect($this->referer());
         }
+
         // VARIABLES
         $this->set('client', $client);
         $this->set('ticket', $ticket);
@@ -95,6 +98,7 @@ class TicketsController extends AppController
      */
     public function add()
     {
+
         $user = $this->Auth->user();
         $ticket = $this->Tickets->newEntity();
 
@@ -106,21 +110,23 @@ class TicketsController extends AppController
                 // Je passe mes variables à mon template mail
                 $viewVars = [
                     'subject' => $ticket->subjects,
-                    'content' => $ticket->content
+                    'content' => nl2br($ticket->content)
                 ];
 
                 // SAUVEGARDE TICKET
                 if ($this->Tickets->save($ticket)) {
                     $email = new Email();
 
-                    $email->profile('default')
-                        ->template('ticket', 'default')
-                        ->emailFormat('html')
-                        ->from(['contact@oranticket.fr' => 'Copie Ticket'])
-                        ->subject(__('[OranTicket] Copie Ticket'))
-                        ->to($user->mail)
-                        ->viewVars($viewVars)
-                        ->send();
+                    if($this->request->data(['mail']) == true){
+                        $email->profile('default')
+                            ->template('ticket', 'default')
+                            ->emailFormat('html')
+                            ->from(['contact@oranticket.fr' => 'Copie Ticket'])
+                            ->subject(__('[OranTicket] Copie Ticket'))
+                            ->to($user->mail)
+                            ->viewVars($viewVars)
+                            ->send();
+                    }
 
                     $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
                     return $this->redirect(['action' => 'index']);
