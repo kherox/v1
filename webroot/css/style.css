@@ -3870,7 +3870,12 @@ footer p {
   border-radius: .25em;
 }
 
-/* line 21, ../scss/Module/_label.scss */
+/* line 18, ../scss/Module/_label.scss */
+.label-danger {
+  background-color: #D64541;
+}
+
+/* line 23, ../scss/Module/_label.scss */
 .label-notif {
   border-radius: 50%;
   color: #FFFFFF;
@@ -3881,7 +3886,7 @@ footer p {
   top: 6px;
 }
 
-/* line 31, ../scss/Module/_label.scss */
+/* line 33, ../scss/Module/_label.scss */
 .label-notif-menu {
   border-radius: 50%;
   position: absolute;
@@ -3893,7 +3898,7 @@ footer p {
 }
 
 @media (max-width: 500px) {
-  /* line 40, ../scss/Module/_label.scss */
+  /* line 42, ../scss/Module/_label.scss */
   .label-notif-menu {
     margin-left: 27px;
     top: 45px;

@@ -15,6 +15,11 @@ foreach ($tickets as $ticket): ?>
                             ['action' => 'view', $ticket->id]
                         );
                     ?>
+                    <?php
+                        if(!$ticket->public == 0){
+                            echo'<span class="label label-danger">Privée</span>';
+                        }
+                    ?>
 
                     <div class="ticket-title-icon">
                         <i class="fa fa-comments-o fa-2x"></i><span><?= h($ticket->comment_count) ?></span>
