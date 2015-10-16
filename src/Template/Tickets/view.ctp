@@ -77,9 +77,24 @@
 					<div class="right">
 						<?= $this->Html->link(__('Éditer'), ['controller' => 'Tickets', 'action' => 'edit', $ticket->id],
 						['class' => 'btn btn-warning']) ?>
+
 						<?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Tickets', 'action' => 'delete',
-						$ticket->id], ['class' => 'btn btn-danger', 'confirm' => __('Voulez vous vraiment supprimer ce
+							$ticket->id], ['class' => 'btn btn-danger', 'confirm' => __('Voulez vous vraiment supprimer ce
 						ticket? '. "\n" . $ticket->subjects)]) ?>
+
+						<?=
+							$this->Form->postLink(__('Report'),
+								['controller' => 'Tickets',
+									'action' => 'report',
+									$ticket->id
+								],
+								[
+									'title' => 'Signalé ce ticket',
+									'escape' => false,
+									'confirm' => __('Voulez vous vraiment signalé ce ticket?'),
+									'class' => 'btn btn-danger'
+								])
+						?>
 					</div>
 				<?php endif; ?>
 			</div>

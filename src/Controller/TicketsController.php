@@ -65,7 +65,10 @@ class TicketsController extends AppController
         $users = $u->find('all');
         $user = $this->Auth->user();
         $ticket = $this->Tickets->get($id, [
-            'contain' => ['Users', 'Comments']
+            'contain' => ['Users', 'Comments'],
+            'conditions' => [
+                'Tickets.report' => 0
+            ]
         ]);
 
         // EMOJIONE
@@ -196,6 +199,35 @@ class TicketsController extends AppController
     }
 
     /**
+     * Report un ticket
+     */
+    public function report($id = null){
+        if($this->request->session()->read('Auth.User.role') == 'admin'){
+            $ticket = $this->Tickets->get($id);
+        }else{
+            $ticket = $this->Tickets->get($id, [
+                'conditions' => [
+                    'Tickets.user_id' => $this->request->session()->read('Auth.User.id')
+                ]
+            ]);
+        }
+
+        if ($this->request->is(['post', 'put'])) {
+            $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
+            $this->Tickets->patchEntity($ticket, ['report' => 1]);
+
+            if ($this->Tickets->save($ticket)) {
+                $this->Flash->success(__('Merci d\'avoir signalé ce ticket.'));
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('Ce ticket n\'a pas pu être signalé, veuillez recommencer.'));
+            }
+        };
+
+        $this->set('_serialize', ['ticket']);
+    }
+
+    /**
      * Résoudre un ticket
      */
     public function label($id = null){
@@ -240,11 +272,6 @@ class TicketsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-
-
-    /**
-     * COMMENTAIRES
-     */
 
     /**
      * Suppression d'un commentaire
