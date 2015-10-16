@@ -1,6 +1,8 @@
 /vendor/*
-/config/app.php
 /tmp/*
 /logs/*
 /node_modules/*
 /webroot/img/upload/avatars/*
+/config/recaptcha.php
+/webroot/.sass-cache/
+/.idea/

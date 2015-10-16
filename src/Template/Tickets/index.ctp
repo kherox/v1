@@ -1,5 +1,5 @@
 <h1 class="page-title">
-    Tout les tickets
+    Tous les tickets
 </h1>
 <div class="container">
 <?php
