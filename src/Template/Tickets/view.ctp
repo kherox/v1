@@ -3,6 +3,7 @@
 		<div class="post">
 			<div class="post-title">
 				<h1><?= h($ticket->subjects) ?>
+
 					<?php
                     if($ticket->label == 0){ ?>
 					<?php

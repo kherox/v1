@@ -36,8 +36,7 @@ class TicketsController extends AppController
 
         $u = $this->loadModel('Users');
         $users = $u->find('all');
-
-
+        $user = $this->Auth->user();
         $this->paginate = [
             'maxLimit' =>  Configure::read('Paginate.Ticket.indexTickets')
         ];
@@ -45,6 +44,7 @@ class TicketsController extends AppController
         $tickets = $this->Tickets
             ->find()
             ->contain(['Comments'])
+            ->where(['report' => 0])
             ->order([
                 'created' => 'desc'
             ]);
@@ -189,7 +189,7 @@ class TicketsController extends AppController
             ->order([
                 'created' => 'desc'
             ]);
-        $ticketss = $this->Tickets->find('all')->count();
+        $ticketss = $this->Tickets->find('all')->where(['Tickets.user_id' => $user['id']])->count();
 
         $tickets = $this->paginate($tickets);
 

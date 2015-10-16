@@ -14,6 +14,7 @@ foreach ($tickets as $ticket): ?>
                             ['action' => 'view', $ticket->id]
                         );
                     ?>
+                    <?= $ticket->report; ?>
 
                     <div class="ticket-title-icon">
                         <i class="fa fa-comments-o fa-2x"></i><span><?= h($ticket->comment_count) ?></span>
