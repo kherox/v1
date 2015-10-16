@@ -22,6 +22,7 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
 ### Via Github
 - Télécharger le fichier zip : [OranTicket](https://github.com/OranTicket/Site-Web/archive/master.zip)
 - Extraire le contenu et lancer ``` composer install```
+
 ### Via Packagist
 - ```composer require gynidark/oranticket```
 
@@ -30,13 +31,14 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
 - Pour configuer l'accès à la base de données : ```config/app.php```
 - Afin de configurer la base de données vous pouvez :
     - Importer le schéma se trouvant dans ```config/schema/oranticket.sql```
-    **OU**
+    - **OU**
     - Créer une base de données **oranticket**, et dans une invite de commande lancer ```bin/cake migrations migrate```
 
 ### Connexion
 Le compte utilisateur par défault est ```admin``` et le mot de passe ```admin```
 
 # Participation
+
 ### Prérequis
 - npm
 - gulp
