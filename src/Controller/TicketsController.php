@@ -45,9 +45,14 @@ class TicketsController extends AppController
             ->find()
             ->contain(['Comments'])
             ->where(['report' => 0])
+            ->andWhere([])
             ->order([
                 'created' => 'desc'
             ]);
+
+        if(!@$user->role == 'admin'){
+           $tickets->where(['public' => 0]);
+        }
 
         $tickets = $this->paginate($tickets);
 
@@ -106,10 +111,10 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
-            if ($this->Recaptcha->verify()) {
+            //if ($this->Recaptcha->verify()) {
                 $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
+                $ticket->public  = $this->request->data(['public']);
                 $ticket->user_id = $user['id'];
-
                 // Je passe mes variables à mon template mail
                 $viewVars = [
                     'subject' => $ticket->subjects,
@@ -136,9 +141,9 @@ class TicketsController extends AppController
                 } else {
                     $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
                 }
-            } else {
-                $this->Flash->error('Veuillez valider le Recaptcha');
-            }
+            //} else {
+            //    $this->Flash->error('Veuillez valider le Recaptcha');
+            //}
         }
 
         $this->set('ticket', $ticket);
@@ -176,6 +181,9 @@ class TicketsController extends AppController
         $this->set('_serialize', ['ticket']);
     }
 
+    /**
+     * Ticket de l'utilisateur
+     */
     public function me($id = null){
         $user = $this->Auth->user();
 

@@ -10,7 +10,7 @@
             <th>ID</th>
             <th>Sujet</th>
             <th>Date de création</th>
-            <th title="Nombre de commentaire">N commentaires</th>
+            <th title="Nombre de commentaire">N° commentaires</th>
             <th>Résolu?</th>
             <th>Signalé</th>
             <th>Action</th>

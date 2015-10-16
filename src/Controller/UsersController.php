@@ -115,36 +115,36 @@ class UsersController extends AppController
      * Ajouté un compte
      **/
      public function add()
-    {
-        $user = $this->Users->newEntity();
-        $user->last_login = new Time();
-        $user->last_ip    = $this->request->clientIp();
+     {
+         $user = $this->Users->newEntity();
+         $user->last_login = new Time();
+         $user->last_ip = $this->request->clientIp();
 
-        if($this->Auth->user()){
-            $this->Flash->error(__('Vous êtes déjà connecté'));
-            return $this->redirect(['action' => 'profile']);
-        }
+         if ($this->Auth->user()) {
+             $this->Flash->error(__('Vous êtes déjà connecté'));
+             return $this->redirect(['action' => 'profile']);
+         }
 
-        if ($this->request->is('post')) {
-            if ($this->Recaptcha->verify()) {
-                $user = $this->Users->patchEntity($user, $this->request->data);
+         if ($this->request->is('post')) {
+             if ($this->Recaptcha->verify()) {
+                 $user = $this->Users->patchEntity($user, $this->request->data);
 
-                if ($this->Users->save($user)) {
-                    $this->Flash->success(__('Votre compte à bien était créé.'));
-                    return $this->redirect(['action' => 'index']);
-                }else{
-                    $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
-                }
-            } else {
+                 if ($this->Users->save($user)) {
+                     $this->Flash->success(__('Votre compte à bien était créé.'));
+                     return $this->redirect(['action' => 'index']);
+                 } else {
+                     $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
+                 }
+             } else {
 
-                $this->Flash->error('Veuillez valider le Recaptcha');
-            }
+                 $this->Flash->error('Veuillez valider le Recaptcha');
+             }
 
-        }
+         }
 
-        $this->set(compact('user'));
-        $this->set('_serialize', ['user']);
-    }
+         $this->set(compact('user'));
+         $this->set('_serialize', ['user']);
+     }
     /**
      * Mon profile
      */
