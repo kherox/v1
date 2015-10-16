@@ -12,6 +12,7 @@
             <th>Date de création</th>
             <th title="Nombre de commentaire">N commentaires</th>
             <th>Résolu?</th>
+            <th>Signalé</th>
             <th>Action</th>
         </tr>
 
@@ -23,6 +24,9 @@
                 <td><?= $ticket->comment_count ?></td>
                 <td>
                     <?= h($ticket->label == '0') ? '<span class="label label-danger">Non</span>' : '<span class="label label-success">Oui</span>' ?>
+                </td>
+                <td>
+                    <?= h($ticket->report == '0') ? '<span class="label label-danger">Non</span>' : '<span class="label label-success">Oui</span>' ?>
                 </td>
 
                 <td>

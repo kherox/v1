@@ -12,7 +12,6 @@
                 <th>Date de création</th>
                 <th>Adresse IP</th>
                 <th>Adresse mail</th>
-                <th>Supprimé?</th>
                 <th>role</th>
                 <th>Action</th>
             </tr>
@@ -24,8 +23,9 @@
                     <td><?= $this->time($user->created) ?></td>
                     <td><?= $user->last_ip ?></td>
                     <td><?= $user->mail ?></td>
-                    <td><span class="label label-danger">Oui</span></td>
-                    <td><?= $user->role ?></td>
+                    <td>
+                        <?= h(empty($user->role)) ? '<span class="label label-danger">Aucun</span>' : '<span class="label label-success">'. $user->role .'</span>' ?>
+                    </td>
 
                     <td>
                         <a

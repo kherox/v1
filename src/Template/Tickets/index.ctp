@@ -7,6 +7,7 @@ foreach ($tickets as $ticket): ?>
     <ul class="tickets">
         <li class="ticket">
             <div class="container">
+
                 <div class="ticket-title grid-9 grid-m-7">
                     <?=
                         $this->Html->link(
@@ -14,13 +15,13 @@ foreach ($tickets as $ticket): ?>
                             ['action' => 'view', $ticket->id]
                         );
                     ?>
-                    <?= $ticket->report; ?>
 
                     <div class="ticket-title-icon">
                         <i class="fa fa-comments-o fa-2x"></i><span><?= h($ticket->comment_count) ?></span>
                         <?= h($ticket->label == '0') ? '<i class="fa fa-star-o fa-2x"></i>' : '<i class="fa fa-star fa-2x"></i>' ?>
                     </div>
                 </div>
+
                 <div class="ticket-info grid-3 grid-m-5">
                     <div class="author right">
                         <?php
