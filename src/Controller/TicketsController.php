@@ -45,7 +45,6 @@ class TicketsController extends AppController
             ->find()
             ->contain(['Comments'])
             ->where(['report' => 0])
-            ->andWhere([])
             ->order([
                 'created' => 'desc'
             ]);
