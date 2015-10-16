@@ -13,40 +13,43 @@ Dès que vous rencontré un souci, poster un ticket et des personnes y répondro
 
 Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/*** ou autre et **OranTicket** fonctionnera à condition que vous ayez ajouté la base de données.
 
-# Utilisation
+# Installation
 
-- Compte existant
+### Prérequis
+- extension php **intl**
+- composer
+
+### Via Github
+- Télécharger le fichier zip : [OranTicket](https://github.com/OranTicket/Site-Web/archive/master.zip)
+- Extraire le contenu et lancer ``` composer install```
+### Via Packagist
+- ```composer require gynidark/oranticket```
+
+### Configuration
+- Les variables de configurations se trouve dans le fichier ```config/oranticket.php```
+- Pour configuer l'accès à la base de données : ```config/app.php```
+- Afin de configurer la base de données vous pouvez :
+    - Importer le schéma se trouvant dans ```config/schema/oranticket.sql```
+    **OU**
+    - Créer une base de données **oranticket**, et dans une invite de commande lancer ```bin/cake migrations migrate```
+
+### Connexion
+Le compte utilisateur par défault est ```admin``` et le mot de passe ```admin```
+
+# Participation
+### Prérequis
+- npm
+- gulp
 
 ```
-Utilisateur  : admin
-
-Mot de passe : admin
-```
-# Instalation
-(Vous devez avoir **intl** pour que **OranTicket** fonctionne.)
-
-- Manuellement:
-
-```
-composer install
-```
-
-- Composer:
-
-```
-composer require gynidark/oranticket dev-master
-```
-
-- NPM(Si vous le souhaitez utiliser **Gulp**):
-
-```
+git clone https://github.com/OranTicket/Site-Web.git oranticket
+cd oranticket
+npm install -g gulp
 npm install
 ```
 
-- Configuration de votre fichier **config/oranticket.php**
-- Importer le fichier OranTicket.sql *config/schema/OranTicket.sql* dans votre base de donnée. **ou** par terminal ```bin/cake migrations migrate```
-
-
-Sinon vous pouvez télécharger manulement [OranTicket](https://github.com/OranTicket/Site-Web/archive/master.zip).
-
-
+### Tâches gulp :
+- ```gulp compass_scss```: Compile les fichiers scss en css.
+- ```gulp minify-css```: Minifie les fichiers css en un seul fichier min.css.
+- ```gulp default```: Crée une archive du code source.
+- ```gulp watch```: Permet de compiler les fichiers scss à chaque modification.
