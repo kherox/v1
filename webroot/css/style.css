@@ -3797,8 +3797,8 @@ footer p {
 }
 /* line 33, ../scss/Module/_button.scss */
 .btn.btn-danger {
-  background-color: #C5201B !important;
-  border: solid 1px #C5201B !important;
+  background-color: #D64541 !important;
+  border: solid 1px #D64541 !important;
 }
 /* line 38, ../scss/Module/_button.scss */
 .btn.btn-success {
@@ -3836,8 +3836,8 @@ footer p {
 }
 /* line 71, ../scss/Module/_button.scss */
 .btn-small.btn-danger {
-  background-color: #C5201B !important;
-  border: solid 1px #C5201B !important;
+  background-color: #D64541 !important;
+  border: solid 1px #D64541 !important;
 }
 /* line 76, ../scss/Module/_button.scss */
 .btn-small.btn-success {
@@ -3870,12 +3870,27 @@ footer p {
   border-radius: .25em;
 }
 
+/* line 15, ../scss/Module/_label.scss */
+.label-success {
+  background-color: #5cb85c;
+}
+
 /* line 18, ../scss/Module/_label.scss */
+.label-warning {
+  background-color: #F89406;
+}
+
+/* line 21, ../scss/Module/_label.scss */
+.label-info {
+  background-color: #52B3D9;
+}
+
+/* line 24, ../scss/Module/_label.scss */
 .label-danger {
   background-color: #D64541;
 }
 
-/* line 23, ../scss/Module/_label.scss */
+/* line 29, ../scss/Module/_label.scss */
 .label-notif {
   border-radius: 50%;
   color: #FFFFFF;
@@ -3886,7 +3901,7 @@ footer p {
   top: 6px;
 }
 
-/* line 33, ../scss/Module/_label.scss */
+/* line 39, ../scss/Module/_label.scss */
 .label-notif-menu {
   border-radius: 50%;
   position: absolute;
@@ -3898,7 +3913,7 @@ footer p {
 }
 
 @media (max-width: 500px) {
-  /* line 42, ../scss/Module/_label.scss */
+  /* line 48, ../scss/Module/_label.scss */
   .label-notif-menu {
     margin-left: 27px;
     top: 45px;

@@ -12,11 +12,17 @@
     border-radius: .25em;
 }
 
-.label-success{ }
-.label-warning{ }
-.label-info{ }
+.label-success{
+    background-color: $success;
+}
+.label-warning{
+    background-color: $warning;
+}
+.label-info{
+    background-color: $info;
+}
 .label-danger {
-    background-color: #D64541;
+    background-color: $danger;
 }
 
 
