@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 -- Base de données :  `oranticket`
 --
 
+CREATE DATABASE IF NOT EXISTS `oranticket` CHARACTER SET utf8 COLLATE utf8mb4;
+USE `oranticket`;
+
 -- --------------------------------------------------------
 
 --
@@ -27,15 +30,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `ticket_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `status` enum('solved','not_solved') NOT NULL,
   `content` tinytext NOT NULL,
   `modified` datetime NOT NULL,
-  `is_spam` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `is_spam` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (ticket_id) REFERENCES ticket(id)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 -- --------------------------------------------------------
 
@@ -44,13 +50,14 @@ CREATE TABLE `comments` (
 --
 
 CREATE TABLE `messages` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_expediteur` int(11) NOT NULL,
   `id_destinataire` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  `title` text COLLATE utf8_bin NOT NULL,
-  `message` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `title` text COLLATE utf8mb4 NOT NULL,
+  `message` text COLLATE utf8mb4 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 -- --------------------------------------------------------
 
@@ -59,9 +66,10 @@ CREATE TABLE `messages` (
 --
 
 CREATE TABLE `tags` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 -- --------------------------------------------------------
 
@@ -70,15 +78,17 @@ CREATE TABLE `tags` (
 --
 
 CREATE TABLE `tickets` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `subjects` varchar(155) NOT NULL,
   `content` text NOT NULL,
   `label` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
-  `comment_count` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `comment_count` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (user_id) REFERENCES user(id)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 -- --------------------------------------------------------
 
@@ -87,10 +97,13 @@ CREATE TABLE `tickets` (
 --
 
 CREATE TABLE `tickets_tags` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `ticket_id` int(11) NOT NULL,
-  `tag_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `tag_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (ticket_id) REFERENCES ticket(id),
+  FOREIGN KEY (tag_id) REFERENCES tag(id)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 -- --------------------------------------------------------
 
@@ -99,7 +112,7 @@ CREATE TABLE `tickets_tags` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
@@ -114,83 +127,10 @@ CREATE TABLE `users` (
   `password_code_expire` datetime NOT NULL,
   `password_reset_count` mediumint(9) NOT NULL,
   `is_deleted` tinyint(4) DEFAULT NULL,
-  `last_login` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `last_login` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `tags`
---
-ALTER TABLE `tags`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `tickets`
---
-ALTER TABLE `tickets`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `tickets_tags`
---
-ALTER TABLE `tickets_tags`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
---
--- AUTO_INCREMENT pour la table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `tags`
---
-ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `tickets`
---
-ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT pour la table `tickets_tags`
---
-ALTER TABLE `tickets_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

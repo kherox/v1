@@ -12,7 +12,7 @@ var gulp       = require('gulp'),
 	notify     = require('gulp-notify'),
 	jadephp    = require('jade-php'),
 	plumber    = require('gulp-plumber'),
-	path       = require('path')
+	path       = require('path');
 
 // Icone pour les notifications Gulp
 var notifyInfo = {
@@ -38,7 +38,7 @@ gulp.task('compass_scss', function() {
 		.pipe(rename({ suffix: '.min'}))
     	.pipe(minifyCss())
 		.pipe(notify({ message: 'Tâche SCSS & MinifyCss  faite.' }))
-		.pipe(gulp.dest('webroot/css'))
+		.pipe(gulp.dest('webroot/css'));
 });
 
 // Minification du css en .min.css
@@ -63,4 +63,4 @@ gulp.task('default', ['dist'], function(){
 // Tâche qui permet de lancer toute les tâches
 gulp.task('watch', function(){
 	gulp.watch('webroot/scss/**/*.scss', ['compass_scss']);
-})
+});
