@@ -8,6 +8,7 @@
         <tr>
             <th>Sujet</th>
             <th>Statut</th>
+            <th>Privé</th>
             <th>Date</th>
             <th>Action</th>
         </tr>
@@ -18,6 +19,9 @@
                 <td><a href="#"><?= $ticket->subjects ?></a></td>
                 <td>
                     <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
+                </td>
+                <td>
+                    <?= h($ticket->public == '0') ? '<span class="label label-success">Public</span>' : '<span class="label label-danger">Privé</span>' ?>
                 </td>
                 <td><?= $this->time($ticket->created) ?></td>
                 <td class="action">
