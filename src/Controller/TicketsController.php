@@ -110,7 +110,7 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
-            //if ($this->Recaptcha->verify()) {
+            if ($this->Recaptcha->verify()) {
                 $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
                 $ticket->public  = $this->request->data(['public']);
                 $ticket->user_id = $user['id'];
@@ -140,9 +140,9 @@ class TicketsController extends AppController
                 } else {
                     $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
                 }
-            //} else {
-            //    $this->Flash->error('Veuillez valider le Recaptcha');
-            //}
+            } else {
+                $this->Flash->error('Veuillez valider le Recaptcha');
+            }
         }
 
         $this->set('ticket', $ticket);
