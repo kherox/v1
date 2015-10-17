@@ -84,7 +84,7 @@
 						ticket? '. "\n" . $ticket->subjects)]) ?>
 
 						<?=
-							$this->Form->postLink(__('Report'),
+							$this->Form->postLink(__('Signalé'),
 								['controller' => 'Tickets',
 									'action' => 'report',
 									$ticket->id
