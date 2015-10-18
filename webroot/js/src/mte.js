@@ -77,25 +77,26 @@ var MTE = function(elem, o) {
             CODE: '`',
             PRE: '    ', // Use ~~~\n%s\n~~~ or ```\n%s\n``` to enable fenced code block syntax in "Markdown Extra"
             BLOCKQUOTE: '> ',
+
             buttons: {
-                ok: 'OK',
-                yes: 'Yes',
-                no: 'No',
-                cancel: 'Cancel',
-                open: 'Open',
-                close: 'Close',
-                bold: 'Bold',
-                italic: 'Italic',
+                ok: 'Ok',
+                yes: 'Oui',
+                no: 'Non',
+                cancel: 'Abandonner',
+                open: 'Ouvrir',
+                close: 'Fermer',
+                bold: 'Gras',
+                italic: 'Italique',
                 code: 'Code',
                 quote: 'Quote',
                 heading: 'H1 ' + _u2013 + ' H6',
-                link: 'Link',
+                link: 'Lien',
                 image: 'Image',
                 ol: 'Ordered List',
                 ul: 'Unordered List',
                 rule: 'Horizontal Rule',
-                undo: 'Undo',
-                redo: 'Redo'
+                undo: 'Retour',
+                redo: 'Revenir'
             },
             prompts: {
                 link_title: 'link title goes here' + _u2026,
@@ -106,11 +107,11 @@ var MTE = function(elem, o) {
                 image_url_title: 'Image URL'
             },
             placeholders: {
-                text: 'text goes here' + _u2026,
-                heading_text: 'Heading',
-                link_text: 'link text',
-                list_ul_text: 'List item',
-                list_ol_text: 'List item',
+                text: 'Votre texte ici' + _u2026,
+                heading_text: 'Votre texte ici',
+                link_text: 'Lien Text',
+                list_ul_text: 'Votre liste ici',
+                list_ol_text: 'Votre liste ici',
                 image_alt: 'Image'
             },
             update: noop,

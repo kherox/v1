@@ -15,7 +15,7 @@
                 <h2>Contenu</h2>
             </div>
             <div class="grid-11">
-                <textarea id="markdown-editor" class="markdown-editor"></textarea>
+                <textarea id="markdown-editor" class="markdown-editor" spellcheck="false"></textarea>
 
                 <?= "" //$this->Form->input('content', ['class' => 'form', 'id' => 'emoji', 'label' => false]); ?>
                 <?= $this->Recaptcha->display() ?>
