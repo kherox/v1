@@ -15,9 +15,15 @@
                 <h2>Contenu</h2>
             </div>
             <div class="grid-11">
-                <textarea id="markdown-editor" class="markdown-editor" spellcheck="false"></textarea>
+                <textarea id="markdown-editor" class="markdown-editor form" rows="10" spellcheck="false"></textarea>
 
                 <?= "" //$this->Form->input('content', ['class' => 'form', 'id' => 'emoji', 'label' => false]); ?>
+            </div>
+
+            <div class="grid-1">
+                <h2>Captcha</h2>
+            </div>
+            <div class="grid-11">
                 <?= $this->Recaptcha->display() ?>
                 <div class="g-recaptcha" data-sitekey="6LdEgg4TAAAAAJ6Mdo3X49Bp9QT6dO4aYTmN3XVS"></div>
             </div>
