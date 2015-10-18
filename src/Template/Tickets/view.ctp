@@ -28,17 +28,6 @@
 				</h1>
 
 			</div>
-			<?php
-            if($ticket->label == 1):
-			?>
-				<div class="post-label">
-					<div id="flash-message" class="flash-message flash-success">
-						<button type="button" class="close"><i class="fa fa-times"></i></button>
-						<strong>Succéss!</strong> Ce ticket est fermé, le ticket est résolu.
-					</div>
-				</div>
-			<?php endif; ?>
-
 
 			<div class="post-author">
 
