@@ -45,6 +45,8 @@
     ]); ?>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.configure({useBR: true});
+        hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

@@ -177,7 +177,7 @@ class TicketsController extends AppController
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('Votre ticket a bien été édité'));
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $id]);
             } else {
                 $this->Flash->error(__('Votre ticket n\'a pas pu être édité, veuillez recommencer.'));
             }

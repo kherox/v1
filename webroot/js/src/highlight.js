@@ -3,6 +3,7 @@
  https://highlightjs.org/
  */
 
+
 (function(factory) {
 
     // Setup highlight.js for different environments. First is Node.js or
