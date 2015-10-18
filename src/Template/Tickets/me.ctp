@@ -21,7 +21,7 @@
                     <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
                 </td>
                 <td>
-                    <?= h($ticket->public == '0') ? '<span class="label label-success">Public</span>' : '<span class="label label-danger">Privé</span>' ?>
+                    <?= h($ticket->public == '0') ? '<span class="label label-success">Non</span>' : '<span class="label label-danger">Oui</span>' ?>
                 </td>
                 <td><?= $this->time($ticket->created) ?></td>
                 <td class="action">
