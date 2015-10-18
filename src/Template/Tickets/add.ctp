@@ -32,6 +32,6 @@
                 <input type="checkbox" name="mail"> Recevoir une copie de votre contenu sur votre boîte mail.
             </div>
             .
-    <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success right']) ?>
+    <?= $this->Form->button(__('Ajouté'), ['class' => 'btn btn-success sendButton right']) ?>
     <?= $this->Form->end() ?>
 </div>
