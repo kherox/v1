@@ -59,7 +59,7 @@
 			</div>
 
 			<div class="post-content">
-				<p><?= nl2br($client->toImage($ticket->content)); ?></p>
+				<p><?= nl2br($client->toImage($html)); ?></p>
 				<?php
                 if($ticket->user_id == $this->request->session()->read('Auth.User.id') ||
 				   $this->request->session()->read('Auth.User.role') == 'admin'):

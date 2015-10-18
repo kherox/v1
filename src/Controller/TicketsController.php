@@ -7,6 +7,7 @@ use Cake\Core\Configure;
 use Cake\Mailer\Email;
 use Emojione\Client;
 use Emojione\Ruleset;
+use Parsedown;
 
 class TicketsController extends AppController
 {
@@ -65,6 +66,8 @@ class TicketsController extends AppController
      **/
     public function view($id = null)
     {
+
+
         $u = $this->loadModel('Users');
         $users = $u->find('all');
         $user = $this->Auth->user();
@@ -78,6 +81,11 @@ class TicketsController extends AppController
         // EMOJIONE
         $client = new Client(new Ruleset());
         $client->imageType = 'svg';
+
+        // MARKDOWN
+        $Parsedown = new Parsedown();
+        $Parsedown->setMarkupEscaped(true);
+        $html = $Parsedown->text($ticket->content);
 
         // AJOUT D'UN COMMENTAIRE
         if ($this->request->is('post')) {
@@ -97,6 +105,7 @@ class TicketsController extends AppController
         $this->set('client', $client);
         $this->set('ticket', $ticket);
         $this->set('users', $users);
+        $this->set(compact('html'));
         $this->set('_serialize', ['ticket']);
     }
 

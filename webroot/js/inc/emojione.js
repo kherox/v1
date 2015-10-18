@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-    $("#emoji").textcomplete([ {
+    $(".emoji").textcomplete([ {
         match: /\B:([\-+\w]*)$/,
         search: function (term, callback) {
             var results = [];

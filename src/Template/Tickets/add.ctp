@@ -15,9 +15,15 @@
                 <h2>Contenu</h2>
             </div>
             <div class="grid-11">
-                <textarea id="markdown-editor" class="markdown-editor form" rows="10" spellcheck="false"></textarea>
-
-                <?= "" //$this->Form->input('content', ['class' => 'form', 'id' => 'emoji', 'label' => false]); ?>
+                <?= $this->Form->input('content',
+                    [
+                        'id'         => 'markdown-editor',
+                        'class'      => 'markdown-editor form emoji',
+                        'spellcheck' => 'false',
+                        'label'      => false,
+                        'rows'       => '10'
+                    ]
+                ); ?>
             </div>
 
             <div class="grid-1">
