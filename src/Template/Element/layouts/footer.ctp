@@ -23,10 +23,12 @@
     $this->Html->script([
         'src/jquery.js',
         'https://www.google.com/recaptcha/api.js',
+        'src/markdown-library.js',
         'src/scrollspeed.js',
         'src/overlay.js',
         'src/textcomplete.js',
-        'src/emojione.js'
+        'src/emojione.js',
+        'src/mte.js'
     ]); ?>
 
     <?=
@@ -38,8 +40,7 @@
         'inc/comment.js',
         'inc/profile.js',
         'inc/modal.js',
+        'inc/markdown.js',
     ]); ?>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-
 </body>
 </html>
