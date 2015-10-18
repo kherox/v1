@@ -9,9 +9,13 @@
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css([
+        'https://highlightjs.org/static/styles/default.css',
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
+        //'https://highlightjs.org/static/styles/railscasts.css',
+        'https://highlightjs.org/static/styles/monokai_sublime.css',
         'src.min.css',
-        'style.css'
+        'style.css',
+
     ]); ?>
 
     <?= $this->fetch('meta') ?>

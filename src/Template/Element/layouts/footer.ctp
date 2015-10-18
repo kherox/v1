@@ -28,7 +28,8 @@
         'src/overlay.js',
         'src/textcomplete.js',
         'src/emojione.js',
-        'src/mte.js'
+        'src/mte.js',
+        'src/highlight.js'
     ]); ?>
 
     <?=
@@ -40,7 +41,10 @@
         'inc/comment.js',
         'inc/profile.js',
         'inc/modal.js',
-        'inc/markdown.js',
+        'inc/markdown.js'
     ]); ?>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
