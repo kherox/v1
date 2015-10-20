@@ -3978,15 +3978,14 @@ ul.tabs li a {
 /* line 47, ../scss/Module/_tab.scss */
 #container {
   padding: 20px;
-  background: #fff;
 }
 
-/* line 52, ../scss/Module/_tab.scss */
+/* line 51, ../scss/Module/_tab.scss */
 #container section {
   display: none;
 }
 
-/* line 56, ../scss/Module/_tab.scss */
+/* line 55, ../scss/Module/_tab.scss */
 #container section:first-child {
   display: block;
 }

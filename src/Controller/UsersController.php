@@ -76,13 +76,15 @@ class UsersController extends AppController
                 $user->last_ip    = $this->request->clientIp();
 
                 $session = $this->request->session();
-                $session->write('SiteWeb.background_body', $user->background_body);
-                $session->write('SiteWeb.background_menu', $user->background_menu);
+
+
 
                 $url = $this->Auth->redirectUrl();
 
                 $this->Users->save($user);
-                $this->request->session()->write('Auth.User', $user);
+                $session->write('Auth.User', $user);
+                $session->write('SiteWeb.background_body', $user->background_body);
+                $session->write('SiteWeb.background_menu', $user->background_menu);
 
                 return $this->redirect($url);
 
