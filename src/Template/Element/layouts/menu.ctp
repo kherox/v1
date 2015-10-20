@@ -1,5 +1,5 @@
 <header>
-        <div class="menu">
+        <div class="menu" style="background:<?= $this->request->session()->read('SiteWeb.background_menu') ?>!important">
             <div class="container">
                 <div class="logo grid-2 grid-m-6">
                     <a href="<?= $this->url(); ?>">

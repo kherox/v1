@@ -4,6 +4,8 @@
         width: 100%;
         padding-bottom: 10px;
 
+        background: #fff;
+
         h1{
             color: #383838;
             font-weight: 500;
@@ -15,6 +17,8 @@
             i{
                 margin-top: 10px;
                 color: $orange;
+                position: absolute;
+                margin-left: 17em;
 
                 &:hover{
                     color: #42bd41;

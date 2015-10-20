@@ -5174,8 +5174,9 @@ table th[class*="col-"] {
   border-bottom: solid 1px #D9D9D9;
   width: 100%;
   padding-bottom: 10px;
+  background: #fff;
 }
-/* line 7, ../scss/Pages/_ticket.scss */
+/* line 9, ../scss/Pages/_ticket.scss */
 .posts .post-title h1 {
   color: #383838;
   font-weight: 500;
@@ -5184,12 +5185,14 @@ table th[class*="col-"] {
   margin-right: 20px;
   margin-top: 20px;
 }
-/* line 15, ../scss/Pages/_ticket.scss */
+/* line 17, ../scss/Pages/_ticket.scss */
 .posts .post-title h1 i {
   margin-top: 10px;
   color: #FF6814;
+  position: absolute;
+  margin-left: 17em;
 }
-/* line 19, ../scss/Pages/_ticket.scss */
+/* line 23, ../scss/Pages/_ticket.scss */
 .posts .post-title h1 i:hover {
   color: #42bd41;
   -moz-transition: 0.3s;
@@ -5197,48 +5200,48 @@ table th[class*="col-"] {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 26, ../scss/Pages/_ticket.scss */
+/* line 30, ../scss/Pages/_ticket.scss */
 .posts .post-author {
   margin-top: 20px;
   margin-left: 10px;
 }
-/* line 30, ../scss/Pages/_ticket.scss */
+/* line 34, ../scss/Pages/_ticket.scss */
 .posts .post-author span {
   font-size: 23px;
   color: #5D5D5D;
   margin-left: 15px;
 }
-/* line 36, ../scss/Pages/_ticket.scss */
+/* line 40, ../scss/Pages/_ticket.scss */
 .posts .post-content {
   border-bottom: solid 1px #D9D9D9;
 }
-/* line 38, ../scss/Pages/_ticket.scss */
+/* line 42, ../scss/Pages/_ticket.scss */
 .posts .post-content p {
   margin: 10px;
   font-size: 18px;
 }
-/* line 43, ../scss/Pages/_ticket.scss */
+/* line 47, ../scss/Pages/_ticket.scss */
 .posts .post-comments {
   margin-top: 70px;
 }
 
 @media (max-width: 600px) {
-  /* line 51, ../scss/Pages/_ticket.scss */
+  /* line 55, ../scss/Pages/_ticket.scss */
   .post-title h1 {
     font-size: 20px !important;
   }
-  /* line 54, ../scss/Pages/_ticket.scss */
+  /* line 58, ../scss/Pages/_ticket.scss */
   .post-title h1 i {
     margin-top: -2px !important;
     font-size: 32px;
   }
 
-  /* line 60, ../scss/Pages/_ticket.scss */
+  /* line 64, ../scss/Pages/_ticket.scss */
   .tickets .ticket .ticket-info .author img {
     display: none;
   }
 
-  /* line 63, ../scss/Pages/_ticket.scss */
+  /* line 67, ../scss/Pages/_ticket.scss */
   .tickets .ticket .ticket-info .author .name {
     margin-right: 0 !important;
   }

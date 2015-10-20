@@ -7,3 +7,5 @@ $(function() {
 $("#flash-message").on('click', '.close', function() {
     $(this).parent("#flash-message").fadeOut(250);
 });
+
+

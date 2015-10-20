@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="posts">
 		<div class="post">
-			<div class="post-title">
+			<div class="post-title" id="post-title">
 				<h1><?= h($ticket->subjects) ?>
 
 					<?php
@@ -13,12 +13,13 @@
 					<?= h($ticket->label == 0) ?
 					$this->Form->postLink(__('<i class="fa fa-star-o right star-hover"></i>'),
 						['controller' => 'Tickets',
-						'action' => 'label',
+						'action' => 'label', 'id' => 'post-title',
 						$ticket->id
 					],
 					[
 						'title' => 'Rendre votre ticket résolu',
 						'escape' => false,
+						'id' => 'post-title',
 						'confirm' => __('Êtes-vous sûr que votre ticket est résolu?')
 					]) : '<i class="fa fa-star right"></i>'
 					?>

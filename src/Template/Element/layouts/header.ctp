@@ -22,7 +22,7 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
+<body style="background:<?= h($this->request->session()->read('SiteWeb.background_body')) ?>!important">
     <?= $this->element('layouts/menu'); ?>
     <?= ""// $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
     <?= $this->element('layouts/sidebar'); ?>

@@ -173,8 +173,11 @@ class TicketsController extends AppController
             ]);
         }
 
+
+
         if ($this->request->is(['post', 'put'])) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
+
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('Votre ticket a bien été édité'));
                 return $this->redirect(['action' => 'view', $id]);

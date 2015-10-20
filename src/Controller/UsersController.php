@@ -75,6 +75,10 @@ class UsersController extends AppController
                 $user->last_login = new Time();
                 $user->last_ip    = $this->request->clientIp();
 
+                $session = $this->request->session();
+                $session->write('SiteWeb.background_body', $user->background_body);
+                $session->write('SiteWeb.background_menu', $user->background_menu);
+
                 $url = $this->Auth->redirectUrl();
 
                 $this->Users->save($user);
@@ -171,9 +175,16 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
+            $user->background_body  = $this->request->data(['background_body']);
+            $user->background_menu  = $this->request->data(['background_menu']);
+            $session = $this->request->session();
+            $session->write('SiteWeb.background_body', $user->background_body);
+            $session->write('SiteWeb.background_menu', $user->background_menu);
 
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Votre compte a bien été édité.'));
+                $session = $this->request->session();
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Votre compte n\'a pas pu être édité.'));
@@ -218,6 +229,7 @@ class UsersController extends AppController
     public function logout()
     {
         $this->Flash->success(__('Vous êtes bien déconnecté'));
+        $this->request->session()->destroy();
 
         return $this->redirect($this->Auth->logout());
     }
