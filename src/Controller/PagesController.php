@@ -40,10 +40,9 @@ class PagesController extends AppController
         $this->loadModel('Users');
         $this->loadModel('Tickets');
 
-        // COUNT 
+        // COUNT
         $Users = $this->Users->find('all')->count();
         $Tickets = $this->Tickets->find('all')->count();
-
 
         $user = $this->Users->find('all');
         $path = func_get_args();

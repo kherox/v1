@@ -24,6 +24,7 @@ class UsersController extends AppController
 
         $this->loadComponent('Flash');
         $this->loadComponent('Recaptcha.Recaptcha');
+
     }
 
     /**
@@ -48,7 +49,7 @@ class UsersController extends AppController
 
 
         $this->set('tickets', $this->paginate($this->Tickets));
-        $this->set('tickets_count', $tickets_count);
+        $this->set(compact('tickets_count'));
         $this->set('users', $this->paginate($users));
         $this->set('_serialize', ['users']);
     }
@@ -77,17 +78,15 @@ class UsersController extends AppController
 
                 $session = $this->request->session();
 
-
-
                 $url = $this->Auth->redirectUrl();
 
                 $this->Users->save($user);
+
                 $session->write('Auth.User', $user);
                 $session->write('SiteWeb.background_body', $user->background_body);
                 $session->write('SiteWeb.background_menu', $user->background_menu);
 
                 return $this->redirect($url);
-
             }else{
                 $this->Flash->error(__('Ce compte à été supprimer'));
             }
@@ -111,9 +110,9 @@ class UsersController extends AppController
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
 
-        $this->set('user', $user);
+        $this->set(compact('user'));
         $this->set('tickets', $this->paginate($this->Tickets));
-        $this->set('tickets_count', $tickets_count);
+
         $this->set('_serialize', ['user']);
     }
 
@@ -164,7 +163,7 @@ class UsersController extends AppController
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
         $this->set('tickets', $this->paginate($this->Tickets));
-        $this->set('tickets_count', $tickets_count);
+        $this->set(compact('tickets_count'));
         $this->set('user', $user);
     }
 
