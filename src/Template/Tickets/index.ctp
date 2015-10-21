@@ -23,7 +23,7 @@ foreach ($tickets as $ticket): ?>
 
                     <div class="ticket-title-icon">
                         <i class="fa fa-comments-o fa-2x"></i><span><?= h($ticket->comment_count) ?></span>
-                        <?= h($ticket->label == '0') ? '<i class="fa fa-star-o fa-2x"></i>' : '<i class="fa fa-star fa-2x"></i>' ?>
+                        <?= h($ticket->label == '0') ? '<i class="fa fa-star-o fa-2x"></i>' : '<i style="color: #579A4D;" class="fa fa-star fa-2x"></i>' ?>
                     </div>
                 </div>
 
