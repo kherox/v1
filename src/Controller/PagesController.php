@@ -62,10 +62,11 @@ class PagesController extends AppController
             $subpage = $path[1];
         }
 
-        $this->set('Users', $Users);
-        $this->set('user', $user);
-        $this->set('Tickets', $Tickets);
+        $this->set(compact('Users'));
+        $this->set(compact('user'));
+        $this->set(compact('Tickets'));
         $this->set(compact('page', 'subpage'));
+        
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('_serialize', ['tickets']);
 
