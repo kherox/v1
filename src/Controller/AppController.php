@@ -26,21 +26,25 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'authError' => 'Vous devez être connecter pour allez sur cette page.',
+
             'loginRedirect' => [
                 'controller' => 'users',
                 'action' => 'index',
                 'prefix' => false
             ],
+
             'unauthorizeRedirect' => [
                 'controller' => 'pages',
                 'action' => 'index',
                 'prefix' => false
             ],
+
             'loginAction' => [
                 'controller' => 'users',
                 'action' => 'login',
                 'prefix' => false
             ],
+
             'logoutRedirect' => [
                 'controller' => 'pages',
                 'action' => 'index'

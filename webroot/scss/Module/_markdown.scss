@@ -138,7 +138,11 @@
   border:none;
   outline:none;
 }
-
+blockquote{
+  border-left: 3px solid rgb(255, 104, 20);
+  line-height: 5px;
+  color: rgb(138, 138, 138);
+}
 
 /* Uncomment the CSS below if you don't want to use icon fonts ... */
 
