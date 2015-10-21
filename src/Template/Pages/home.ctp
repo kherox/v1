@@ -1,5 +1,4 @@
 <div class="home-header">
-
     <div class="container" style="margin-top: 30px;">
         <div class="panel">
             <div class="grid-6">
@@ -33,8 +32,7 @@
 
 <div class="home-start">
     <h2>Postez, recevez, validez</h2>
-    <?=
-        $this->Html->link(__('Voir les tickets'), [
+    <?= $this->Html->link(__('Voir les tickets'), [
             'controller' => 'Tickets',
             'action' => 'index'
         ]);

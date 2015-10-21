@@ -60,9 +60,8 @@
 							<?php endif; ?>
 						</small>
 					</h4>
-					<p>
-						<?= nl2br($client->toImage($comment['content'])); ?>
-					</p>
+
+					<p><?= nl2br($client->toImage($comment['content'])); ?></p>
 				</div>
 			</div>
 		<?php endforeach; ?>
@@ -70,7 +69,6 @@
 
 	<?php
     if(!empty($this->request->session()->read('Auth.User'))){ ?>
-
 		<?= $this->Form->create('Comments') ?>
 			<div class="form-group" style="margin-top: 30px;">
 				<?php echo $this->Form->input('user_id', ['type' => 'hidden']); ?>
@@ -80,9 +78,7 @@
 			</div>
 		<?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success sendButton', 'id' => 'sendButton']) ?>
 		<?= $this->Form->end(); ?>
-
 	<?php }else{ ?>
-
 		<div class="post-label">
 			<div id="flash-message" class="flash-message flash-info">
 				<button type="button" class="close"><i class="fa fa-times"></i></button>
@@ -90,6 +86,5 @@
 				<?= $this->Html->link(__('Se connecter'),['controller' => 'Users', 'action' => 'login']) ?>
 			</div>
 		</div>
-
 	<?php } ?>
 </div>

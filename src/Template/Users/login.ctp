@@ -1,7 +1,6 @@
 <div class="container" style="margin-top: 30px;">
         <div class="login">
             <?= $this->Flash->render('auth') ?>
-
             <?= $this->Form->create() ?>
                 <div class="center">
                     <i class="fa fa-user fa-5x"></i>
@@ -10,6 +9,7 @@
                 <div class="grid-6">
                     <?= $this->Form->input('username', ['class' => 'form', 'placeholder' => 'Votre prénom']); ?>
                 </div>
+                
                 <div class="grid-6">
                     <?= $this->Form->input('password', ['class' => 'form', 'placeholder' => 'Votre mot de passe']); ?>
                 </div>

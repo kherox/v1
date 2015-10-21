@@ -3,11 +3,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
-/**
- * Comments Controller
- *
- * @property \App\Model\Table\CommentsTable $Comments
- */
 class CommentsController extends AppController
 {
     public function initialize()
@@ -25,6 +20,7 @@ class CommentsController extends AppController
         $this->paginate = [
             'contain' => ['Users', 'Tickets']
         ];
+
         $this->set('comments', $this->paginate($this->Comments));
         $this->set('_serialize', ['comments']);
     }
@@ -41,6 +37,7 @@ class CommentsController extends AppController
         $comment = $this->Comments->get($id, [
             'contain' => ['Users', 'Tickets']
         ]);
+
         $this->set('comment', $comment);
         $this->set('_serialize', ['comment']);
     }
@@ -53,6 +50,9 @@ class CommentsController extends AppController
     public function add()
     {
         $comment = $this->Comments->newEntity();
+        $users = $this->Comments->Users->find('list', ['limit' => 200]);
+        $tickets = $this->Comments->Tickets->find('list', ['limit' => 200]);
+
         if ($this->request->is('post')) {
             $comment = $this->Comments->patchEntity($comment, $this->request->data);
             if ($this->Comments->save($comment)) {
@@ -63,8 +63,6 @@ class CommentsController extends AppController
             }
         }
 
-        $users = $this->Comments->Users->find('list', ['limit' => 200]);
-        $tickets = $this->Comments->Tickets->find('list', ['limit' => 200]);
         $this->set(compact('comment', 'users', 'tickets'));
         $this->set('_serialize', ['comment']);
     }

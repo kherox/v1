@@ -102,7 +102,7 @@ class TicketsController extends AppController
         }
 
         // VARIABLES
-        $this->set(compact('users', 'tickets', 'client', 'html'));
+        $this->set(compact('users', 'tickets', 'client', 'html', 'ticket'));
         $this->set('_serialize', ['ticket']);
     }
 
@@ -151,7 +151,8 @@ class TicketsController extends AppController
             }
         }
 
-        $this->set('ticket', $ticket);
+        $this->set(compact('ticket'));
+
         $this->set('_serialize', ['ticket']);
     }
 
@@ -185,6 +186,7 @@ class TicketsController extends AppController
 
         $users = $this->Tickets->Users->find('list', ['limit' => 200]);
         $tags = $this->Tickets->Tags->find('list', ['limit' => 200]);
+
         $this->set(compact('ticket', 'users', 'tags'));
         $this->set('_serialize', ['ticket']);
     }
@@ -209,9 +211,7 @@ class TicketsController extends AppController
 
         $tickets = $this->paginate($tickets);
 
-        $this->set(compact('tickets'));
-        $this->set(compact('ticketss'));
-        $this->set('user', $user);
+        $this->set(compact('tickets', 'ticketss', 'user'));
     }
 
     /**

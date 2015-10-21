@@ -1,6 +1,7 @@
 <h1 class="page-title">
 	Commentaire - Édition du commentaire
 </h1>
+
 <div class="container">
 	<div class="posts">
 		<div class="post">

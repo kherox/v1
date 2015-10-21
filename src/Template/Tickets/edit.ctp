@@ -1,6 +1,7 @@
 <h1 class="page-title">
     Tickets - Édition du ticket
 </h1>
+
 <div class="container">
     <div class="posts">
         <div class="post">

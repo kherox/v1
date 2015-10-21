@@ -20,6 +20,7 @@
                         ?>
                     </div>
                 </div>
+                
                 <div class="user-stats">
                     <div class="grid-12 grid-m-6">
                         <div class="grid-12">
@@ -36,4 +37,3 @@
         <?php endforeach; ?>
     </ul>
 </div>
-

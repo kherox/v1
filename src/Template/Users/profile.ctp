@@ -18,6 +18,7 @@
                         );
                         ?>
                     </div>
+
                     <div class="grid-6 grid-m-12">
                         <div class="profil-name">
                             <h2><?= $user->username; ?></h2>
@@ -179,7 +180,6 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        
                         <?= $this->element('paginate'); ?>
                     </p>
                 </section>

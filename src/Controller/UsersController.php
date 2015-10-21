@@ -98,13 +98,14 @@ class UsersController extends AppController
      **/
     public function view($id = null)
     {
-        $user = $this->Auth->user();
-
         $this->loadModel('Tickets');
+
+        $user = $this->Auth->user();
         $user = $this->Users->get($id, [
             'contain' => ['Tickets']
         ]);
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+
         $this->paginate = [
             'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
             'conditions' => ['Tickets.user_id' => $user['id']]
@@ -112,7 +113,6 @@ class UsersController extends AppController
 
         $this->set(compact('user'));
         $this->set('tickets', $this->paginate($this->Tickets));
-
         $this->set('_serialize', ['user']);
     }
 
@@ -136,15 +136,14 @@ class UsersController extends AppController
 
                  if ($this->Users->save($user)) {
                      $this->Flash->success(__('Votre compte à bien était créé.'));
+
                      return $this->redirect(['action' => 'index']);
                  } else {
                      $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
                  }
              } else {
-
                  $this->Flash->error('Veuillez valider le Recaptcha');
              }
-
          }
 
          $this->set(compact('user'));
@@ -158,13 +157,15 @@ class UsersController extends AppController
 
         $user = $this->Auth->user();
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+
         $this->paginate = [
             'limit' => 5,
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
+
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set(compact('tickets_count'));
-        $this->set('user', $user);
+        $this->set(compact('user'));
     }
 
     /**
@@ -176,16 +177,19 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
+
             $user->background_body  = $this->request->data(['background_body']);
             $user->background_menu  = $this->request->data(['background_menu']);
+
+            /*
+             * Session
+             */
             $session = $this->request->session();
             $session->write('SiteWeb.background_body', $user->background_body);
             $session->write('SiteWeb.background_menu', $user->background_menu);
 
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Votre compte a bien été édité.'));
-                $session = $this->request->session();
-
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Votre compte n\'a pas pu être édité.'));
@@ -216,7 +220,6 @@ class UsersController extends AppController
      */
     public function active($id = null){
         $user = $this->Users->get($id);
-
         $user->is_deleted = null;
 
         if($this->Users->save($user)){
@@ -259,7 +262,6 @@ class UsersController extends AppController
             $user->password_code = $code;
             $user->password_code_expire = new Time();
 
-
             $this->Users->save($user);
 
             $viewVars = [
@@ -268,8 +270,10 @@ class UsersController extends AppController
                 'code' => $code
             ];
 
+            /*
+             * EMAIL
+             */
             $email = new Email();
-
             $email->profile('default')
                 ->template('forgotPassword', 'default')
                 ->emailFormat('html')
@@ -281,6 +285,7 @@ class UsersController extends AppController
 
             $this->Flash->success("Votre email à bien était envoyer.");
         }
+
         $this->set(compact('user'));
     }
 
@@ -313,7 +318,6 @@ class UsersController extends AppController
             $this->redirect(['controller' => 'pages', 'action' => 'home']);
         }
 
-
         if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
@@ -327,7 +331,7 @@ class UsersController extends AppController
                 return $this->redirect(['controller' => 'users', 'action' => 'login']);
             }
         }
-        $this->set(compact('user'));
 
+        $this->set(compact('user'));
     }
 }

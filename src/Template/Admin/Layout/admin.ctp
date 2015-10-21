@@ -29,13 +29,17 @@
                 <ul class="nav navbar-nav">
                     <!-- Déconnexion -->
                     <li>
-                        <a href="<?= \Cake\Core\Configure::read('Site.base_url') ?>Users/logout"><i class="fa fa-sign-out"></i></a>
+                        <a href="<?= \Cake\Core\Configure::read('Site.base_url') ?>Users/logout">
+                            <i class="fa fa-sign-out"></i>
+                        </a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <!-- Site web -->
                     <li>
-                        <a target="_blank" href="<?= \Cake\Core\Configure::read('Site.base_url') ?>"><i class="fa fa-link"></i></a>
+                        <a target="_blank" href="<?= \Cake\Core\Configure::read('Site.base_url') ?>">
+                            <i class="fa fa-link"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -50,7 +54,12 @@
                 </div>
                 <div class="pull-left info">
                     <p><?= $this->request->session()->read('Auth.User.username') ?></p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Connecté</a>
+
+                    <a href="#">
+                        <i class="fa fa-circle text-success">
+                        </i>
+                        Connecté
+                    </a>
                 </div>
             </div>
 
@@ -69,13 +78,6 @@
                     <a href="<?= $this->url(); ?>admin/Users">
                         <i class="fa fa-user"></i>
                         <span>Utilisateurs</span>
-                    </a>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-comment"></i>
-                        <span>Commentaires</span>
                     </a>
                 </li>
             </ul>
@@ -98,7 +100,6 @@
 </div>
 
 <?=
-
 $this->Html->script([
     'src/jquery.js',
     'admin/adminLTE.js',

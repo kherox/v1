@@ -6,32 +6,30 @@
 
 					<?php
                     if($ticket->label == 0){ ?>
-					<?php
-                        if($ticket->user_id == $this->request->session()->read('Auth.User.id') ||
-					$this->request->session()->read('Auth.User.role') == 'admin'):
-					?>
-					<?= h($ticket->label == 0) ?
-					$this->Form->postLink(__('<i class="fa fa-star-o right star-hover"></i>'),
-						['controller' => 'Tickets',
-						'action' => 'label', 'id' => 'post-title',
-						$ticket->id
-					],
-					[
-						'title' => 'Rendre votre ticket résolu',
-						'escape' => false,
-						'id' => 'post-title',
-						'confirm' => __('Êtes-vous sûr que votre ticket est résolu?')
-					]) : '<i class="fa fa-star right"></i>'
-					?>
+						<?php
+	                    if($ticket->user_id == $this->request->session()->read('Auth.User.id') ||
+						   	$this->request->session()->read('Auth.User.role') == 'admin'):
 
-					<?php endif; ?>
+							h($ticket->label == 0) ?
+								$this->Form->postLink(__('<i class="fa fa-star-o right star-hover"></i>'),
+									['controller' => 'Tickets',
+									'action' => 'label', 'id' => 'post-title',
+									$ticket->id
+								],
+								[
+									'title' => 'Rendre votre ticket résolu',
+									'escape' => false,
+									'id' => 'post-title',
+									'confirm' => __('Êtes-vous sûr que votre ticket est résolu?')
+								]) : '<i class="fa fa-star right"></i>'
+
+							endif; ?>
 					<?php } ?>
 				</h1>
 
 			</div>
 
 			<div class="post-author">
-
 				<?php
                     foreach($users as $user){
                         if($ticket->user_id == $user->id){
@@ -89,7 +87,6 @@
 					</div>
 				<?php endif; ?>
 			</div>
-
 			<?= $this->element('comment'); ?>
 		</div>
 	</div>

@@ -18,6 +18,7 @@
                         );
                     ?>
                 </div>
+
                 <div class="grid-6 grid-m-7">
                     <div class="profil-name">
                         <h2><?= $user->username; ?></h2>
@@ -34,6 +35,7 @@
                             <h2>4</h2>
                             <span>Commentaires</span>
                         </div>
+
                         <div class="grid-3 grid-m-4">
                             <h2><?= $tickets_count; ?></h2>
                             <span>Tickets</span>
@@ -64,6 +66,7 @@
             <li class="active">
                 <a href="#">A propos</a>
             </li>
+
             <li>
                 <a href="#">Tickets</a>
             </li>
@@ -81,6 +84,7 @@
                                 <span><a href="#"><i class="fa fa-link"></i> <?= $user->website; ?></a></span>
                             </div>
                         </div>
+                        
                         <div class="container">
                             <div class="grid-4 grid-m-4">
                                 <span>Adresse mail</span>

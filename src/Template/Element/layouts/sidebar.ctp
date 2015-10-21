@@ -4,14 +4,12 @@
     </a>
     <div class="sidebar-avatar">
         <?=
-                $this->Html->image($this->gravatar(
-                    $this->request->session()->read('Auth.User.mail')
-                ));
+            $this->Html->image($this->gravatar(
+                $this->request->session()->read('Auth.User.mail')
+            ));
         ?>
         <p class="sidebar-name">
-            <?=
-            $this->request->session()->read('Auth.User.username')
-            ?>
+            <?= $this->request->session()->read('Auth.User.username') ?>
         </p>
     </div>
     <div class="sidebar-menu">
@@ -30,14 +28,12 @@
 
         <div class="grid-6 a-deco">
             <i class="fa fa-power-off"></i>
-
             <a href="<?= $this->url(); ?>logout" class="a-deco">
                 Déconnexion
             </a>
         </div>
         <div class="grid-6 a-admin">
             <i class="fa fa-cog"></i>
-
             <a href="<?= $this->url(); ?>admin/" class="a-plus">
                 Admin
             </a>

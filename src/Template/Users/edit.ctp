@@ -8,6 +8,7 @@
         <h1 class="page-title">
             Éditer mon compte
         </h1>
+
         <div class="grid-12">
             <?= $this->Form->input('username', ['class' => 'form']); ?>
             <?= $this->Form->input('password', ['class' => 'form', 'style' => "margin-bottom: 10px"]); ?>
@@ -23,11 +24,14 @@
         <h1 class="page-title">
             Préférence Site web
         </h1>
-            <span>Fond de OranTicket</span>
-            <?= $this->Form->input('background_body', ['type' => 'color', 'class' => 'form', 'label' => false]); ?>
-            <span>Fond du menu</span>
-            <?= $this->Form->input('background_menu', ['type' => 'color', 'class' => 'form', 'label' => false]); ?>
+
+        <span>Fond de OranTicket</span>
+        <?= $this->Form->input('background_body', ['type' => 'color', 'class' => 'form', 'label' => false]); ?>
+
+        <span>Fond du menu</span>
+        <?= $this->Form->input('background_menu', ['type' => 'color', 'class' => 'form', 'label' => false]); ?>
     </div>
+    
     <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-success pull-right']) ?>
     <?= $this->Form->end() ?>
 </div>

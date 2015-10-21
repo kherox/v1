@@ -13,6 +13,7 @@
                     ]
                 ) ?>
             </div>
+
             <div class="grid-6">
                 <?= $this->Form->input(
                     'password_confirm',
@@ -27,6 +28,7 @@
                     ]
                 ) ?>
             </div>
+            
             <?= $this->Form->button(__('Envoyer'), ['class' => 'btn btn-success pull-right']) ?>
     <?= $this->Form->end(); ?>
 </div>
