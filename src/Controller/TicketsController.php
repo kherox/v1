@@ -57,7 +57,7 @@ class TicketsController extends AppController
         $tickets = $this->paginate($tickets);
 
         $this->set(compact('tickets'));
-        $this->set('users', $users);
+        $this->set(compact('users'));
         $this->set('_serialize', ['tickets']);
     }
 
@@ -102,10 +102,7 @@ class TicketsController extends AppController
         }
 
         // VARIABLES
-        $this->set('client', $client);
-        $this->set('ticket', $ticket);
-        $this->set('users', $users);
-        $this->set(compact('html'));
+        $this->set(compact('users', 'tickets', 'client', 'html'));
         $this->set('_serialize', ['ticket']);
     }
 
