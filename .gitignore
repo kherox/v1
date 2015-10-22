@@ -6,3 +6,4 @@
 /config/recaptcha.php
 /webroot/.sass-cache/
 /.idea/
+/composer.lock

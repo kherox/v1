@@ -5,12 +5,12 @@
 				<h1><?= h($ticket->subjects) ?>
 
 					<?php
-                    if($ticket->label == 0){ ?>
+                    if($ticket->label == 0): ?>
 						<?php
 	                    if($ticket->user_id == $this->request->session()->read('Auth.User.id') ||
 						   	$this->request->session()->read('Auth.User.role') == 'admin'):
 
-							h($ticket->label == 0) ?
+							if($ticket->label == 0){
 								$this->Form->postLink(__('<i class="fa fa-star-o right star-hover"></i>'),
 									['controller' => 'Tickets',
 									'action' => 'label', 'id' => 'post-title',
@@ -21,10 +21,13 @@
 									'escape' => false,
 									'id' => 'post-title',
 									'confirm' => __('Êtes-vous sûr que votre ticket est résolu?')
-								]) : '<i class="fa fa-star right"></i>'
+								]);
 
-							endif; ?>
-					<?php } ?>
+							} else{
+								'<i class="fa fa-star right"></i>';
+							} ?>
+					<?php endif ?>
+					<?php endif?>
 				</h1>
 
 			</div>
