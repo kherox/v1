@@ -7,3 +7,4 @@
 /webroot/.sass-cache/
 /.idea/
 /composer.lock
+.DS_Store
