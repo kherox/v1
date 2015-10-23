@@ -111,7 +111,7 @@ class UsersController extends AppController
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
 
-        $this->set(compact('user'));
+        $this->set(compact('user','tickets_count'));
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('_serialize', ['user']);
     }

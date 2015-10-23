@@ -11,7 +11,7 @@
 						   	$this->request->session()->read('Auth.User.role') == 'admin'):
 
 							if($ticket->label == 0){
-								$this->Form->postLink(__('<i class="fa fa-star-o right star-hover"></i>'),
+								echo $this->Form->postLink(__('<i class="fa fa-star-o right star-hover"></i>'),
 									['controller' => 'Tickets',
 									'action' => 'label', 'id' => 'post-title',
 									$ticket->id
@@ -24,7 +24,7 @@
 								]);
 
 							} else{
-								'<i class="fa fa-star right"></i>';
+								echo '<i class="fa fa-star right"></i>';
 							} ?>
 					<?php endif ?>
 					<?php endif?>
