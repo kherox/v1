@@ -9,6 +9,8 @@
 
 **OranTicket** est fait pour vous, il vous permetera de créer des tickets.
 
+![screen](https://sc-cdn.scaleengine.net/i/be60441224e66362b5b117e3262a249f.png)
+
 Dès que vous rencontré un souci, poster un ticket et des personnes y répondrons. Sur **OranTicket** il y aura un système de permission, des administrateurs, modérateurs et membre. Les Administrateurs pourront **supprimer**/**éditer** et **fermer** des tickets et les modérateur pourrons **supprimer**(confirmation par un administrateur) / **fermer** et **éditer** les tickets.
 
 Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/*** ou autre et **OranTicket** fonctionnera à condition que vous ayez ajouté la base de données.
