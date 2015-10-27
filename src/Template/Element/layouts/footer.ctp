@@ -23,6 +23,7 @@
     $this->Html->script([
         'src/jquery.js',
         'https://www.google.com/recaptcha/api.js',
+        'https://cdn.socket.io/socket.io-1.3.7.js',
         'src/markdown-library.js',
         'src/scrollspeed.js',
         'src/overlay.js',

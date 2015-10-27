@@ -32,6 +32,9 @@
                                         <a href="<?= $this->url(); ?>Users/login">
                                             <i class="fa fa-user"></i>
                                         </a>
+                                        <div class="fond" id="notifications">
+
+                                        </div>
                                     </li>
                                 <?php endif; ?>
                             </ul>

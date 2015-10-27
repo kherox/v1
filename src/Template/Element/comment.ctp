@@ -3,7 +3,7 @@
 		<?php
         foreach ($ticket->comments as $comment):
 		?>
-			<div class="container">
+			<div class="container" id="comments">
 				<div class="grid-1">
 					<?php
 						foreach($users as $user){
@@ -76,14 +76,14 @@
 		            echo $this->Form->input('content', ['placeholder' => 'Votre commentaire...', 'type' => 'textarea', 'class' => 'form emoji', 'label' => false]);
 				?>
 			</div>
-		<?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success sendButton', 'id' => 'sendButton']) ?>
+		<?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success sendButton', 'id' => 'sendButton', 'onClick' => 'post_comment()']) ?>
 		<?= $this->Form->end(); ?>
 	<?php }else{ ?>
 		<div class="post-label">
-			<div id="flash-message" class="flash-message flash-info">
+			<div id="flash-message" class="flash-message flash-error">
 				<button type="button" class="close"><i class="fa fa-times"></i></button>
 				<strong>Attention!</strong> Vous devez être connecté pour envoyer un commentaire.
-				<?= $this->Html->link(__('Se connecter'),['controller' => 'Users', 'action' => 'login']) ?>
+				<?= $this->Html->link(__('Se connecter'),['controller' => 'Users', 'action' => 'login'], ['style' => 'color: #fff; font-weight: 800']) ?>
 			</div>
 		</div>
 	<?php } ?>

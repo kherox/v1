@@ -136,7 +136,7 @@ var MTE = function(elem, o) {
         v_w = page.parentNode.offsetWidth,
         v_h = win.innerHeight > page.parentNode.offsetHeight ? win.innerHeight : page.parentNode.offsetHeight,
 
-    // Rewrite some methods for better JS minification
+        // Rewrite some methods for better JS minification
         _AREA = elem,
         _INDENT = editor.indent,
         _INSERT = editor.insert,
@@ -399,8 +399,8 @@ var MTE = function(elem, o) {
                 }
             };
             var input = doc.createElement('input');
-            input.type = 'text';
-            input.value = value;
+                input.type = 'text';
+                input.value = value;
             addEvent(input, "keydown", function(e) {
                 var k = e.keyCode;
                 if (k == 27) return base.close(true), false;
@@ -416,7 +416,7 @@ var MTE = function(elem, o) {
                 }
             });
             var OK = doc.createElement('button');
-            OK.innerHTML = opt.buttons.ok;
+                OK.innerHTML = opt.buttons.ok;
             addEvent(OK, "click", function() {
                 if (required) {
                     if (input.value !== "" && input.value !== value) success(input.value);
@@ -426,7 +426,7 @@ var MTE = function(elem, o) {
                 return false;
             });
             var CANCEL = doc.createElement('button');
-            CANCEL.innerHTML = opt.buttons.cancel;
+                CANCEL.innerHTML = opt.buttons.cancel;
             addEvent(CANCEL, "click", function() {
                 return base.close(true), false;
             });
@@ -457,7 +457,7 @@ var MTE = function(elem, o) {
     base.alert = function(title, message, callback, offset) {
         base.modal('alert', function(o, m, h, c, f) {
             var OK = doc.createElement('button');
-            OK.innerHTML = opt.buttons.ok;
+                OK.innerHTML = opt.buttons.ok;
             addEvent(OK, "click", function() {
                 if (is_function(callback)) {
                     base.close();
@@ -483,7 +483,7 @@ var MTE = function(elem, o) {
     base.confirm = function(title, message, callback, offset) {
         base.modal('confirm', function(o, m, h, c, f) {
             var OK = doc.createElement('button');
-            OK.innerHTML = opt.buttons.ok;
+                OK.innerHTML = opt.buttons.ok;
             addEvent(OK, "click", function() {
                 if (is_set(callback)) {
                     if (is_function(callback.OK)) {
@@ -498,7 +498,7 @@ var MTE = function(elem, o) {
                 return false;
             });
             var CANCEL = doc.createElement('button');
-            CANCEL.innerHTML = opt.buttons.cancel;
+                CANCEL.innerHTML = opt.buttons.cancel;
             addEvent(CANCEL, "click", function() {
                 if (is_set(callback)) {
                     if (is_function(callback.CANCEL)) {
@@ -605,9 +605,9 @@ var MTE = function(elem, o) {
     }
 
     var release = doc.createElement('a');
-    release.href = '#esc:' + (new Date()).getTime();
-    release.style.width = 0;
-    release.style.height = 0;
+        release.href = '#esc:' + (new Date()).getTime();
+        release.style.width = 0;
+        release.style.height = 0;
     _AREA.parentNode.appendChild(release);
 
     // Custom Button
@@ -616,10 +616,10 @@ var MTE = function(elem, o) {
         data = data || {};
         if (data.title === false) return;
         var btn = doc.createElement('a'), pos;
-        btn.className = opt.toolbarButtonClass.replace(/%s/g, key);
-        btn.setAttribute('tabindex', -1);
-        btn.href = '#' + key.replace(' ', ':').replace(/[^a-z0-9\:]/gi, '-').replace(/-+/g,'-').replace(/^-|-$/g, "");
-        btn.innerHTML = data.text ? data.text.replace(/%s/g, key) : '<i class="' + opt.toolbarIconClass.replace(/%s/g, key) + '"></i>';
+            btn.className = opt.toolbarButtonClass.replace(/%s/g, key);
+            btn.setAttribute('tabindex', -1);
+            btn.href = '#' + key.replace(' ', ':').replace(/[^a-z0-9\:]/gi, '-').replace(/-+/g,'-').replace(/^-|-$/g, "");
+            btn.innerHTML = data.text ? data.text.replace(/%s/g, key) : '<i class="' + opt.toolbarIconClass.replace(/%s/g, key) + '"></i>';
         if (data.title) btn.title = data.title;
         if (is_object(data.attr)) {
             for (var i in data.attr) {
@@ -658,7 +658,7 @@ var MTE = function(elem, o) {
     base.separator = function(data) {
         data = data || {};
         var sep = doc.createElement('span'), pos;
-        sep.className = opt.toolbarSeparatorClass;
+            sep.className = opt.toolbarSeparatorClass;
         if (is_object(data.attr)) {
             for (var i in data.attr) {
                 if (is_string(data.attr[i]) && data.attr[i].slice(0, 2) == '+=') {
@@ -843,8 +843,8 @@ var MTE = function(elem, o) {
                             alt = trim(s.value.length ? s.value : decodeURIComponent(
                                 r.split('/').pop().replace(/\..*$/, "").replace(/[-+._]+/g, ' ')
                             ).toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
-                                    return a.toUpperCase();
-                                }));
+                                return a.toUpperCase();
+                            }));
                         if (!alt.length) alt = opt.placeholders.image_alt;
                         _INSERT('![' + alt + '](' + r + ')', function() {
                             s = _SELECTION();
