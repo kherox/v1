@@ -1111,3 +1111,17 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2015-10-28 18:36:46 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Tickets/view.ctp, line 64
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

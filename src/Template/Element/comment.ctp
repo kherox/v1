@@ -48,7 +48,7 @@
                                         'controller' => 'Tickets',
                                         'action' => 'editComment',
                                         $comment->id
-                                    ], ['class' => 'btn-small btn-warning'])
+                                    ], ['class' => 'btn-small btn-warning']);
 
                                     echo $this->Form->postLink(__('Supprimer'), [
                                         'controller' => 'Tickets',
