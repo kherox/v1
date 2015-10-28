@@ -32,12 +32,12 @@
                     <div class="profil-stats">
 
                         <div class="grid-3 grid-m-4">
-                            <h2>4</h2>
+                            <h2><?= $comments_count ?></h2>
                             <span>Commentaires</span>
                         </div>
 
                         <div class="grid-3 grid-m-4">
-                            <h2><?= $tickets_count; ?></h2>
+                            <h2><?= $tickets_count ?></h2>
                             <span>Tickets</span>
                         </div>
 
