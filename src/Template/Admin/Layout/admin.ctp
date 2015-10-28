@@ -29,7 +29,7 @@
                 <ul class="nav navbar-nav">
                     <!-- Déconnexion -->
                     <li>
-                        <a href="<?= \Cake\Core\Configure::read('Site.base_url') ?>Users/logout">
+                        <a href="<?= $this->Url->build('/', true); ?>Users/logout">
                             <i class="fa fa-sign-out"></i>
                         </a>
                     </li>
@@ -37,7 +37,7 @@
                 <ul class="nav navbar-nav">
                     <!-- Site web -->
                     <li>
-                        <a target="_blank" href="<?= \Cake\Core\Configure::read('Site.base_url') ?>">
+                        <a target="_blank" href="<?= $this->Url->build('/', true); ?>">
                             <i class="fa fa-link"></i>
                         </a>
                     </li>
@@ -67,7 +67,7 @@
                 <li class="header">Menu</li>
 
                 <li class="treeview">
-                    <a href="<?= $this->url(); ?>admin/Tickets">
+                    <a href="<?= $this->Url->build('/', true); ?>admin/Tickets">
                         <i class="fa fa-ticket"></i>
                         <span>Tickets</span>
 
@@ -75,7 +75,7 @@
                 </li>
 
                 <li class="treeview">
-                    <a href="<?= $this->url(); ?>admin/Users">
+                    <a href="<?= $this->Url->build('/', true); ?>admin/Users">
                         <i class="fa fa-user"></i>
                         <span>Utilisateurs</span>
                     </a>

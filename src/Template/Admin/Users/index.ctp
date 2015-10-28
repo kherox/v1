@@ -33,7 +33,7 @@
                             target="_blank"
                             style="padding: 3px 8px;margin-right: 3px;"
                             href="
-                            <?= $this->url(); ?>Users/view/<?= $user->id ?>
+                            <?= $this->Url->build('/', true); ?>Users/view/<?= $user->id ?>
                         ">
                             Regardé
                         </a>
@@ -43,7 +43,7 @@
                             target="_blank"
                             style="padding: 3px 8px;margin-right: 3px;"
                             href="
-                            <?= $this->url(); ?>Users/edit/<?= $user->id ?>
+                            <?= $this->Url->build('/', true); ?>Users/edit/<?= $user->id ?>
                         ">
                             Édité
                         </a>
@@ -55,7 +55,7 @@
                                 style="padding: 3px 8px;margin-right: 3px;"
                                 confirm="Voulez vous vraiment désactiver ce compte?"
                                 href="
-                                    <?= $this->url(); ?>Users/delete/<?= $user->id ?>
+                                    <?= $this->Url->build('/', true); ?>Users/delete/<?= $user->id ?>
                                 ">
                                 Désactivé
                             </a>
@@ -66,7 +66,7 @@
                                 style="padding: 3px 12px;margin-right: 3px;"
                                 confirm="Voulez vous vraiment réactivé ce compte?"
                                 href="
-                                    <?= $this->url(); ?>Users/active/<?= $user->id ?>
+                                    <?= $this->Url->build('/', true); ?>Users/active/<?= $user->id ?>
                                 ">
                                 Réactivé
                             </a>

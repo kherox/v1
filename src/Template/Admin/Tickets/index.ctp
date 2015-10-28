@@ -35,7 +35,7 @@
                         target="_blank"
                         style="padding: 3px 8px;margin-right: 3px;"
                         href="
-                            <?= $this->url(); ?>Tickets/view/<?= $ticket->id ?>
+                            <?= $this->Url->build('/', true); ?>Tickets/view/<?= $ticket->id ?>
                         ">
                         Regardé
                     </a>
@@ -45,7 +45,7 @@
                         target="_blank"
                         style="padding: 3px 8px;margin-right: 3px;"
                         href="
-                            <?= $this->url(); ?>Tickets/edit/<?= $ticket->id ?>
+                            <?= $this->Url->build('/', true); ?>Tickets/edit/<?= $ticket->id ?>
                         ">
                         Édité
                     </a>
@@ -56,7 +56,7 @@
                         style="padding: 3px 8px;margin-right: 3px;"
                         confirm="<?= "Voulez vous vraiment supprimer ce ticket" . $ticket->subjects ?>"
                         href="
-                            <?= $this->url(); ?>Tickets/delete/<?= $ticket->id ?>
+                            <?= $this->Url->build('/', true); ?>Tickets/delete/<?= $ticket->id ?>
                         ">
                         Supprimé
                     </a>

@@ -472,3 +472,35 @@ Stack Trace:
 #1 {main}
 
 
+2015-10-28 14:00:08 Error: Fatal Error (1): Call to undefined method App\View\AppView::url() in [/var/www/OranTicket/src/Template/Admin/Users/index.ctp, line 36]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-10-28 14:00:08 Error: [Cake\Error\FatalErrorException] Call to undefined method App\View\AppView::url()
+Request URL: /OranTicket/admin/
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/var/www/OranTi...', 36)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-10-28 14:10:34 Error: Fatal Error (1): Call to undefined method App\View\AppView::url() in [/var/www/OranTicket/src/Template/Users/index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-10-28 14:10:34 Error: [Cake\Error\FatalErrorException] Call to undefined method App\View\AppView::url()
+Request URL: /OranTicket/users
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', '/var/www/OranTi...', 31)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

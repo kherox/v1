@@ -26,9 +26,9 @@
                         <div class="grid-12">
                             <?php
                             if($this->request->session()->read('Auth.User.username') == $user->username): ?>
-                                <a style="color: #5D5D5D;" href="<?= $this->url(); ?>users/view/<?= $user->id ?>"><?= h($user->username) ?></a>
+                                <a style="color: #5D5D5D;" href="<?= $this->Url->build('/', true); ?>users/view/<?= $user->id ?>"><?= h($user->username) ?></a>
                             <?php else: ?>
-                                <a href="<?= $this->url(); ?>users/view/<?= $user->id ?>"><?= h($user->username) ?></a>
+                                <a href="<?= $this->Url->build('/', true); ?>users/view/<?= $user->id ?>"><?= h($user->username) ?></a>
                             <?php endif; ?>
                         </div>
                     </div>
