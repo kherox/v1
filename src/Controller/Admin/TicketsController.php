@@ -12,7 +12,6 @@ class TicketsController extends AppController
         $ticketss = $this->Tickets->find('all')->count();
         $tickets = $this->Tickets->find('all');
 
-        $this->set(compact('tickets'));;
-        $this->set(compact('ticketss'));
+        $this->set(compact('tickets', 'ticketss'));;
     }
 }

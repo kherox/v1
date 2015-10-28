@@ -12,3 +12,42 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2015-10-28 15:42:15 Notice: Notice (8): Undefined variable: id in [/var/www/OranTicket/src/Controller/Admin/TicketsController.php, line 15]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+App\Controller\Admin\TicketsController::index() - APP/Controller/Admin/TicketsController.php, line 15
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 429
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-10-28 15:43:04 Notice: Notice (8): Undefined variable: tickets_report in [/var/www/OranTicket/src/Template/Admin/Tickets/index.ctp, line 67]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Admin/Tickets/index.ctp, line 67
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-10-28 15:43:20 Notice: Notice (8): Undefined variable: tickets_report in [/var/www/OranTicket/src/Template/Admin/Tickets/index.ctp, line 67]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Admin/Tickets/index.ctp, line 67
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 970
+Cake\View\View::_render() - CORE/src/View/View.php, line 930
+Cake\View\View::render() - CORE/src/View/View.php, line 578
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 611
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
