@@ -637,3 +637,32 @@ Stack Trace:
 #1 {main}
 
 
+2015-10-28 17:56:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.ico',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /OranTicket/favicon.ico
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-10-28 18:28:02 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-10-28 18:28:03 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';'
+Request URL: /OranTicket/tickets/view/52
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/var/www/OranTi...', 64)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

@@ -26,16 +26,21 @@
 
     <div class="sidebar-footer sidebar-footer-animation">
 
-        <div class="grid-6 a-deco">
-            <i class="fa fa-power-off"></i>
+        <div class="grid-6 ">
             <a href="<?= $this->Url->build('/', true); ?>logout" class="a-deco">
-                Déconnexion
+                <div class="a-admin">
+                    <i class="fa fa-power-off"></i>
+                    Déconnexion
+                </div>
             </a>
         </div>
-        <div class="grid-6 a-admin">
-            <i class="fa fa-cog"></i>
+
+        <div class="grid-6">
             <a href="<?= $this->Url->build('/', true); ?>admin/" class="a-plus">
-                Admin
+                <div class="a-admin">
+                    <i class="fa fa-cog"></i>
+                    Admin
+                </div>
             </a>
         </div>
 

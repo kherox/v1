@@ -85,7 +85,6 @@ class TicketsController extends AppController
         // MARKDOWN
         $Parsedown = new Parsedown();
         $Parsedown->setMarkupEscaped(true);
-        $html = $Parsedown->text($ticket->content);
 
         // AJOUT D'UN COMMENTAIRE
         if ($this->request->is('post')) {
@@ -94,6 +93,7 @@ class TicketsController extends AppController
 
             $comment = $this->Tickets->Comments->newEntity();
             $comment = $this->Tickets->Comments->patchEntity($comment, $this->request->data);
+
 
             if ($this->Tickets->Comments->save($comment)) {
                 $this->Flash->success(__('Votre commentaire à bien était sauvegarder.'));
@@ -104,7 +104,7 @@ class TicketsController extends AppController
         }
 
         // VARIABLES
-        $this->set(compact('users', 'tickets', 'client', 'html', 'ticket'));
+        $this->set(compact('users', 'tickets', 'client', 'html', 'ticket', 'Parsedown'));
         $this->set('_serialize', ['ticket']);
     }
 

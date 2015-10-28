@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Parsedown;
 
 class CommentsController extends AppController
 {
@@ -38,7 +39,7 @@ class CommentsController extends AppController
             'contain' => ['Users', 'Tickets']
         ]);
 
-        $this->set('comment', $comment);
+        $this->set(compact('comment'));
         $this->set('_serialize', ['comment']);
     }
 

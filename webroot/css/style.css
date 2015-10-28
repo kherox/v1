@@ -674,32 +674,37 @@ footer p {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-/* line 88, ../scss/Layout/_sidebar.scss */
+/* line 90, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-deco a {
   color: #fff;
 }
-/* line 91, ../scss/Layout/_sidebar.scss */
+/* line 93, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-deco a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
-/* line 97, ../scss/Layout/_sidebar.scss */
+/* line 99, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin {
   background-color: #2b2c2d;
   color: #FFF;
   text-align: center;
   padding-top: 12px;
   padding-bottom: 12px;
+  border: 1px solid #888888;
 }
-/* line 104, ../scss/Layout/_sidebar.scss */
+/* line 109, ../scss/Layout/_sidebar.scss */
+.sidebar .sidebar-footer .a-admin i {
+  color: #FF6814;
+}
+/* line 112, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin a {
   color: #fff;
 }
-/* line 106, ../scss/Layout/_sidebar.scss */
+/* line 115, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a-admin a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-/* line 114, ../scss/Layout/_sidebar.scss */
+/* line 123, ../scss/Layout/_sidebar.scss */
 .circle-new-message {
   margin-top: 13px;
   position: absolute;
