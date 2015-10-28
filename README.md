@@ -26,7 +26,7 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
 - Extraire le contenu et lancer ``` composer install```
 
 ### Via Packagist
-- ```composer require gynidark/oranticket```
+- ```composer create-project --prefer-dist gynidark/oranticket```
 
 ### Configuration
 - Les variables de configurations se trouve dans le fichier ```config/oranticket.php```
