@@ -30,13 +30,7 @@ class AppView extends View
      *
      * @return void
      */
-    public function initialize()
-    {
-    }
-
-    function url(){
-        return \Cake\Core\Configure::read('Site.base_url');
-    }
+    public function initialize(){}
 
     function gravatar($email, $size='80')
     {
