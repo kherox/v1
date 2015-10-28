@@ -11,9 +11,7 @@ use Parsedown;
 
 class TicketsController extends AppController
 {
-    /**
-     * Pagination & Order
-     **/
+
     public $paginate = [
         'limit' => 10,
         'order' => [
@@ -121,11 +119,13 @@ class TicketsController extends AppController
                 $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
                 $ticket->public  = $this->request->data(['public']);
                 $ticket->user_id = $user['id'];
+
                 // Je passe mes variables à mon template mail
                 $viewVars = [
                     'subject' => $ticket->subjects,
                     'content' => nl2br($ticket->content)
                 ];
+
                 // SAUVEGARDE TICKET
                 if ($this->Tickets->save($ticket)) {
                     $email = new Email();
@@ -140,6 +140,7 @@ class TicketsController extends AppController
                             ->viewVars($viewVars)
                             ->send();
                     }
+
                     $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
                     return $this->redirect(['action' => 'index']);
                 } else {
@@ -171,7 +172,6 @@ class TicketsController extends AppController
 
         if ($this->request->is(['post', 'put'])) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
-
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('Votre ticket a bien été édité'));
                 return $this->redirect(['action' => 'view', $id]);

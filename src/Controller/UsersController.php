@@ -42,6 +42,7 @@ class UsersController extends AppController
                 ]
             ])
             ->count();
+
         $users = $this->Users
             ->find('all')
             ->order(['created' => 'DESC']);
@@ -49,8 +50,8 @@ class UsersController extends AppController
 
 
         $this->set('tickets', $this->paginate($this->Tickets));
-        $this->set(compact('tickets_count'));
         $this->set('users', $this->paginate($users));
+        $this->set(compact('tickets_count'));
         $this->set('_serialize', ['users']);
     }
     /**
@@ -67,17 +68,13 @@ class UsersController extends AppController
 
         if ($userLogin) {
             if(!$userLogin['is_deleted'] == true){
-
                 $this->Auth->setUser($userLogin);
 
                 $user = $this->Users->newEntity($userLogin);
-
                 $user->isNew(false);
                 $user->last_login = new Time();
                 $user->last_ip    = $this->request->clientIp();
-
                 $session = $this->request->session();
-
                 $url = $this->Auth->redirectUrl();
 
                 $this->Users->save($user);
@@ -105,8 +102,19 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Tickets']
         ]);
-        $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
-        $comments_count = $this->Comments->find('all', ['conditions' => ['Comments.user_id' => $user['id']]])->count();
+        $tickets_count = $this->Tickets->find('all', [
+            'conditions' => [
+                'Tickets.user_id' => $user['id']
+            ]
+        ])
+        ->count();
+
+        $comments_count = $this->Comments->find('all', [
+            'conditions' => [
+                'Comments.user_id' => $user['id']
+            ]
+        ])
+        ->count();
 
         $this->paginate = [
             'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
@@ -208,7 +216,6 @@ class UsersController extends AppController
     public function delete($id = null)
     {
         $user = $this->Users->get($id);
-
         $user->is_deleted = true;
 
         if($this->Users->save($user)){

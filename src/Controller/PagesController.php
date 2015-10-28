@@ -8,6 +8,9 @@ use Cake\View\Exception\MissingTemplateException;
 
 class PagesController extends AppController
 {
+    /**
+     * @return \Cake\Network\Response|null
+     */
     public function display()
     {
         $this->loadModel('Users');
