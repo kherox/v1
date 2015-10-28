@@ -6,21 +6,12 @@ body{
 	overflow: scroll!important; 
 }
 
-.right{
-	float: right;
-}
+.right{ float: right; }
 
-h1,h2,h3,h4,h5{
-	color: $gris;
-}
+h1,h2,h3,h4,h5{ color: $gris; }
 
-.center{
-	text-align: center;
-}
-
-.large{
-	width: 100%;
-}
+.center{ text-align: center; }
+.large{ width: 100%; }
 
 .select-file{
 	position: relative;
@@ -45,14 +36,6 @@ h1,h2,h3,h4,h5{
 	font-weight: 300;
 }
 
-body::-webkit-scrollbar {
-	width: 8px;
-}
-
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-	background-color: $orange;
-}
+body::-webkit-scrollbar {width: 8px;}
+body::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);}
+body::-webkit-scrollbar-thumb {background-color: $orange;}
