@@ -28,7 +28,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Visualisations de tout les tickets pour les admins/modos
+     * Visualisations de tout les membres
      **/
     public function index()
     {
@@ -54,7 +54,7 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
     /**
-     * Connexion votre compte
+     * Connexion
      */
     public function login()
     {
@@ -94,7 +94,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Visualisations de tout les tickets pour les admins/modos
+     * Visualisations d'un ticket
      **/
     public function view($id = null)
     {
@@ -218,7 +218,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Réactivé votre compte
+     * Réactivé votre compte (Dans l'administration)
      */
     public function active($id = null){
         $user = $this->Users->get($id);

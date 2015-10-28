@@ -29,7 +29,7 @@ class TicketsController extends AppController
     }
 
     /**
-     * Visualisation de tout les tickets pour les admins/modos
+     * Visualisation de tout les tickets
      **/
     public function index()
     {
@@ -62,7 +62,7 @@ class TicketsController extends AppController
     }
 
     /**
-     * Visualisation de tout les tickets pour les admins/modos
+     * Visualisation d'un ticket
      **/
     public function view($id = null)
     {
@@ -95,7 +95,6 @@ class TicketsController extends AppController
             $comment = $this->Tickets->Comments->newEntity();
             $comment = $this->Tickets->Comments->patchEntity($comment, $this->request->data);
 
-
             if ($this->Tickets->Comments->save($comment)) {
                 $this->Flash->success(__('Votre commentaire à bien était sauvegarder.'));
             } else {
@@ -127,7 +126,6 @@ class TicketsController extends AppController
                     'subject' => $ticket->subjects,
                     'content' => nl2br($ticket->content)
                 ];
-
                 // SAUVEGARDE TICKET
                 if ($this->Tickets->save($ticket)) {
                     $email = new Email();
@@ -142,7 +140,6 @@ class TicketsController extends AppController
                             ->viewVars($viewVars)
                             ->send();
                     }
-
                     $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
                     return $this->redirect(['action' => 'index']);
                 } else {
@@ -154,7 +151,6 @@ class TicketsController extends AppController
         }
 
         $this->set(compact('ticket'));
-
         $this->set('_serialize', ['ticket']);
     }
 
@@ -172,8 +168,6 @@ class TicketsController extends AppController
                 ]
             ]);
         }
-
-
 
         if ($this->request->is(['post', 'put'])) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
@@ -217,7 +211,7 @@ class TicketsController extends AppController
     }
 
     /**
-     * Report un ticket
+     * Signaler un ticket
      */
     public function report($id = null){
         if($this->request->session()->read('Auth.User.role') == 'admin'){
