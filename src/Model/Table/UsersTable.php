@@ -31,7 +31,13 @@ class UsersTable extends Table
 
         $validator
             ->requirePresence('username', 'create')
-            ->notEmpty('username');
+            ->notEmpty('username')
+            ->add('username', [
+                'length' => [
+                    'rule' => ['maxLength', 13],
+                    'message' => 'Votre username doit avoir moins que 13 caractères',
+                ]
+            ]);
 
         $validator
             ->requirePresence('password', 'create')

@@ -3719,6 +3719,14 @@ footer p {
   border: solid 1px #FF6814;
 }
 
+/* line 14, ../scss/Module/_form.scss */
+.form-color {
+  width: 100%;
+  border: 0;
+  height: 40px;
+  outline: none;
+}
+
 /* line 3, ../scss/Module/_panel.scss */
 .panel .panel-content {
   background-color: #F1F1F1;

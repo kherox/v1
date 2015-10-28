@@ -25,11 +25,15 @@
             Préférence Site web
         </h1>
 
-        <span>Fond de OranTicket</span>
-        <?= $this->Form->input('background_body', ['type' => 'color', 'class' => 'form', 'label' => false]); ?>
+        <div class="grid-6">
+            <span>Fond de OranTicket</span>
+            <?= $this->Form->input('background_body', ['type' => 'color', 'class' => 'form-color', 'label' => false]); ?>
+        </div>
 
-        <span>Fond du menu</span>
-        <?= $this->Form->input('background_menu', ['type' => 'color', 'class' => 'form', 'label' => false]); ?>
+        <div class="grid-6">
+            <span>Fond du menu</span>
+            <?= $this->Form->input('background_menu', ['type' => 'color', 'class' => 'form-color', 'label' => false]); ?>
+        </div>
     </div>
     
     <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-success pull-right']) ?>
