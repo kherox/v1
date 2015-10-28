@@ -666,3 +666,16 @@ Stack Trace:
 #2 {main}
 
 
+2015-10-28 21:12:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.ico',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /OranTicket/favicon.ico
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

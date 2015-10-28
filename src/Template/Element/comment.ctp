@@ -1,8 +1,7 @@
 <div class="post-comments">
     <div class="post-list">
         <?php
-        foreach ($ticket->comments as $comment):
-            ?>
+        foreach ($ticket->comments as $comment): ?>
             <div class="container" id="comments">
                 <div class="grid-1">
                     <?php

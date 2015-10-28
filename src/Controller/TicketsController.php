@@ -85,6 +85,7 @@ class TicketsController extends AppController
         // MARKDOWN
         $Parsedown = new Parsedown();
         $Parsedown->setMarkupEscaped(true);
+        $html = $Parsedown->text($ticket->content);
 
         // AJOUT D'UN COMMENTAIRE
         if ($this->request->is('post')) {
