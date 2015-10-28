@@ -4859,6 +4859,20 @@ table th[class*="col-"] {
   outline: none;
 }
 
+/* line 141, ../scss/Module/_markdown.scss */
+blockquote {
+  border-left: 3px solid #ff6814;
+  line-height: 5px;
+  color: darkgrey;
+  font-style: italic;
+}
+
+/* line 147, ../scss/Module/_markdown.scss */
+.posts .post-content p {
+  margin: 10px;
+  font-size: 16px !important;
+}
+
 /* Uncomment the CSS below if you don't want to use icon fonts ... */
 /*
 .editor-toolbar-button {width:auto}

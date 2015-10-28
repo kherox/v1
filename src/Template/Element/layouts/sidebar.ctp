@@ -14,11 +14,11 @@
     </div>
     <div class="sidebar-menu">
         <?php $profile_id = $this->request->session()->read('Auth.User.id'); ?>
-        <a href="<?= $this->url(); ?>users/profile/<?= $profile_id; ?>">
+        <a href="<?= $this->Url->build('/', true); ?>users/profile/<?= $profile_id; ?>">
             <i class="fa fa-user"></i>
             Mon compte
         </a>
-        <a href="<?= $this->url(); ?>Tickets/me">
+        <a href="<?= $this->Url->build('/', true); ?>Tickets/me">
             <i class="fa fa-ticket"></i>
             Mes tickets
         </a>
@@ -28,13 +28,13 @@
 
         <div class="grid-6 a-deco">
             <i class="fa fa-power-off"></i>
-            <a href="<?= $this->url(); ?>logout" class="a-deco">
+            <a href="<?= $this->Url->build('/', true); ?>logout" class="a-deco">
                 Déconnexion
             </a>
         </div>
         <div class="grid-6 a-admin">
             <i class="fa fa-cog"></i>
-            <a href="<?= $this->url(); ?>admin/" class="a-plus">
+            <a href="<?= $this->Url->build('/', true); ?>admin/" class="a-plus">
                 Admin
             </a>
         </div>

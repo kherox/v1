@@ -2,7 +2,7 @@
         <div class="menu" style="background:<?= $this->request->session()->read('SiteWeb.background_menu') ?>!important">
             <div class="container">
                 <div class="logo grid-2 grid-m-6">
-                    <a href="<?= $this->url(); ?>">
+                    <a href="<?= $this->Url->build('/', true); ?>">
                         <?= $this->Html->image('oranticket.png', ['width' => '190']); ?>
                     </a>
                 </div>
@@ -12,13 +12,13 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="<?= $this->url(); ?>tickets/">
+                                    <a href="<?= $this->Url->build('/', true); ?>tickets/">
                                         <i class="fa fa-ticket"></i>
                                     </a>
                                 </li>
                                 <?php if(!empty($this->request->session()->read('Auth.User'))): ?>
                                     <li>
-                                        <a href="<?= $this->url(); ?>tickets/add">
+                                        <a href="<?= $this->Url->build('/', true); ?>tickets/add">
                                             <i class="fa fa-plus"></i>
                                         </a>
                                     </li>
@@ -29,7 +29,7 @@
                                     </li>
                                 <?php else: ?>
                                     <li>
-                                        <a href="<?= $this->url(); ?>Users/login">
+                                        <a href="<?= $this->Url->build('/', true); ?>Users/login">
                                             <i class="fa fa-user"></i>
                                         </a>
                                         <div class="fond" id="notifications">

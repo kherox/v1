@@ -91,8 +91,10 @@ class TicketsController extends AppController
         if ($this->request->is('post')) {
             $this->request->data['ticket_id'] = $id;
             $this->request->data['user_id'] = $user['id'];
+
             $comment = $this->Tickets->Comments->newEntity();
             $comment = $this->Tickets->Comments->patchEntity($comment, $this->request->data);
+
             if ($this->Tickets->Comments->save($comment)) {
                 $this->Flash->success(__('Votre commentaire à bien était sauvegarder.'));
             } else {
@@ -111,7 +113,6 @@ class TicketsController extends AppController
      */
     public function add()
     {
-
         $user = $this->Auth->user();
         $ticket = $this->Tickets->newEntity();
 

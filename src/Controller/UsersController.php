@@ -117,7 +117,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Ajouté un compte
+     * Ajouter un compte
      **/
      public function add()
      {
