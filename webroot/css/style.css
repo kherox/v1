@@ -47,12 +47,27 @@ h1, h2, h3, h4, h5 {
   color: #1b1c1d;
 }
 
-/* line 42, ../scss/Base/_base.scss */
+/* line 41, ../scss/Base/_base.scss */
 .main-desc {
   text-align: center;
   font-size: 18px;
   line-height: 35px;
   font-weight: 300;
+}
+
+/* line 48, ../scss/Base/_base.scss */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* line 52, ../scss/Base/_base.scss */
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* line 56, ../scss/Base/_base.scss */
+body::-webkit-scrollbar-thumb {
+  background-color: #FF6814;
 }
 
 /*********************************************************************************************
