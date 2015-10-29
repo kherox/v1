@@ -41,7 +41,6 @@ class TicketsTable extends Table
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
 
-
         $validator
             ->requirePresence('subjects', 'create')
             ->add('subjects', [
