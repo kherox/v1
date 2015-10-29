@@ -134,6 +134,7 @@
                             <tr>
                                 <th>Sujet</th>
                                 <th>Statut</th>
+                                <th>Privé</th>
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -144,6 +145,9 @@
                                 <td><a href="#"><?= $ticket->subjects ?></a></td>
                                 <td>
                                     <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
+                                </td>
+                                <td>
+                                    <?= h($ticket->public == '0') ? '<span class="label label-success">Non</span>' : '<span class="label label-danger">Oui</span>' ?>
                                 </td>
                                 <td><?= h($ticket->created->format('d/m/Y G:i:s')) ?></td>
                                 <td class="action">
