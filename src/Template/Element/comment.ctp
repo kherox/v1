@@ -63,7 +63,7 @@
                         </small>
                     </h4>
 
-                    <p><?= $Parsedown->text(nl2br($client->toImage($comment['content']))); ?></p>
+                    <p><?= $client->toImage($Parsedown->text(nl2br($comment['content']))); ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
