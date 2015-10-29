@@ -8,7 +8,11 @@
         cursor: pointer!important;
     }
 }
-
+a{
+    &:hover{
+     text-decoration: none;
+    }
+}
 .sidebar{
     position: fixed;
     top: 0px;
@@ -52,6 +56,9 @@
     }
     .sidebar-menu{
         margin-top: 20px;
+        i{
+            color: $orange;
+        }
         a{
             text-transform: uppercase;
             display: block;
@@ -73,42 +80,23 @@
     }
 
     .sidebar-footer{
+
+        .grid-6{
+            border: solid 2px #888888;
+        }
         bottom: 0;
         width: 100%;
         position: absolute;
         font-weight: 500;
         text-transform: uppercase;
-        .a-deco{
+        .a{
             background-color: #C51F1F;
             color: rgb(255, 255, 255);
             text-align: center;
             padding-top: 12px;
             padding-bottom: 12px;
-            border: 1px solid #888888;
-
-
-
-            a{
-                color: #fff;
-
-                &:hover{
-                    text-decoration: none!important;
-                }
-            }
-        }
-
-        .a-admin{
-            background-color: rgb(43, 44, 45);
-            color: #FFF;
-            text-align: center;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            border: 1px solid #888888;
-
-
-
             i{
-                color: $orange
+                color: $orange;
             }
             a{
                 color: #fff;

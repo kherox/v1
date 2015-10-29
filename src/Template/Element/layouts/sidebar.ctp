@@ -25,24 +25,34 @@
     </div>
 
     <div class="sidebar-footer sidebar-footer-animation">
+        <?php if(!empty($this->request->session()->read('Auth.User.role'))): ?>
+            <div class="grid-6 ">
+                <a href="<?= $this->Url->build('/', true); ?>logout" class="a">
+                    <div class="a-admin">
+                        <i class="fa fa-power-off"></i>
+                        Déconnexion
+                    </div>
+                </a>
+            </div>
 
-        <div class="grid-6 ">
-            <a href="<?= $this->Url->build('/', true); ?>logout" class="a-deco">
-                <div class="a-admin">
-                    <i class="fa fa-power-off"></i>
-                    Déconnexion
-                </div>
-            </a>
-        </div>
-
-        <div class="grid-6">
-            <a href="<?= $this->Url->build('/', true); ?>admin/" class="a-plus">
-                <div class="a-admin">
-                    <i class="fa fa-cog"></i>
-                    Admin
-                </div>
-            </a>
-        </div>
+            <div class="grid-6">
+                <a href="<?= $this->Url->build('/', true); ?>admin/" class="a">
+                    <div class="a-admin">
+                        <i class="fa fa-cog"></i>
+                        Admin
+                    </div>
+                </a>
+            </div>
+        <?php else: ?>
+            <div class="grid-12">
+                <a href="<?= $this->Url->build('/', true); ?>logout" class="a">
+                    <div class="a-admin">
+                        <i class="fa fa-power-off"></i>
+                        Déconnexion
+                    </div>
+                </a>
+            </div>
+        <?php endif; ?>
 
     </div>
 </div>
