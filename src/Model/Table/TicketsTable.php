@@ -71,7 +71,6 @@ class TicketsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->isUnique(['subjects'],'Ce topic existe déjà.'));
         $rules->add($rules->isUnique(['content'],'Ce topic existe déjà.'));
         return $rules;
     }
