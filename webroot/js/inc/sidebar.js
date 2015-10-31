@@ -1,5 +1,3 @@
-//document.getElementById('sendButton').style.display = 'none';
-
 'use strict';
 
 (function() {

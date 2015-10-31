@@ -968,3 +968,11 @@ Stack Trace:
 #22 {main}
 
 
+2015-10-31 08:22:52 Error: Fatal Error (1): Cannot access  property Cake\Database\Type\DateTimeType::$dateTimeClass in [/var/www/OranTicket/vendor/cakephp/cakephp/src/Database/Type/DateTimeType.php, line 133]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+

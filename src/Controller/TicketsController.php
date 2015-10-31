@@ -43,7 +43,7 @@ class TicketsController extends AppController
         $tickets = $this->Tickets
             ->find()
             ->contain(['Comments'])
-            ->where(['report' => 0])
+            ->where(['report' => ''])
             ->order([
                 'created' => 'desc'
             ]);
@@ -226,7 +226,7 @@ class TicketsController extends AppController
 
         if ($this->request->is(['post', 'put'])) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
-            $this->Tickets->patchEntity($ticket, ['report' => 1]);
+            $this->Tickets->patchEntity($ticket, ['report' => $this->request->data('report')]);
 
             if ($this->Tickets->save($ticket)) {
                 $this->Flash->success(__('Merci d\'avoir signalé ce ticket.'));

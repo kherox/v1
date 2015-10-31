@@ -8,4 +8,8 @@ $("#flash-message").on('click', '.close', function() {
     $(this).parent("#flash-message").fadeOut(250);
 });
 
-
+// REPORT
+$("#group_report").hide().fadeOut(250);
+$("#report_btn").on('click', function(){
+    $("#group_report").show().fadeIn(250);
+});
