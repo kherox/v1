@@ -699,3 +699,272 @@ Stack Trace:
 #1 {main}
 
 
+2015-10-29 21:05:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+Request URL: /OranTicket/favicon.ico
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-10-30 22:34:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Favicon.ico could not be found.
+Request URL: /OranTicket/favicon.ico
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-10-30 23:33:41 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oranticket.notifications' doesn't exist
+Request URL: /OranTicket/users
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'notifications', Array, Object(Cake\Database\Schema\Table))
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('notifications', Array)
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('notifications')
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Query.php(173): Cake\ORM\Table->schema()
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Query.php(131): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\NotificationsTable))
+#5 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Table.php(1228): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\NotificationsTable))
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Table.php(931): Cake\ORM\Table->query()
+#7 /var/www/OranTicket/src/View/Cell/NotificationCell.php(19): Cake\ORM\Table->find()
+#8 [internal function]: App\View\Cell\NotificationCell->notifications()
+#9 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/CellTrait.php(85): ReflectionMethod->invokeArgs(Object(App\View\Cell\NotificationCell), Array)
+#10 /var/www/OranTicket/src/Template/Element/layouts/menu.ctp(42): Cake\View\View->cell('Notification::n...')
+#11 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#12 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#13 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(1310): Cake\View\View->_render('/var/www/OranTi...', Array)
+#14 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(484): Cake\View\View->_renderElement('/var/www/OranTi...', Array, Array)
+#15 /var/www/OranTicket/src/Template/Element/layouts/header.ctp(24): Cake\View\View->element('layouts/menu')
+#16 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#17 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#18 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(1310): Cake\View\View->_render('/var/www/OranTi...', Array)
+#19 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(484): Cake\View\View->_renderElement('/var/www/OranTi...', Array, Array)
+#20 /var/www/OranTicket/src/Template/Layout/default.ctp(1): Cake\View\View->element('layouts/header')
+#21 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#22 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#23 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(624): Cake\View\View->_render('/var/www/OranTi...')
+#24 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(583): Cake\View\View->renderLayout('', 'default')
+#25 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#26 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#27 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#28 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#29 {main}
+
+
+2015-10-30 23:33:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /OranTicket/css/base.css
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-10-30 23:33:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /OranTicket/css/cake.css
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-10-30 23:33:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Request URL: /OranTicket/img/cake.power.gif
+Stack Trace:
+#0 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2015-10-30 23:34:04 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'oranticket.notifications' doesn't exist
+Request URL: /OranTicket/users
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'notifications', Array, Object(Cake\Database\Schema\Table))
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(64): Cake\Database\Schema\Collection->describe('notifications', Array)
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Table.php(423): Cake\Database\Schema\CachedCollection->describe('notifications')
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Query.php(173): Cake\ORM\Table->schema()
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Query.php(131): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\NotificationsTable))
+#5 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Table.php(1228): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\NotificationsTable))
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/ORM/Table.php(931): Cake\ORM\Table->query()
+#7 /var/www/OranTicket/src/View/Cell/NotificationCell.php(19): Cake\ORM\Table->find()
+#8 [internal function]: App\View\Cell\NotificationCell->notifications()
+#9 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/CellTrait.php(85): ReflectionMethod->invokeArgs(Object(App\View\Cell\NotificationCell), Array)
+#10 /var/www/OranTicket/src/Template/Element/layouts/menu.ctp(42): Cake\View\View->cell('Notification::n...')
+#11 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#12 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#13 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(1310): Cake\View\View->_render('/var/www/OranTi...', Array)
+#14 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(484): Cake\View\View->_renderElement('/var/www/OranTi...', Array, Array)
+#15 /var/www/OranTicket/src/Template/Element/layouts/header.ctp(24): Cake\View\View->element('layouts/menu')
+#16 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#17 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#18 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(1310): Cake\View\View->_render('/var/www/OranTi...', Array)
+#19 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(484): Cake\View\View->_renderElement('/var/www/OranTi...', Array, Array)
+#20 /var/www/OranTicket/src/Template/Layout/default.ctp(1): Cake\View\View->element('layouts/header')
+#21 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#22 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#23 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(624): Cake\View\View->_render('/var/www/OranTi...')
+#24 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(583): Cake\View\View->renderLayout('', 'default')
+#25 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#26 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#27 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#28 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#29 {main}
+
+
+2015-10-30 23:35:15 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::notifications() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'notifications',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /OranTicket/users/notifications
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\UsersController))
+#2 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2015-10-30 23:36:15 Error: [Cake\View\Exception\MissingTemplateException] Template file "Tickets/notifications.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Tickets/notifications.ctp',
+)
+Request URL: /OranTicket/tickets/notifications
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(575): Cake\View\View->_getViewFileName(NULL)
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TicketsController))
+#4 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2015-10-30 23:38:04 Error: [Cake\View\Exception\MissingElementException] Element/meta.ctp
+Request URL: /OranTicket/tickets/notifications
+Stack Trace:
+#0 /var/www/OranTicket/src/Template/Tickets/notifications.ctp(3): Cake\View\View->element('meta', Array)
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/var/www/OranTi...')
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#5 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TicketsController))
+#7 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-10-30 23:38:33 Error: [Cake\View\Exception\MissingElementException] Element/meta.ctp
+Request URL: /OranTicket/tickets/notifications
+Stack Trace:
+#0 /var/www/OranTicket/src/Template/Tickets/notifications.ctp(3): Cake\View\View->element('meta', Array)
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/var/www/OranTi...')
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#5 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TicketsController))
+#7 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-10-30 23:38:38 Error: [Cake\View\Exception\MissingElementException] Element/meta.ctp
+Request URL: /OranTicket/tickets/notifications
+Stack Trace:
+#0 /var/www/OranTicket/src/Template/Tickets/notifications.ctp(3): Cake\View\View->element('meta', Array)
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/var/www/OranTi...')
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#5 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TicketsController))
+#7 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-10-30 23:44:34 Error: [Cake\View\Exception\MissingElementException] Element/meta.ctp
+Request URL: /OranTicket/tickets/notifications
+Stack Trace:
+#0 /var/www/OranTicket/src/Template/Tickets/notifications.ctp(3): Cake\View\View->element('meta', Array)
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(578): Cake\View\View->_render('/var/www/OranTi...')
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render(NULL, NULL)
+#5 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(120): Cake\Controller\Controller->render()
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TicketsController))
+#7 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2015-10-30 23:52:37 Error: Fatal Error (1): Class 'App\Controller\Notifications' not found in [/var/www/OranTicket/src/Controller/TicketsController.php, line 97]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-10-30 23:52:37 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Notifications' not found
+Request URL: /OranTicket/tickets/view/52
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/var/www/OranTi...', 97)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-10-30 23:55:30 Error: Fatal Error (1): Class 'App\Controller\Notifications' not found in [/var/www/OranTicket/src/Controller/TicketsController.php, line 97]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-10-30 23:55:31 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Notifications' not found
+Request URL: /OranTicket/tickets/view/52
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/var/www/OranTi...', 97)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-10-30 23:55:55 Error: Fatal Error (1): Class 'App\Controller\Notifications' not found in [/var/www/OranTicket/src/Controller/TicketsController.php, line 97]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-10-30 23:55:56 Error: [Cake\Error\FatalErrorException] Class 'App\Controller\Notifications' not found
+Request URL: /OranTicket/tickets/view/52
+Stack Trace:
+#0 /var/www/OranTicket/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Class 'App\\Cont...', '/var/www/OranTi...', 97)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2015-10-31 00:14:13 Error: [Cake\View\Exception\MissingCellException] Cell class NotificationCell is missing.
+Exception Attributes: array (
+  'className' => 'NotificationCell',
+)
+Request URL: /OranTicket/
+Stack Trace:
+#0 /var/www/OranTicket/src/Template/Element/layouts/menu.ctp(42): Cake\View\View->cell('Notification::n...')
+#1 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#2 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#3 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(1310): Cake\View\View->_render('/var/www/OranTi...', Array)
+#4 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(484): Cake\View\View->_renderElement('/var/www/OranTi...', Array, Array)
+#5 /var/www/OranTicket/src/Template/Element/layouts/header.ctp(24): Cake\View\View->element('layouts/menu')
+#6 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#7 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#8 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(1310): Cake\View\View->_render('/var/www/OranTi...', Array)
+#9 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(484): Cake\View\View->_renderElement('/var/www/OranTi...', Array, Array)
+#10 /var/www/OranTicket/src/Template/Layout/default.ctp(1): Cake\View\View->element('layouts/header')
+#11 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(970): include('/var/www/OranTi...')
+#12 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(930): Cake\View\View->_evaluate('/var/www/OranTi...', Array)
+#13 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(624): Cake\View\View->_render('/var/www/OranTi...')
+#14 /var/www/OranTicket/vendor/cakephp/cakephp/src/View/View.php(583): Cake\View\View->renderLayout('', 'default')
+#15 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(611): Cake\View\View->render('home', NULL)
+#16 /var/www/OranTicket/src/Controller/PagesController.php(47): Cake\Controller\Controller->render('home')
+#17 [internal function]: App\Controller\PagesController->display('home')
+#18 /var/www/OranTicket/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#19 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#20 /var/www/OranTicket/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PagesController))
+#21 /var/www/OranTicket/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#22 {main}
+
+

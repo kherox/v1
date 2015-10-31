@@ -18,7 +18,8 @@
         "cakemanager/cakephp-notifier": "dev-master",
         "cake17/cakephp-recaptcha": "dev-master",
         "kzykhys/ciconia": "~1.0.0",
-        "erusev/parsedown": "dev-master"
+        "erusev/parsedown": "dev-master",
+        "gourmet/whoops": "~1.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",
