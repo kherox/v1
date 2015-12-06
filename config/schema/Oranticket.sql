@@ -20,90 +20,8 @@ SET time_zone = "+00:00";
 -- Base de données :  `oranticket`
 --
 
-CREATE DATABASE IF NOT EXISTS `oranticket` CHARACTER SET utf8 COLLATE utf8mb4;
+CREATE DATABASE IF NOT EXISTS `oranticket` CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `oranticket`;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `comments`
---
-
-CREATE TABLE `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `ticket_id` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `status` enum('solved','not_solved') NOT NULL,
-  `content` tinytext NOT NULL,
-  `modified` datetime NOT NULL,
-  `is_spam` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (user_id) REFERENCES user(id),
-  FOREIGN KEY (ticket_id) REFERENCES ticket(id)
-) ENGINE=InnoDB AUTO_INCREMENT=0;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `messages`
---
-
-CREATE TABLE `messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_expediteur` int(11) NOT NULL,
-  `id_destinataire` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `title` text COLLATE utf8mb4 NOT NULL,
-  `message` text COLLATE utf8mb4 NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tags`
---
-
-CREATE TABLE `tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tickets`
---
-
-CREATE TABLE `tickets` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `subjects` varchar(155) NOT NULL,
-  `content` text NOT NULL,
-  `label` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `comment_count` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (user_id) REFERENCES user(id)
-) ENGINE=InnoDB AUTO_INCREMENT=0;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tickets_tags`
---
-
-CREATE TABLE `tickets_tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ticket_id` int(11) NOT NULL,
-  `tag_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (ticket_id) REFERENCES ticket(id),
-  FOREIGN KEY (tag_id) REFERENCES tag(id)
-) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 -- --------------------------------------------------------
 
@@ -111,7 +29,7 @@ CREATE TABLE `tickets_tags` (
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -130,6 +48,91 @@ CREATE TABLE `users` (
   `last_login` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tickets`
+--
+
+CREATE TABLE IF NOT EXISTS `tickets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subjects` varchar(155) NOT NULL,
+  `content` text NOT NULL,
+  `label` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `comment_count` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `ticket_id` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `status` enum('solved','not_solved') NOT NULL,
+  `content` tinytext NOT NULL,
+  `modified` datetime NOT NULL,
+  `is_spam` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (ticket_id) REFERENCES tickets(id)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_expediteur` int(11) NOT NULL,
+  `id_destinataire` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `title` text COLLATE utf8_general_ci NOT NULL,
+  `message` text COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tags`
+--
+
+CREATE TABLE IF NOT EXISTS `tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tickets_tags`
+--
+
+CREATE TABLE IF NOT EXISTS `tickets_tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ticket_id` int(11) NOT NULL,
+  `tag_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (ticket_id) REFERENCES tickets(id),
+  FOREIGN KEY (tag_id) REFERENCES tags(id)
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
