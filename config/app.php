@@ -158,7 +158,7 @@ return [
             'host' => 'localhost',
             'port' => '',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
             'database' => 'oranticket',
             'encoding' => 'utf8',
             'timezone' => 'UTC',

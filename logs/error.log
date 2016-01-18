@@ -976,3 +976,11 @@ Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHa
 
 
 
+2016-01-10 12:24:21 Error: Fatal Error (4): syntax error, unexpected '?>' in [C:\wamp\www\OranTicket\src\Template\Element\layouts\header.ctp, line 21]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+

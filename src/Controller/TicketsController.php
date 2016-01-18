@@ -43,7 +43,7 @@ class TicketsController extends AppController
         $tickets = $this->Tickets
             ->find()
             ->contain(['Comments'])
-            ->where(['report' => ''])
+            ->where(['report' => 0])
             ->order([
                 'created' => 'desc'
             ]);

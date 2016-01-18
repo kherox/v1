@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="logo grid-2 grid-m-6">
                     <a href="<?= $this->Url->build('/', true); ?>">
-                        <?= $this->Html->image('oranticket.png', ['width' => '190']); ?>
+                        <?= $this->Html->image('logo.png', ['width' => '190', 'alt' => 'Logo OranTicket']); ?>
                     </a>
                 </div>
 
@@ -13,18 +13,18 @@
                             <ul>
                                 <li>
                                     <a href="<?= $this->Url->build('/', true); ?>tickets/">
-                                        <i class="fa fa-ticket"></i>
+                                        <i class="fa fa-ticket"></i> Tickets
                                     </a>
                                 </li>
                                 <?php if(!empty($this->request->session()->read('Auth.User'))): ?>
                                     <li>
                                         <a href="<?= $this->Url->build('/', true); ?>tickets/add">
-                                            <i class="fa fa-plus"></i>
+                                            <i class="fa fa-plus"></i> Ajouter un ticket
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" id="sidebar--trigger" class="sidebar-trigger">
-                                            <i class="fa fa-user"></i>
+                                            <i class="fa fa-user"></i> <?= $this->request->session()->read('Auth.User.username'); ?>
                                         </a>
                                     </li>
                                 <?php else: ?>

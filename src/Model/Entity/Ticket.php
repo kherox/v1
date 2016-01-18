@@ -12,6 +12,6 @@ class Ticket extends Entity
         'subjects' => true,
         'label'    => true,
         'public'   => true,
-        'report'   => true,
+        'report'   => true
     ];
 }
