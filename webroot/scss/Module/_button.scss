@@ -7,6 +7,7 @@
     text-transform: uppercase;
     font-weight: 400;
     color: #fff!important;
+    @include border-radius(5px);
     cursor: pointer;
     outline: none;
 

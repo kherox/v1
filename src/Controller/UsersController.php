@@ -164,9 +164,11 @@ class UsersController extends AppController
      */
     public function profile(){
         $this->loadModel('Tickets');
+        $this->loadModel('Comments');
 
         $user = $this->Auth->user();
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
+        $comments_count = $this->Comments->find('all', ['conditions' => ['Comments.user_id' => $user['id']]])->count();
 
         $this->paginate = [
             'limit' => 5,
@@ -174,8 +176,7 @@ class UsersController extends AppController
         ];
 
         $this->set('tickets', $this->paginate($this->Tickets));
-        $this->set(compact('tickets_count'));
-        $this->set(compact('user'));
+        $this->set(compact(['tickets_count', 'user', 'comments_count']));
     }
 
     /**

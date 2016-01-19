@@ -30,7 +30,7 @@
                                 <?php else: ?>
                                     <li>
                                         <a href="<?= $this->Url->build('/', true); ?>Users/login">
-                                            <i class="fa fa-user"></i>
+                                            <i class="fa fa-user"></i> Se connecter
                                         </a>
                                         <div class="fond" id="notifications">
 

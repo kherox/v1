@@ -1,15 +1,15 @@
 .form{
     width: 100%;
     border: solid 1px #D4D4D4;
+    border-top: 2px solid #D4D4D4;
     padding: 12px;
     outline: none;
-
+    @include border-radius(5px);
     &:focus{
         @include transition(0.4s);
-        border: solid 1px $orange;
+        border-top: 2px solid $orange;
     }
 }
-
 
 .form-color{
     width: 100%;

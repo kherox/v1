@@ -984,3 +984,19 @@ Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHa
 
 
 
+2016-01-19 08:44:44 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\wamp\www\OranTicket\src\Controller\UsersController.php, line 170]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
+2016-01-19 08:52:49 Error: Fatal Error (1): Call to a member function patchEntity() on a non-object in [C:\wamp\www\OranTicket\src\Controller\TicketsController.php, line 328]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+

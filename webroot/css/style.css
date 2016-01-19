@@ -30,12 +30,17 @@ h1, h2, h3, h4, h5 {
 }
 
 /* line 16, ../scss/Base/_base.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 18, ../scss/Base/_base.scss */
 .select-file {
   position: relative;
   margin-top: -40px;
 }
 
-/* line 21, ../scss/Base/_base.scss */
+/* line 23, ../scss/Base/_base.scss */
 .page-title {
   font-size: 16px;
   text-align: center;
@@ -47,7 +52,7 @@ h1, h2, h3, h4, h5 {
   color: #1b1c1d;
 }
 
-/* line 32, ../scss/Base/_base.scss */
+/* line 34, ../scss/Base/_base.scss */
 .main-desc {
   text-align: center;
   font-size: 18px;
@@ -55,17 +60,17 @@ h1, h2, h3, h4, h5 {
   font-weight: 300;
 }
 
-/* line 39, ../scss/Base/_base.scss */
+/* line 41, ../scss/Base/_base.scss */
 body::-webkit-scrollbar {
   width: 8px;
 }
 
-/* line 40, ../scss/Base/_base.scss */
+/* line 42, ../scss/Base/_base.scss */
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-/* line 41, ../scss/Base/_base.scss */
+/* line 43, ../scss/Base/_base.scss */
 body::-webkit-scrollbar-thumb {
   background-color: #FF6814;
 }
@@ -600,11 +605,6 @@ footer p {
 }
 
 /* line 12, ../scss/Layout/_sidebar.scss */
-a:hover {
-  text-decoration: none;
-}
-
-/* line 16, ../scss/Layout/_sidebar.scss */
 .sidebar {
   position: fixed;
   top: 0px;
@@ -616,11 +616,11 @@ a:hover {
   border-left: 3px solid #fff;
   transition: 0.4s;
 }
-/* line 27, ../scss/Layout/_sidebar.scss */
+/* line 23, ../scss/Layout/_sidebar.scss */
 .sidebar.sidebar-animation {
   right: 0 !important;
 }
-/* line 31, ../scss/Layout/_sidebar.scss */
+/* line 27, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-close {
   right: 0;
   position: absolute;
@@ -628,37 +628,37 @@ a:hover {
   font-size: 23px;
   cursor: pointer !important;
 }
-/* line 38, ../scss/Layout/_sidebar.scss */
+/* line 34, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-close a {
   cursor: pointer !important;
 }
-/* line 43, ../scss/Layout/_sidebar.scss */
+/* line 39, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-avatar {
   text-align: center;
   margin-top: 30px;
   color: #FF6814;
 }
-/* line 48, ../scss/Layout/_sidebar.scss */
+/* line 44, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-avatar img {
   border-radius: 50%;
   border: solid 2px #f3f3F3;
   padding: 6px;
 }
-/* line 53, ../scss/Layout/_sidebar.scss */
+/* line 49, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-avatar .sidebar-name {
   text-align: center;
   font-size: 35px;
   font-weight: 200;
 }
-/* line 59, ../scss/Layout/_sidebar.scss */
+/* line 56, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu {
   margin-top: 20px;
 }
-/* line 61, ../scss/Layout/_sidebar.scss */
+/* line 59, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu i {
   color: #FF6814;
 }
-/* line 64, ../scss/Layout/_sidebar.scss */
+/* line 61, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu a {
   text-transform: uppercase;
   display: block;
@@ -667,16 +667,21 @@ a:hover {
   height: 50px;
   color: #CBCBCB;
   line-height: 50px;
-  font-weight: 600;
   text-align: center;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
-/* line 76, ../scss/Layout/_sidebar.scss */
+/* line 73, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-menu a:hover {
+  border-left: solid 4px #E5E5E5;
+  border-right: solid 4px #E5E5E5;
   text-decoration: none;
   background-color: #0C0C0C;
   color: #fff;
 }
-/* line 84, ../scss/Layout/_sidebar.scss */
+/* line 83, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer {
   bottom: 0;
   width: 100%;
@@ -684,11 +689,7 @@ a:hover {
   font-weight: 500;
   text-transform: uppercase;
 }
-/* line 86, ../scss/Layout/_sidebar.scss */
-.sidebar .sidebar-footer .grid-6 {
-  border: solid 2px #888888;
-}
-/* line 94, ../scss/Layout/_sidebar.scss */
+/* line 89, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a {
   background-color: #C51F1F;
   color: white;
@@ -696,20 +697,20 @@ a:hover {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-/* line 100, ../scss/Layout/_sidebar.scss */
+/* line 95, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a i {
   color: #FF6814;
 }
-/* line 103, ../scss/Layout/_sidebar.scss */
+/* line 96, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a a {
   color: #fff;
 }
-/* line 106, ../scss/Layout/_sidebar.scss */
+/* line 97, ../scss/Layout/_sidebar.scss */
 .sidebar .sidebar-footer .a a:hover {
   text-decoration: none !important;
 }
 
-/* line 114, ../scss/Layout/_sidebar.scss */
+/* line 105, ../scss/Layout/_sidebar.scss */
 .circle-new-message {
   margin-top: 13px;
   position: absolute;
@@ -722,16 +723,18 @@ a:hover {
 .form {
   width: 100%;
   border: solid 1px #D4D4D4;
+  border-top: 2px solid #D4D4D4;
   padding: 12px;
   outline: none;
+  border-radius: 5px;
 }
-/* line 7, ../scss/Module/_form.scss */
+/* line 8, ../scss/Module/_form.scss */
 .form:focus {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  border: solid 1px #FF6814;
+  border-top: 2px solid #FF6814;
 }
 
 /* line 14, ../scss/Module/_form.scss */
@@ -799,41 +802,42 @@ a:hover {
   text-transform: uppercase;
   font-weight: 400;
   color: #fff !important;
+  border-radius: 5px;
   cursor: pointer;
   outline: none;
 }
-/* line 13, ../scss/Module/_button.scss */
+/* line 14, ../scss/Module/_button.scss */
 .btn:disabled {
   background: #c8c8c8 !important;
   border: solid 1px #c8c8c8 !important;
   cursor: not-allowed;
 }
-/* line 23, ../scss/Module/_button.scss */
+/* line 24, ../scss/Module/_button.scss */
 .btn.btn-default {
   background-color: #FF6814 !important;
   border: solid 1px #FF6814 !important;
 }
-/* line 28, ../scss/Module/_button.scss */
+/* line 29, ../scss/Module/_button.scss */
 .btn.btn-warning {
   background-color: #F89406 !important;
   border: solid 1px #F89406 !important;
 }
-/* line 33, ../scss/Module/_button.scss */
+/* line 34, ../scss/Module/_button.scss */
 .btn.btn-danger {
   background-color: #D64541 !important;
   border: solid 1px #D64541 !important;
 }
-/* line 38, ../scss/Module/_button.scss */
+/* line 39, ../scss/Module/_button.scss */
 .btn.btn-success {
   background-color: #5cb85c;
   border: solid 1px #5cb85c;
 }
-/* line 43, ../scss/Module/_button.scss */
+/* line 44, ../scss/Module/_button.scss */
 .btn.btn-primary {
   background-color: #2C3E50 !important;
   border: solid 1px #2C3E50 !important;
 }
-/* line 48, ../scss/Module/_button.scss */
+/* line 49, ../scss/Module/_button.scss */
 .btn.btn-info {
   background-color: #52B3D9 !important;
   border: solid 1px #52B3D9 !important;
@@ -842,37 +846,37 @@ a:hover {
 /**
  * SMALL BUTTON
  **/
-/* line 57, ../scss/Module/_button.scss */
+/* line 58, ../scss/Module/_button.scss */
 .btn-small {
   padding: 0px 4px;
   color: #fff;
 }
-/* line 61, ../scss/Module/_button.scss */
+/* line 62, ../scss/Module/_button.scss */
 .btn-small.btn-default {
   background-color: #FF6814 !important;
   border: solid 1px #FF6814 !important;
 }
-/* line 66, ../scss/Module/_button.scss */
+/* line 67, ../scss/Module/_button.scss */
 .btn-small.btn-warning {
   background-color: #F89406 !important;
   border: solid 1px #F89406 !important;
 }
-/* line 71, ../scss/Module/_button.scss */
+/* line 72, ../scss/Module/_button.scss */
 .btn-small.btn-danger {
   background-color: #D64541 !important;
   border: solid 1px #D64541 !important;
 }
-/* line 76, ../scss/Module/_button.scss */
+/* line 77, ../scss/Module/_button.scss */
 .btn-small.btn-success {
   background-color: #5cb85c !important;
   border: solid 1px #5cb85c !important;
 }
-/* line 80, ../scss/Module/_button.scss */
+/* line 81, ../scss/Module/_button.scss */
 .btn-small.btn-primary {
   background-color: #2C3E50 !important;
   border: solid 1px #2C3E50 !important;
 }
-/* line 84, ../scss/Module/_button.scss */
+/* line 85, ../scss/Module/_button.scss */
 .btn-small.btn-info {
   background-color: #52B3D9 !important;
   border: solid 1px #52B3D9 !important;

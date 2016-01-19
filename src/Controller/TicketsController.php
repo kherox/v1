@@ -273,7 +273,6 @@ class TicketsController extends AppController
      */
     public function delete($id = null)
     {
-        //$this->request->allowMethod(['public', 'post', 'delete']);
         $ticket = $this->Tickets->get($id);
 
         if ($this->Tickets->delete($ticket)) {
@@ -328,8 +327,7 @@ class TicketsController extends AppController
             $ticket = $this->Comments->patchEntity($comment, $this->request->data);
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('Votre commentaire a bien été édité'));
-
-                return $this->redirect(['action' => 'index']);
+                $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Votre commentaire n\'a pas pu être édité, veuillez recommencer.'));
             }

@@ -30,9 +30,8 @@
                 <div class="grid-8">
                     <div class="grid-12">
                         <div class="profil-stats">
-
                             <div class="grid-3 grid-m-12">
-                                <h2>4</h2>
+                                <h2><?= $comments_count?></h2>
                                 <span>Commentaires</span>
                             </div>
                             <div class="grid-3 grid-m-12">

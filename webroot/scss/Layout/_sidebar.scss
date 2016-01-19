@@ -8,11 +8,7 @@
         cursor: pointer!important;
     }
 }
-a{
-    &:hover{
-     text-decoration: none;
-    }
-}
+
 .sidebar{
     position: fixed;
     top: 0px;
@@ -56,11 +52,12 @@ a{
             font-weight: 200;
         }
     }
+
     .sidebar-menu{
         margin-top: 20px;
-        i{
-            color: $orange;
-        }
+
+        i{ color: $orange; }
+
         a{
             text-transform: uppercase;
             display: block;
@@ -69,11 +66,13 @@ a{
             height: 50px;
             color: #CBCBCB;
             line-height: 50px;
-            font-weight: 600;
 
             text-align: center;
+            @include transition(0.3s);
 
             &:hover{
+                border-left: solid 4px #E5E5E5;
+                border-right: solid 4px #E5E5E5;
                 text-decoration: none;
                 background-color: #0C0C0C;
                 color: #fff;
@@ -82,10 +81,6 @@ a{
     }
 
     .sidebar-footer{
-
-        .grid-6{
-            border: solid 2px #888888;
-        }
         bottom: 0;
         width: 100%;
         position: absolute;
@@ -97,12 +92,8 @@ a{
             text-align: center;
             padding-top: 12px;
             padding-bottom: 12px;
-            i{
-                color: $orange;
-            }
-            a{
-                color: #fff;
-
+            i{ color: $orange; }
+            a{ color: #fff;
                 &:hover{
                     text-decoration: none!important;
                 }
