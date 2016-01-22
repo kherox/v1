@@ -29,12 +29,15 @@
                                     </li>
                                 <?php else: ?>
                                     <li>
-                                        <a href="<?= $this->Url->build('/', true); ?>Users/login">
+                                        <a href="<?= $this->Url->build('/', true); ?>connexion">
                                             <i class="fa fa-user"></i> Se connecter
                                         </a>
-                                        <div class="fond" id="notifications">
+                                    </li>
 
-                                        </div>
+                                    <li>
+                                        <a href="<?= $this->Url->build('/', true); ?>inscription">
+                                            <i class="fa fa-user-plus"></i> S'inscrire
+                                        </a>
                                     </li>
                                 <?php endif; ?>
                             </ul>

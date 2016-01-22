@@ -22,7 +22,7 @@ Router::scope('/', function ($routes) {
     $routes->connect('/pages/*',['controller' => 'Pages','action' => 'display']);
 
     // Connexion
-    $routes->connect('/login',['controller' => 'Users','action' => 'login']);
+    $routes->connect('/connexion',['controller' => 'Users','action' => 'login']);
 
     // Récupération mot de passe
     $routes->connect(
@@ -31,13 +31,13 @@ Router::scope('/', function ($routes) {
     );
 
     // Inscription
-    $routes->connect('/register',['controller' => 'Users','action' => 'add']);
+    $routes->connect('/inscription',['controller' => 'Users','action' => 'add']);
 
     // Profil
     $routes->connect('/profil',['controller' => 'Users','action' => 'profile']);
 
     // Déconnexion
-    $routes->connect('/logout',['controller' => 'Users','action' => 'logout']);
+    $routes->connect('/deconnexion',['controller' => 'Users','action' => 'logout']);
 
     // Administration
     $routes->fallbacks('InflectedRoute');
