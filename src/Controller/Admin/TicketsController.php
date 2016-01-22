@@ -14,4 +14,5 @@ class TicketsController extends AppController
 
         $this->set(compact('tickets', 'ticketss'));;
     }
+
 }

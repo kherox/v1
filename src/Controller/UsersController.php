@@ -141,11 +141,11 @@ class UsersController extends AppController
          }
 
          if ($this->request->is('post')) {
-             if ($this->Recaptcha->verify()) {
+             if ($this->Recaptcha->verify() || \Cake\Core\Configure::read('Site.debug') == false) {
                  $user = $this->Users->patchEntity($user, $this->request->data);
 
                  if ($this->Users->save($user)) {
-                     $this->Flash->success(__('Votre compte à bien était créé.'));
+                     $this->Flash->success(__('Votre compte à bien été créé.'));
 
                      return $this->redirect(['action' => 'index']);
                  } else {

@@ -2063,69 +2063,39 @@ blockquote {
 
 /* line 1, ../scss/Pages/_users.scss */
 .users {
-  list-style: none;
-  padding-left: 0;
+  margin-top: 40px;
 }
-/* line 5, ../scss/Pages/_users.scss */
-.users li {
-  list-style-type: none;
-}
-/* line 9, ../scss/Pages/_users.scss */
+/* line 3, ../scss/Pages/_users.scss */
 .users .user {
-  border: 1px solid #cecece;
-  padding: 8px 30px 10px;
-  margin: 20px 20px 20px;
-  height: 250px;
-  width: 250px;
-}
-/* line 16, ../scss/Pages/_users.scss */
-.users .user .user-stats {
-  text-align: center;
-  margin-top: -20px;
-}
-/* line 20, ../scss/Pages/_users.scss */
-.users .user .user-stats .user-stats-info .fa {
-  color: #FF6814;
-}
-/* line 24, ../scss/Pages/_users.scss */
-.users .user .user-stats a {
-  text-decoration: none;
-  font-size: 19px;
-  font-weight: 600;
-}
-/* line 28, ../scss/Pages/_users.scss */
-.users .user .user-stats a:hover {
+  border: 2px solid #D9D9D9;
+  border-top: 4px solid #D9D9D9;
+  padding: 10px;
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #808080;
+  border-radius: 15px;
 }
-/* line 34, ../scss/Pages/_users.scss */
-.users .user .avatar {
-  text-align: center;
-  width: auto;
+/* line 10, ../scss/Pages/_users.scss */
+.users .user .avatar img {
+  border-radius: 50%;
+}
+/* line 13, ../scss/Pages/_users.scss */
+.users .user .name {
+  margin-top: 10px;
+}
+/* line 15, ../scss/Pages/_users.scss */
+.users .user .name a, .users .user .name span {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+}
+/* line 23, ../scss/Pages/_users.scss */
+.users .user:hover {
+  border-top: 4px solid #FF6814;
 }
 
-@media (max-width: 720px) {
-  /* line 42, ../scss/Pages/_users.scss */
-  .users .user {
-    height: 145px;
-  }
-  /* line 45, ../scss/Pages/_users.scss */
-  .users .avatar img {
-    width: 105px;
-    margin-left: -27px;
-  }
-}
-@media (max-width: 600px) {
-  /* line 53, ../scss/Pages/_users.scss */
-  .users .user {
-    padding: 8px 20px 10px;
-    width: 415px;
-    height: 145px;
-  }
-}
 /* line 1, ../scss/Pages/_tickets.scss */
 .tickets {
   list-style: none;

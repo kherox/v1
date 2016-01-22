@@ -43,4 +43,8 @@ class AppView extends View
         return $date;
     }
 
+    function config($name){
+        return \Cake\Core\Configure::read($name);
+    }
+
 }

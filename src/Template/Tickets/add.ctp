@@ -26,14 +26,16 @@
                     ]
                 ); ?>
             </div>
+            <?php if($this->config('Site.debug') == true): ?>
+                <div class="grid-1">
+                    <h2>Captcha</h2>
+                </div>
 
-            <div class="grid-1">
-                <h2>Captcha</h2>
-            </div>
-            <div class="grid-11">
-                <?= $this->Recaptcha->display() ?>
-                <div class="g-recaptcha" data-sitekey="6LdEgg4TAAAAAJ6Mdo3X49Bp9QT6dO4aYTmN3XVS"></div>
-            </div>
+                <div class="grid-11">
+                    <?= $this->Recaptcha->display() ?>
+                    <div class="g-recaptcha" data-sitekey="6LdEgg4TAAAAAJ6Mdo3X49Bp9QT6dO4aYTmN3XVS"></div>
+                </div>
+            <?php endif; ?>
 
             <div class="grid-1">
                 <h2>Privé?</h2>

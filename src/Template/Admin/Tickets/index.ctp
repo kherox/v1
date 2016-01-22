@@ -3,6 +3,7 @@
     <span class="label label-primary"><?= $ticketss ?></span>
 </div>
 
+<!-- TABLE LIST TICKETS -->
 <div class="box-body table-responsive no-padding">
     <table class="table table-hover">
         <tbody>
@@ -42,8 +43,8 @@
 
                     <a
                         class="btn-small btn-warning"
-                        target="_blank"
                         style="padding: 3px 8px;margin-right: 3px;"
+                        target="_blank"
                         href="
                             <?= $this->Url->build('/', true); ?>Tickets/edit/<?= $ticket->id ?>
                         ">
