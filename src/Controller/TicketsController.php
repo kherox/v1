@@ -115,7 +115,7 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
-            if ($this->Recaptcha->verify()) {
+            if ($this->Recaptcha->verify() || \Cake\Core\Configure::read('Site.debug') == false) {
                 $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
                 $ticket->public  = $this->request->data(['public']);
                 $ticket->user_id = $user['id'];

@@ -509,18 +509,22 @@ img.scale, img.responsive {
   list-style: none;
   display: inline-block;
 }
-/* line 18, ../scss/Layout/_header.scss */
+/* line 19, ../scss/Layout/_header.scss */
 .menu nav li a {
   text-decoration: none;
   color: #808080;
   border: solid 2px transparent;
   padding: 10px 15px 10px 15px;
 }
-/* line 24, ../scss/Layout/_header.scss */
+/* line 25, ../scss/Layout/_header.scss */
+.menu nav li a .connect {
+  color: #FF6814;
+}
+/* line 28, ../scss/Layout/_header.scss */
 .menu nav li a:hover {
   color: #4D5D5D;
 }
-/* line 28, ../scss/Layout/_header.scss */
+/* line 32, ../scss/Layout/_header.scss */
 .menu nav li a:hover i {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -530,25 +534,25 @@ img.scale, img.responsive {
 }
 
 @media (max-width: 500px) {
-  /* line 40, ../scss/Layout/_header.scss */
+  /* line 44, ../scss/Layout/_header.scss */
   .menu .logo {
     width: 100%;
     text-align: center;
   }
-  /* line 44, ../scss/Layout/_header.scss */
+  /* line 48, ../scss/Layout/_header.scss */
   .menu .nav-center, .menu .right {
     width: 100% !important;
     text-align: center !important;
   }
-  /* line 48, ../scss/Layout/_header.scss */
+  /* line 52, ../scss/Layout/_header.scss */
   .menu nav {
     margin-top: -20px;
   }
-  /* line 52, ../scss/Layout/_header.scss */
+  /* line 56, ../scss/Layout/_header.scss */
   .menu nav li a {
     border: none;
   }
-  /* line 54, ../scss/Layout/_header.scss */
+  /* line 58, ../scss/Layout/_header.scss */
   .menu nav li a:hover {
     border: none;
     -moz-transition: 0.4s;

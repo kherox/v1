@@ -15,12 +15,16 @@
             list-style: none;
             display: inline-block;
 
+
             a{
                 text-decoration: none;
                 color: #808080;
                 border: solid 2px transparent;
                 padding: 10px 15px 10px 15px;
 
+                .connect{
+                    color: $orange;
+                }
                 &:hover{
                     //@include transition(0.8s);
                     color: #4D5D5D;
