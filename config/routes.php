@@ -24,12 +24,6 @@ Router::scope('/', function ($routes) {
     // Connexion
     $routes->connect('/connexion',['controller' => 'Users','action' => 'login']);
 
-    // Récupération mot de passe
-    $routes->connect(
-        '/users/reset_password/:code.:id',['controller' => 'Users','action' => 'reset_password'],
-        ['_name' => 'users-resetpassword','pass' => ['id','code'],'id' => '[0-9]+']
-    );
-
     // Inscription
     $routes->connect('/inscription',['controller' => 'Users','action' => 'add']);
 
@@ -38,6 +32,12 @@ Router::scope('/', function ($routes) {
 
     // Déconnexion
     $routes->connect('/deconnexion',['controller' => 'Users','action' => 'logout']);
+
+    // Récupération mot de passe
+    $routes->connect(
+        '/users/reset_password/:code.:id',['controller' => 'Users','action' => 'reset_password'],
+        ['_name' => 'users-resetpassword','pass' => ['id','code'],'id' => '[0-9]+']
+    );
 
     // Administration
     $routes->fallbacks('InflectedRoute');

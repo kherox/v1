@@ -1,13 +1,13 @@
 <header>
         <div class="menu" style="background:<?= $this->request->session()->read('SiteWeb.background_menu') ?>!important">
             <div class="container">
-                <div class="logo grid-2 grid-m-6">
+                <div class="logo grid-2 grid-m-3">
                     <a href="<?= $this->Url->build('/', true); ?>">
                         <?= $this->Html->image('logo.png', ['width' => '190', 'alt' => 'Logo OranTicket']); ?>
                     </a>
                 </div>
 
-                <div class="nav-center grid-10 grid-m-6">
+                <div class="nav-center grid-10 grid-m-9">
                     <div class="right">
                         <nav>
                             <ul>

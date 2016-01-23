@@ -18,7 +18,7 @@
                 margin-top: 10px;
                 color: $orange;
                 position: absolute;
-                margin-left: 17em;
+                //margin-left: 17em;
 
                 &:hover{
                     color: #42bd41;
@@ -35,6 +35,10 @@
             font-size: 23px;
             color: #5D5D5D;
             margin-left: 15px;
+        }
+
+        img{
+            @include border-radius(50%);
         }
     }
     .post-content{
