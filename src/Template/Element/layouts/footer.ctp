@@ -22,7 +22,7 @@
     // LIB
     $this->Html->script([
         'src/jquery.js',
-        'https://cdn.socket.io/socket.io-1.4.3.js'
+        'https://cdn.socket.io/socket.io-1.4.3.js',
         'https://www.google.com/recaptcha/api.js',
         'https://cdn.socket.io/socket.io-1.3.7.js',
         'src/markdown-library.js',

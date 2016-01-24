@@ -1008,3 +1008,11 @@ Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHa
 
 
 
+2016-01-24 22:28:45 Error: Fatal Error (4): syntax error, unexpected ''https://www.google.com/recapt' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [C:\wamp\www\OranTicket\src\Template\Element\layouts\footer.ctp, line 26]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+
