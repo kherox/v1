@@ -20,7 +20,7 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body style="background:<?= h($this->request->session()->read('SiteWeb.background_body')) ?>!important">
+<body style="<?php ""// h($this->request->session()->read('SiteWeb.background_body')) ?>">
     <?= $this->element('layouts/menu'); ?>
     <?= ""// $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
     <?= $this->element('layouts/sidebar'); ?>

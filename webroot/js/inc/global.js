@@ -11,5 +11,5 @@ $("#flash-message").on('click', '.close', function() {
 // REPORT
 $("#group_report").hide().fadeOut(250);
 $("#report_btn").on('click', function(){
-    $("#group_report").show().fadeIn(250);
+    $("#group_report").show("slow").fadeIn(250);
 });

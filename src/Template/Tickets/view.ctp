@@ -66,13 +66,25 @@
 				if($ticket->user_id == $this->request->session()->read('Auth.User.id') ||
 					$this->request->session()->read('Auth.User.role') == 'admin'):
 					?>
-					<div class="right">
-						<?= $this->Html->link(__('Éditer'), ['controller' => 'Tickets', 'action' => 'edit', $ticket->id],
-							['class' => 'btn btn-warning']) ?>
+					<div class="right" style="margin-top: 20px;">
+						<?=
+						$this->Html->link(__('Éditer'), [
+							'controller' => 'Tickets',
+							'action' => 'edit',
+							$ticket->id
+						],[
+							'class' => 'btn btn-warning'
+						]); ?>
 
-						<?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Tickets', 'action' => 'delete',
-							$ticket->id], ['class' => 'btn btn-danger', 'confirm' => __('Voulez vous vraiment supprimer ce
-						ticket? '. "\n" . $ticket->subjects)]) ?>
+						<?=
+						$this->Form->postLink(__('Supprimer'), [
+							'controller' => 'Tickets',
+							'action' => 'delete',
+							$ticket->id
+						], [
+							'class' => 'btn btn-danger',
+							'confirm' => __('Voulez vous vraiment supprimer ce ticket? '. "\n" . $ticket->subjects)
+						]); ?>
 
 						<a href="#" id="report_btn" class="btn btn-danger">Signaler</a>
 					</div>
@@ -92,11 +104,17 @@
 							'class'      => 'form',
 							'label'      => false,
 							'rows'       => '6',
-							'placeholder'=> 'Votre message...'
+							'placeholder'=> 'Pourquoi signalez-vous ce ticket?'
 						]
 					); ?>
 				</div>
-				<?= $this->Form->button(__('Signaler'), ['class' => 'btn btn-success sendButton', 'id' => 'sendButton', 'onClick' => 'post_comment()']) ?>
+
+				<?=
+                $this->Form->button(__('Signaler'), [
+                    'class' => 'btn btn-success sendButton',
+                    'id' => 'sendButton',
+                    'onClick' => 'post_comment()'
+                ]) ?>
 				<?= $this->Form->end(); ?>
 			</div>
 

@@ -83,11 +83,16 @@
                         'spellcheck' => 'false',
                         'label'      => false,
                         'rows'       => '6',
-                        'placeholder'=> 'Votre message...'
+                        'placeholder'=> 'Votre message...',
+                        'style' => 'margin-bottom: 5px'
                     ]
                 ); ?>
             </div>
-            <?= $this->Form->button(__('Ajouter le commentaire'), ['class' => 'btn btn-success sendButton', 'id' => 'sendButton', 'onClick' => 'post_comment()']) ?>
+            <?= $this->Form->button(__('Ajouter le commentaire'), [
+                'class' => 'btn btn-success sendButton',
+                'id' => 'sendButton',
+                'onClick' => 'post_comment()'
+            ]) ?>
         <?= $this->Form->end(); ?>
 
     <?php }else{ ?>

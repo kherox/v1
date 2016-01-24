@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -77,7 +76,7 @@ class AppController extends Controller
         // Si mon role et égal à Admin, je return true
         if (isset($user['role']) && $user['role'] === 'admin')
             return true;
-        
+
         return false;
     }
 }
