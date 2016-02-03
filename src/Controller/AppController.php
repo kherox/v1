@@ -11,30 +11,31 @@ class AppController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Flash');
+
         $this->loadComponent('Auth', [
             'authError' => 'Vous devez être connecter pour allez sur cette page.',
 
             'loginRedirect' => [
                 'controller' => 'users',
-                'action' => 'index',
-                'prefix' => false
+                'action'     => 'index',
+                'prefix'     => false
             ],
 
             'unauthorizeRedirect' => [
                 'controller' => 'pages',
-                'action' => 'index',
-                'prefix' => false
+                'action'     => 'index',
+                'prefix'     => false
             ],
 
             'loginAction' => [
                 'controller' => 'users',
-                'action' => 'login',
-                'prefix' => false
+                'action'     => 'login',
+                'prefix'     => false
             ],
 
             'logoutRedirect' => [
                 'controller' => 'pages',
-                'action' => 'index'
+                'action'     => 'index'
             ]
         ]);
     }
@@ -57,14 +58,12 @@ class AppController extends Controller
             $prefix = explode('/', $this->request->params['prefix'])[0];
 
             if($prefix == 'admin'){
-                // Si le role est vide, je rend une erreur
                 if($this->request->session()->read('Auth.User.role') == 'admin') {
                     // Je change mon layout, en utilisant Admin
                     $this->viewBuilder()->layout('admin');
                 }else{
-                    // Je reste sur la même page
+                    // Je reste sur la même page et j'affiche une erreur
                     $this->redirect($this->referer());
-                    // J'envoie une erreur
                     $this->Flash->error('Vous ne pouvez pas accédez à cette page');
                 }
             }
@@ -73,10 +72,8 @@ class AppController extends Controller
 
     public function isAuthorized($user)
     {
-        // Si mon role et égal à Admin, je return true
         if (isset($user['role']) && $user['role'] === 'admin')
             return true;
-
         return false;
     }
 }

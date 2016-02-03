@@ -26,17 +26,9 @@ class PagesController extends AppController
         $page = $subpage = null;
 
 
-        if (!$count) {
-            return $this->redirect('/');
-        }
-
-        if (!empty($path[0])) {
-            $page = $path[0];
-        }
-
-        if (!empty($path[1])) {
-            $subpage = $path[1];
-        }
+        if (!$count) { return $this->redirect('/'); }
+        if (!empty($path[0])) { $page = $path[0]; }
+        if (!empty($path[1])) { $subpage = $path[1]; }
 
         $this->set(compact('Users', 'user', 'Tickets', 'page', 'subpage'));
         $this->set('tickets', $this->paginate($this->Tickets));
