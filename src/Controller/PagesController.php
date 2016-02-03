@@ -16,7 +16,7 @@ class PagesController extends AppController
         $this->loadModel('Users');
         $this->loadModel('Tickets');
 
-        // COUNT
+        // Nombre d'utilisateurs & tickets
         $Users = $this->Users->find('all')->count();
         $Tickets = $this->Tickets->find('all')->count();
 
@@ -39,16 +39,13 @@ class PagesController extends AppController
         }
 
         $this->set(compact('Users', 'user', 'Tickets', 'page', 'subpage'));
-
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set('_serialize', ['tickets']);
 
         try {
             $this->render(implode('/', $path));
         } catch (MissingTemplateException $e) {
-            if (Configure::read('debug')) {
-                throw $e;
-            }
+            if (Configure::read('debug')) {  throw $e; }
             throw new NotFoundException();
         }
     }
