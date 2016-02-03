@@ -22,6 +22,7 @@ class TicketsController extends AppController
     public function initialize()
     {
         parent::initialize();
+
         $this->loadComponent('Recaptcha.Recaptcha');
         $this->loadComponent('Paginator');
     }
@@ -32,10 +33,11 @@ class TicketsController extends AppController
     public function index()
     {
         $this->loadModel('Tickets');
-
         $u = $this->loadModel('Users');
+
         $users = $u->find('all');
         $user = $this->Auth->user();
+
         $this->paginate = [
             'maxLimit' =>  Configure::read('Paginate.Ticket.indexTickets')
         ];
@@ -43,11 +45,13 @@ class TicketsController extends AppController
         $tickets = $this->Tickets
             ->find()
             ->contain(['Comments'])
+            // Je n'affiche pas les tickets signalé
             ->where(['report' => 0])
             ->order([
                 'created' => 'desc'
             ]);
 
+        // J'affiche les tickets booleen 0 aux admin seulement
         if(!@$user->role == 'admin'){
            $tickets->where(['public' => 0]);
         }
@@ -64,11 +68,11 @@ class TicketsController extends AppController
      **/
     public function view($id = null)
     {
-
-
         $u = $this->loadModel('Users');
+
         $users = $u->find('all');
         $user = $this->Auth->user();
+
         $ticket = $this->Tickets->get($id, [
             'contain' => ['Users', 'Comments'],
             'conditions' => [
@@ -76,16 +80,16 @@ class TicketsController extends AppController
             ]
         ]);
 
-        // EMOJIONE
+        // Emojione
         $client = new Client(new Ruleset());
         $client->imageType = 'svg';
 
-        // MARKDOWN
+        // Markdown
         $Parsedown = new Parsedown();
         $Parsedown->setMarkupEscaped(true);
         $html = $Parsedown->text($ticket->content);
 
-        // AJOUT D'UN COMMENTAIRE
+        // Ajout d'un commentaire
         if ($this->request->is('post')) {
             $this->request->data['ticket_id'] = $id;
             $this->request->data['user_id'] = $user['id'];
@@ -94,14 +98,14 @@ class TicketsController extends AppController
             $comment = $this->Tickets->Comments->patchEntity($comment, $this->request->data);
 
             if ($this->Tickets->Comments->save($comment)) {
-                $this->Flash->success(__('Votre commentaire à bien était sauvegarder.'));
+                $this->Flash->success(__('Votre commentaire a bien était sauvegarder.'));
             } else {
                 $this->Flash->error(__('Votre commentaire n\'a pas plus être sauvegarder, veuillez recommencer.'));
             }
+
             return $this->redirect($this->referer());
         }
 
-        // VARIABLES
         $this->set(compact('users', 'tickets', 'client', 'html', 'ticket', 'Parsedown'));
         $this->set('_serialize', ['ticket']);
     }
@@ -126,12 +130,14 @@ class TicketsController extends AppController
                     'content' => nl2br($ticket->content)
                 ];
 
-                // SAUVEGARDE TICKET
+                // Ajout d'un ticket
                 if ($this->Tickets->save($ticket)) {
                     $email = new Email();
 
                     if($this->request->data(['mail']) == true){
-                        $email->profile('default')
+                        // Recevoir une copie du ticket par mail.
+                        $email
+                            ->profile('default')
                             ->template('ticket', 'default')
                             ->emailFormat('html')
                             ->from(['contact@oranticket.fr' => 'Copie Ticket'])
@@ -141,10 +147,10 @@ class TicketsController extends AppController
                             ->send();
                     }
 
-                    $this->Flash->success(__('Votre ticket à bien était sauvegarder.'));
+                    $this->Flash->success(__('Votre ticket à bien était ajouté.'));
                     return $this->redirect(['action' => 'index']);
                 } else {
-                    $this->Flash->error(__('Votre ticket n\'a pas plus être sauvegarder, veuillez recommencer.'));
+                    $this->Flash->error(__('Votre ticket n\'a pas plus être ajouté, veuillez recommencer.'));
                 }
             } else {
                 $this->Flash->error('Veuillez valider le Recaptcha');
@@ -203,11 +209,13 @@ class TicketsController extends AppController
             ->order([
                 'created' => 'desc'
             ]);
-        $ticketss = $this->Tickets->find('all')->where(['Tickets.user_id' => $user['id']])->count();
+
+        // Nombre de ticket de l'utilisateur
+        $ticketsUser = $this->Tickets->find('all')->where(['Tickets.user_id' => $user['id']])->count();
 
         $tickets = $this->paginate($tickets);
 
-        $this->set(compact('tickets', 'ticketss', 'user'));
+        $this->set(compact('tickets', 'ticketsUser', 'user'));
     }
 
     /**
@@ -290,6 +298,7 @@ class TicketsController extends AppController
     public function deleteComment($id = null)
     {
         $this->loadModel('Comments');
+
         $this->request->allowMethod(['post', 'delete']);
         $comment = $this->Comments->get($id);
 
@@ -305,11 +314,13 @@ class TicketsController extends AppController
     /**
      * Édition d'un commentaire
      */
-    public function editComment($id = null){
+    public function editComment($id = null)
+    {
         $this->loadModel('Comments');
 
         $users = $this->Comments->Users->find('list', ['limit' => 200]);
 
+        // Si je suis admin, j'ai l'autorisation
         if($this->request->session()->read('Auth.User.role') == 'admin'){
             $comment = $this->Comments->get($id, [
                 'contain' => ['Users']

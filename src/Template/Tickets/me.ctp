@@ -1,5 +1,5 @@
 <h1 class="page-title">
-    Mes tickets<span class="label label-info"><?= $ticketss ?></span>
+    Mes tickets<span class="label label-info"><?= $ticketsUser ?></span>
 </h1>
 
 <div class="container">
