@@ -16,6 +16,8 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
+
+        // J'autorise aux utilisateurs non inscrit à accédez à c'est pages.
         $this->Auth->allow(['login', 'add', 'logout']);
     }
 
@@ -35,13 +37,12 @@ class UsersController extends AppController
         $this->loadModel('Tickets');
 
         $user = $this->Auth->user();
-        $tickets_count = $this->Tickets
-            ->find('all', [
+        $tickets_count =
+            $this->Tickets->find('all', [
                 'conditions' => [
                     'Tickets.user_id' => $user['id']
                 ]
-            ])
-            ->count();
+            ])->count();
 
         $users = $this->Users
             ->find('all')
@@ -54,6 +55,7 @@ class UsersController extends AppController
         $this->set(compact('tickets_count'));
         $this->set('_serialize', ['users']);
     }
+
     /**
      * Connexion
      */
@@ -61,19 +63,23 @@ class UsersController extends AppController
     {
         $userLogin = $this->Auth->identify();
 
+        // Si l'utilisateur est déjà connecté
         if($this->Auth->user()){
             $this->Flash->error(__('Vous êtes déjà connecté'));
             return $this->redirect(['action' => 'profile']);
         }
 
         if ($userLogin) {
+            // Si l'utilisateur n'a pas supprimé sont compte
             if(!$userLogin['is_deleted'] == true){
                 $this->Auth->setUser($userLogin);
 
                 $user = $this->Users->newEntity($userLogin);
+
                 $user->isNew(false);
                 $user->last_login = new Time();
                 $user->last_ip    = $this->request->clientIp();
+
                 $session = $this->request->session();
                 $url = $this->Auth->redirectUrl();
 
@@ -99,22 +105,23 @@ class UsersController extends AppController
         $this->loadModel('Comments');
 
         $user = $this->Auth->user();
-        $user = $this->Users->get($id, [
-            'contain' => ['Tickets']
-        ]);
-        $tickets_count = $this->Tickets->find('all', [
-            'conditions' => [
-                'Tickets.user_id' => $user['id']
-            ]
-        ])
-        ->count();
+        $user = $this->Users->get($id, ['contain' => ['Tickets']]);
 
-        $comments_count = $this->Comments->find('all', [
-            'conditions' => [
-                'Comments.user_id' => $user['id']
-            ]
-        ])
-        ->count();
+        // Nombre de ticket de l'utilisateur
+        $tickets_count =
+            $this->Tickets->find('all', [
+                'conditions' => [
+                    'Tickets.user_id' => $user['id']
+                ]
+            ])->count();
+
+        // Nombre de commentaire de l'utilisateur
+        $comments_count =
+            $this->Comments->find('all', [
+                'conditions' => [
+                    'Comments.user_id' => $user['id']
+                ]
+            ])->count();
 
         $this->paginate = [
             'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
@@ -129,36 +136,38 @@ class UsersController extends AppController
     /**
      * Ajouter un compte
      **/
-     public function add()
-     {
-         $user = $this->Users->newEntity();
-         $user->last_login = new Time();
-         $user->last_ip = $this->request->clientIp();
+    public function add()
+    {
+       $user = $this->Users->newEntity();
 
-         if ($this->Auth->user()) {
-             $this->Flash->error(__('Vous êtes déjà connecté'));
-             return $this->redirect(['action' => 'profile']);
-         }
+       $user->last_login = new Time();
+       $user->last_ip = $this->request->clientIp();
 
-         if ($this->request->is('post')) {
-             if ($this->Recaptcha->verify() || \Cake\Core\Configure::read('Site.debug') == false) {
-                 $user = $this->Users->patchEntity($user, $this->request->data);
+       // Si l'utilisateur est déjà connecté
+       if ($this->Auth->user()) {
+           $this->Flash->error(__('Vous êtes déjà connecté'));
+           return $this->redirect(['action' => 'profile']);
+       }
 
-                 if ($this->Users->save($user)) {
-                     $this->Flash->success(__('Votre compte à bien été créé.'));
+       if ($this->request->is('post')) {
+           if ($this->Recaptcha->verify() || \Cake\Core\Configure::read('Site.debug') == false) {
+               $user = $this->Users->patchEntity($user, $this->request->data);
 
-                     return $this->redirect(['action' => 'index']);
-                 } else {
-                     $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
-                 }
-             } else {
-                 $this->Flash->error('Veuillez valider le Recaptcha');
-             }
-         }
+               if ($this->Users->save($user)) {
+                   $this->Flash->success(__('Votre compte à bien été créé.'));
 
-         $this->set(compact('user'));
-         $this->set('_serialize', ['user']);
-     }
+                   return $this->redirect(['action' => 'index']);
+               } else {
+                   $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
+               }
+           } else {
+               $this->Flash->error('Veuillez valider le Recaptcha');
+           }
+       }
+
+       $this->set(compact('user'));
+       $this->set('_serialize', ['user']);
+   }
     /**
      * Mon profile
      */
@@ -167,6 +176,7 @@ class UsersController extends AppController
         $this->loadModel('Comments');
 
         $user = $this->Auth->user();
+        // Nombre de ticket, commentaire d'un utilisateur
         $tickets_count = $this->Tickets->find('all', ['conditions' => ['Tickets.user_id' => $user['id']]])->count();
         $comments_count = $this->Comments->find('all', ['conditions' => ['Comments.user_id' => $user['id']]])->count();
 
@@ -192,10 +202,9 @@ class UsersController extends AppController
             $user->background_body  = $this->request->data(['background_body']);
             $user->background_menu  = $this->request->data(['background_menu']);
 
-            /*
-             * Session
-             */
+            // Session
             $session = $this->request->session();
+
             $session->write('SiteWeb.background_body', $user->background_body);
             $session->write('SiteWeb.background_menu', $user->background_menu);
 
@@ -217,6 +226,7 @@ class UsersController extends AppController
     public function delete($id = null)
     {
         $user = $this->Users->get($id);
+
         $user->is_deleted = true;
 
         if($this->Users->save($user)){
@@ -267,24 +277,24 @@ class UsersController extends AppController
                 $this->redirect(['controller' => 'pages', 'action' => 'home']);
             }
 
+            // Génération d'un code
             $code = md5(rand() . uniqid());
 
             $user->password_code = $code;
             $user->password_code_expire = new Time();
 
             $this->Users->save($user);
-
+            // Les variables qui vont ce retrouver dans la vu
             $viewVars = [
                 'userID' => $user->id,
                 'name' => $user->username,
                 'code' => $code
             ];
 
-            /*
-             * EMAIL
-             */
+            // Email
             $email = new Email();
-            $email->profile('default')
+            $email
+                ->profile('default')
                 ->template('forgotPassword', 'default')
                 ->emailFormat('html')
                 ->from(['contact@oranticket.fr' => 'Mot de passe oublié'])
@@ -309,12 +319,12 @@ class UsersController extends AppController
         }
 
         $user = $this->Users
-            ->find()
-            ->where([
-                'Users.password_code' => $this->request->code,
-                'Users.id' => $this->request->id
+        ->find()
+        ->where([
+            'Users.password_code' => $this->request->code,
+            'Users.id' => $this->request->id
             ])
-            ->first();
+        ->first();
 
         $expire = $user->password_code_expire->timestamp + (Configure::read('Settings.User.ResetPassword.expire_code') * 60);
 
@@ -330,6 +340,7 @@ class UsersController extends AppController
 
         if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->data);
+
             if ($this->Users->save($user)) {
                 $this->Flash->success('Votre mot de passe à bien été modifié');
 
