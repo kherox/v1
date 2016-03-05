@@ -26,19 +26,19 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
 - composer
 
 ### Via Github
-- Télécharger le fichier zip : [OranTicket](https://github.com/OranTicket/Site-Web/archive/master.zip)
+- Télécharger le fichier zip : [Ticki](https://github.com/Gynidark/Ticki/archive/master.zip)
 - Extraire le contenu et lancer ``` composer install```
 
 ### Via Packagist
-- ```composer create-project --prefer-dist gynidark/oranticket```
+- ```composer create-project --prefer-dist gynidark/ticki```
 
 ### Configuration
-- Les variables de configurations se trouve dans le fichier ```config/oranticket.php```
+- Les variables de configurations se trouve dans le fichier ```config/ticki.php```
 - Pour configuer l'accès à la base de données : ```config/app.php```
 - Afin de configurer la base de données vous pouvez :
-    - Importer le schéma se trouvant dans ```config/schema/oranticket.sql```
+    - Importer le schéma se trouvant dans ```config/schema/ticki.sql```
     - **OU**
-    - Créer une base de données **oranticket**, et dans une invite de commande lancer ```bin/cake migrations migrate```
+    - Créer une base de données **ticki**, et dans une invite de commande lancer ```bin/cake migrations migrate```
 
 ## Connexion
 - Compte **administrateur** : ```admin``` et le mot de passe ```admin```
