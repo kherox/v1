@@ -1,19 +1,23 @@
-![Logo](https://sc-cdn.scaleengine.net/i/16fdf0408cb5ac329f672d0671bc1e0a.png)
 
-[![Github Issues](http://githubbadges.herokuapp.com/OranTicket/Site-Web/issues.svg?style=flat-square)](https://github.com/OranTicket/Site-Web/issues)
+
+[![Github Issues](http://githubbadges.herokuapp.com/Ticki/Site-Web/issues.svg?style=flat-square)](https://github.com/Gynidark/Ticki/issues)
 [!['License'](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](http://gynidark.github.io/)
 [![CakePHP 3](https://img.shields.io/badge/CakePHP 3-%E2%99%A5-44CB12.svg?style=flat-square)](http://cakephp.org)
 [!['By'](https://img.shields.io/badge/By-Gynidark-blue.svg?style=flat-square)](http://gynidark.github.io/)
-[![Total Downloads](https://img.shields.io/packagist/dt/gynidark/oranticket.svg?style=flat-square)](https://packagist.org/packages/gynidark/oranticket)
-[![Gitter Chat](https://img.shields.io/badge/Gitter-Join%20Chat-red.svg?style=flat-square)](https://gitter.im/OranTicket)
 
-**OranTicket** est fait pour vous, il vous permetera de créer des tickets.
+**Ticki** est un projet **CakePHP** afin d'aider les débutants avec ce framework **PHP**.
 
-![screen](https://sc-cdn.scaleengine.net/i/be60441224e66362b5b117e3262a249f.png)
+Poster un ticket et des personnes y répondrons.
 
-Dès que vous rencontré un souci, poster un ticket et des personnes y répondrons. Sur **OranTicket** il y aura un système de permission, des administrateurs, modérateurs et membre. Les Administrateurs pourront **supprimer**/**éditer** et **fermer** des tickets et les modérateur pourrons **supprimer**(confirmation par un administrateur) / **fermer** et **éditer** les tickets.
+## Fonctionnalités
+- Tickets (CRUD)
+- Système de permission
+- Administration
+- Espace membre complet
 
-Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/*** ou autre et **OranTicket** fonctionnera à condition que vous ayez ajouté la base de données.
+
+Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/***.
+**Ticki** fonctionnera à condition que vous ayez ajouté la base de données.
 
 # Installation
 
@@ -36,24 +40,7 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
     - **OU**
     - Créer une base de données **oranticket**, et dans une invite de commande lancer ```bin/cake migrations migrate```
 
-### Connexion
-Le compte utilisateur par défault est ```admin``` et le mot de passe ```admin```
+## Connexion
+- Compte **administrateur** : ```admin``` et le mot de passe ```admin```
+- Compte **membre** : ```member``` et le mot de passe ```member```
 
-# Participation
-
-### Prérequis
-- npm
-- gulp
-
-```
-git clone https://github.com/OranTicket/Site-Web.git oranticket
-cd oranticket
-npm install -g gulp
-npm install
-```
-
-### Tâches gulp :
-- ```gulp compass_scss```: Compile les fichiers scss en css.
-- ```gulp minify-css```: Minifie les fichiers css en un seul fichier min.css.
-- ```gulp default```: Crée une archive du code source.
-- ```gulp watch```: Permet de compiler les fichiers scss à chaque modification.
