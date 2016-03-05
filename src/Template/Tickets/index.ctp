@@ -1,8 +1,8 @@
 <div class="ui four cards">
     <?php foreach ($tickets as $ticket): ?>
-        <div class="ui card">
+        <div class="ui card grid-m-6">
             <div class="content">
-                <?= h($ticket->label == '0') ? '<i class="right floated empty star icon"></i>' : '<i class="right floated star icon"></i>' ?>
+                <?= h($ticket->label == '0') ? '<i style="color: #ffb70a!important;" class="right floated empty star icon"></i>' : '<i style="color: #ffb70a!important;" class="right floated star icon"></i>' ?>
                 <?php
                 if(!$ticket->public == 0){
                     echo'<i class="right floated lock icon"></i>';
@@ -11,9 +11,6 @@
 
                 <div class="header">
                     <?= $ticket->subjects ?>
-                </div>
-                <div class="description">
-                    <p></p>
                 </div>
             </div>
             <div class="extra content">
