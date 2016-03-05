@@ -1,24 +1,50 @@
-<div class="container" style="margin-top: 30px;">
-        <div class="login">
-            <?= $this->Flash->render('auth') ?>
-            <?= $this->Form->create() ?>
-                <div class="center">
-                    <i class="fa fa-user fa-5x"></i>
-                </div>
+<style type="text/css">
+    .column {
+        max-width: 450px;
+    }
+</style>
 
-                <div class="grid-6">
-                    <?= $this->Form->input('username', ['class' => 'form', 'placeholder' => 'Votre prénom']); ?>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2>Connexion</h2>
+        <?= $this->Flash->render('auth') ?>
+        <?= $this->Form->create() ?>
+            <div class="ui large form">
+                <div class="ui stacked segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <?= $this->Form->input(
+                                'username', [
+                                    'templates' => [
+                                        'inputContainer' => '{{content}}'
+                                    ],
+                                'label' => false,
+                                'placeholder' => 'Votre prénom'
+                            ]); ?>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <?= $this->Form->input(
+                                'password', [
+                                'templates' => [
+                                    'inputContainer' => '{{content}}'],
+                                'label' => false,
+                                'class' => 'form',
+                                'placeholder' => 'Votre mot de passe'
+                            ]); ?>
+                        </div>
+                    </div>
+                    <?= $this->Form->button(__('Se connecter'), ['class' => 'ui fluid large teal submit button']) ?>
+                    <?= $this->Html->link('Mot de passe oublié', ['controller' => 'Users','action' => 'forgot_password'], ['class' => 'ui fluid large negative submit button', 'style' => 'margin-top: 10px']);?>
                 </div>
-                
-                <div class="grid-6">
-                    <?= $this->Form->input('password', ['class' => 'form', 'placeholder' => 'Votre mot de passe']); ?>
-                </div>
+            </div>
+        <?= $this->Form->end() ?>
 
-                <div class="grid-12 center">
-                    <?= $this->Form->button(__('Se connecter'), ['class' => 'btn btn-success right']) ?>
-                    <?= $this->Html->link('Mot de passe oublié', ['controller' => 'Users','action' => 'forgot_password'], ['class' => 'right btn btn-danger']);?>
-                    <?= $this->Html->link("S'inscrire", ['controller' => 'Users','action' => 'add'], ['class' => 'right btn btn-info']);?>
-                </div>
-            <?= $this->Form->end() ?>
+        <div class="ui message" style="margin-bottom: 30px">
+            Vous êtes nouveau? <?= $this->Html->link("S'inscrire", ['controller' => 'Users','action' => 'add'], []);?>
         </div>
     </div>
+</div>

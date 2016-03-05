@@ -1,4 +1,4 @@
-<div class="ui fixed menu">
+<div class="ui menu">
     <div class="ui container">
         <a class="item header" style="padding: 0px 36px;font-size: 18px;" href="<?= $this->Url->build('/', true); ?>">Ticki</a >
         <a class="item" href="<?= $this->Url->build('/', true); ?>tickets/">Tickets</a>
