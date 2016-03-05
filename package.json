@@ -1,7 +1,6 @@
 {
-  "name": "OranTicket",
+  "name": "Ticki",
   "version": "0.0.0",
-  "description": "![Logo](https://sc-cdn.scaleengine.net/i/16fdf0408cb5ac329f672d0671bc1e0a.png)",
   "main": "gulpfile.js",
   "directories": {
     "test": "tests"

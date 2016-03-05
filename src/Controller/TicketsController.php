@@ -39,7 +39,7 @@ class TicketsController extends AppController
         $user = $this->Auth->user();
 
         $this->paginate = [
-            'maxLimit' =>  Configure::read('Paginate.Ticket.indexTickets')
+            'maxLimit' =>  Configure::read('settings.ticket.paginate.index')
         ];
 
         $tickets = $this->Tickets
@@ -119,7 +119,7 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->newEntity();
 
         if ($this->request->is('post')) {
-            if ($this->Recaptcha->verify() || \Cake\Core\Configure::read('Site.debug') == false) {
+            if ($this->Recaptcha->verify() || Configure::read('site.debug') == false) {
                 $ticket = $this->Tickets->patchEntity($ticket, $this->request->data);
                 $ticket->public  = $this->request->data(['public']);
                 $ticket->user_id = $user['id'];
@@ -200,7 +200,7 @@ class TicketsController extends AppController
         $user = $this->Auth->user();
 
         $this->paginate = [
-            'maxLimit' =>  Configure::read('Paginate.TicketMe.indexTicketMe'),
+            'maxLimit' =>  Configure::read('settings.ticket.paginate.ticketme'),
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
 

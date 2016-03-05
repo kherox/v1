@@ -124,7 +124,7 @@ class UsersController extends AppController
             ])->count();
 
         $this->paginate = [
-            'maxLimit' => Configure::read('Paginate.Ticket.viewUsers'),
+            'maxLimit' => Configure::read('settings.ticket.paginate.profil'),
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
 
