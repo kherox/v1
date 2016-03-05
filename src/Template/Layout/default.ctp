@@ -1,5 +1,5 @@
 <?= $this->element('layouts/header'); ?>
-    <div id="page-wrapper">
+    <div class="ui container">
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </div>

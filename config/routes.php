@@ -29,7 +29,6 @@ Router::scope('/', function ($routes) {
 
     // Profil
     $routes->connect('/profil',['controller' => 'Users','action' => 'profile']);
-
     // Déconnexion
     $routes->connect('/deconnexion',['controller' => 'Users','action' => 'logout']);
 

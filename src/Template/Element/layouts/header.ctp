@@ -9,10 +9,8 @@
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css([
+        'http://semantic-ui.com/dist/semantic.min.css',
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
-        'https://highlightjs.org/static/styles/monokai_sublime.css',
-        //'https://highlightjs.org/static/styles/color-brewer.css',
-        'src.min.css',
         'style.css'
     ]); ?>
 
@@ -23,6 +21,5 @@
 <body style="<?php ""// h($this->request->session()->read('SiteWeb.background_body')) ?>">
     <?= $this->element('layouts/menu'); ?>
     <?= ""// $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
-    <?= $this->element('layouts/sidebar'); ?>
 
     <?= ""//$this->element('layouts/sidebar', [], ['cache' => ['config' => 'sidebar']]); ?>

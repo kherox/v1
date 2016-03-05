@@ -1,22 +1,45 @@
-<footer class="footer">
-    <div class="container">
-        <div class="grid-8">
-            <h2>Soutenir Ticki</h2>
-            <p>
-                - Vous avez une idée, aucune idée nest bête. Proposé là sur le chan General <a href="https://discord.gg/0TXt7JbSm9fnbttA">Discord</a> de Ticki.<br>
-                - Vous souhaitez améliorer le code de Ticki ou ajouter des fonctionnalités,
-                voici le <a href="https://github.com/Ticki">dépôt Github</a>
-            <p>
-        </div>
-        <div class="grid-4">
-            <h2>Ticki</h2>
-            <p>
-                Dès que vous rencontrez un souci, poster un ticket et des personnes y répondons.
-            </p>
+<div class="ui inverted footer vertical segment center">
+    <div class="ui stackable center aligned page grid">
+        <div class="four column row">
+
+            <div class="column">
+                <h5 class="ui inverted header">Courses</h5>
+                <div class="ui inverted link list">
+                    <a class="item">Registration</a>
+                    <a class="item">Course Calendar</a>
+                    <a class="item">Professors</a>
+                </div>
+            </div>
+            <div class="column">
+                <h5 class="ui inverted header">Library</h5>
+                <div class="ui inverted link list">
+                    <a class="item">A-Z</a>
+                    <a class="item">Most Popular</a>
+                    <a class="item">Recently Changed</a>
+                </div>
+            </div>
+            <div class="column">
+                <h5 class="ui inverted header">Community</h5>
+                <div class="ui inverted link list">
+                    <a class="item">BBS</a>
+                    <a class="item">Careers</a>
+                    <a class="item">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="column">
+                <h5 class="ui inverted header">Designed By</h5>
+                <addr>
+                    <a class="item" href="http://scripteden.com"><img src="images/scripteden-logo-g.png" alt="Logo" style="height:20px"></a>  <br>
+                    <a href="http://scripteden.com/downloads/bootstrap/">Bootstrap Templates</a>           <br>
+                    <a href="http://scripteden.com/downloads/semantic-ui/">Semantic UI Templates</a>
+                </addr>
+
+
+            </div>
         </div>
     </div>
-    <p class="center">Gratuit et Open-source par <a href="gynidark.github.io">Gynidark</a></p>
-</footer>
+</div>
 
     <?=
     // LIB
@@ -31,12 +54,14 @@
         'src/textcomplete.js',
         'src/emojione.js',
         'src/mte.js',
-        'src/highlight.js'
+        'src/highlight.js',
+        'http://semantic-ui.com/dist/semantic.min.js'
     ]); ?>
 
     <?=
     // FILE
     $this->Html->script([
+        'inc/app.js',
         'inc/global.js',
         'inc/emojione.js',
         'inc/sidebar.js',

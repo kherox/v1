@@ -1,49 +1,31 @@
-<header>
-        <div class="menu" style="background:<?= $this->request->session()->read('SiteWeb.background_menu') ?>!important">
-            <div class="container">
-                <div class="logo grid-2 grid-m-3">
-                    <a href="<?= $this->Url->build('/', true); ?>">
-                        <?= $this->Html->image('logo.png', ['width' => '190', 'alt' => 'Logo Ticki']); ?>
-                    </a>
+<div class="ui fixed menu">
+    <div class="ui container">
+        <a class="item header" style="padding: 0px 36px;font-size: 18px;" href="#">Ticki</a >
+        <a class="item" href="<?= $this->Url->build('/', true); ?>tickets/">Tickets</a>
+
+        <div class="right menu">
+            <div class="ui inline dropdown item">
+                <div class="text">
+                    <img class="ui avatar image" src="http://i.skyrock.net/7537/80537537/pics/3068945789_1_3_B1ZByw9w.jpg">
+                    <?= $this->request->session()->read('Auth.User.username'); ?>
                 </div>
-
-                <div class="nav-center grid-10 grid-m-9">
-                    <div class="right">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="<?= $this->Url->build('/', true); ?>tickets/">
-                                        <i class="fa fa-ticket"></i> Tickets
-                                    </a>
-                                </li>
-                                <?php if(!empty($this->request->session()->read('Auth.User'))): ?>
-                                    <li>
-                                        <a href="<?= $this->Url->build('/', true); ?>tickets/add">
-                                            <i class="fa fa-plus"></i> Ajouter un ticket
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="sidebar--trigger" class="sidebar-trigger">
-                                            <i class="fa fa-user"></i> <?= $this->request->session()->read('Auth.User.username'); ?>
-                                        </a>
-                                    </li>
-                                <?php else: ?>
-                                    <li>
-                                        <a href="<?= $this->Url->build('/', true); ?>connexion">
-                                            <i class="fa fa-user"></i> Se connecter
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="<?= $this->Url->build('/', true); ?>inscription">
-                                            <i class="fa fa-user-plus"></i> S'inscrire
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
-                            </ul>
-                        </nav>
-                    </div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                        <?php $profile_id = $this->request->session()->read('Auth.User.id'); ?>
+                        <a class="item" href="<?= $this->Url->build('/', true); ?>users/profile/<?= $profile_id; ?>">Mon compte</a>
+                        <a class="item" href="<?= $this->Url->build('/', true); ?>Tickets/me">Mes tickets</a>
+                        <a class="item" href="<?= $this->Url->build('/', true); ?>logout">Déconnexion</a>
                 </div>
             </div>
+            <?php if(empty($this->request->session()->read('Auth.User'))): ?>
+                <div class="item">
+                    <a href="<?= $this->Url->build('/', true); ?>connexion" class="ui primary button">Connexion</a>
+                </div>
+            <?php else: ?>
+                <div class="item">
+                    <a href="<?= $this->Url->build('/', true); ?>tickets/add" class="ui primary button">Ajouter un ticket</a>
+                </div>
+            <?php endif; ?>
         </div>
-    </header>
+    </div>
+</div>

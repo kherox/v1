@@ -13,3 +13,7 @@ $("#group_report").hide().fadeOut(250);
 $("#report_btn").on('click', function(){
     $("#group_report").show("slow").fadeIn(250);
 });
+
+$('.ui.dropdown')
+    .dropdown()
+;
