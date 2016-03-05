@@ -26,7 +26,7 @@
         </h1>
 
         <div class="grid-6">
-            <span>Fond de OranTicket</span>
+            <span>Fond de Ticki</span>
             <?= $this->Form->input('background_body', ['type' => 'color', 'class' => 'form-color', 'label' => false]); ?>
         </div>
 

@@ -1,4 +1,4 @@
-2015-10-23 05:40:14 Notice: Notice (8): Undefined variable: tickets_count in [/var/www/OranTicket/src/Template/Users/view.ctp, line 40]
+2015-10-23 05:40:14 Notice: Notice (8): Undefined variable: tickets_count in [/var/www/Ticki/src/Template/Users/view.ctp, line 40]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Users/view.ctp, line 40
@@ -12,7 +12,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 15:42:15 Notice: Notice (8): Undefined variable: id in [/var/www/OranTicket/src/Controller/Admin/TicketsController.php, line 15]
+2015-10-28 15:42:15 Notice: Notice (8): Undefined variable: id in [/var/www/Ticki/src/Controller/Admin/TicketsController.php, line 15]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\Admin\TicketsController::index() - APP/Controller/Admin/TicketsController.php, line 15
@@ -23,7 +23,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 15:43:04 Notice: Notice (8): Undefined variable: tickets_report in [/var/www/OranTicket/src/Template/Admin/Tickets/index.ctp, line 67]
+2015-10-28 15:43:04 Notice: Notice (8): Undefined variable: tickets_report in [/var/www/Ticki/src/Template/Admin/Tickets/index.ctp, line 67]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Admin/Tickets/index.ctp, line 67
@@ -37,7 +37,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 15:43:20 Notice: Notice (8): Undefined variable: tickets_report in [/var/www/OranTicket/src/Template/Admin/Tickets/index.ctp, line 67]
+2015-10-28 15:43:20 Notice: Notice (8): Undefined variable: tickets_report in [/var/www/Ticki/src/Template/Admin/Tickets/index.ctp, line 67]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Admin/Tickets/index.ctp, line 67
@@ -51,7 +51,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:17:38 Notice: Notice (8): Undefined variable: comment in [/var/www/OranTicket/src/Controller/TicketsController.php, line 88]
+2015-10-28 18:17:38 Notice: Notice (8): Undefined variable: comment in [/var/www/Ticki/src/Controller/TicketsController.php, line 88]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 88
@@ -62,7 +62,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:17:38 Notice: Notice (8): Trying to get property of non-object in [/var/www/OranTicket/src/Controller/TicketsController.php, line 88]
+2015-10-28 18:17:38 Notice: Notice (8): Trying to get property of non-object in [/var/www/Ticki/src/Controller/TicketsController.php, line 88]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 88
@@ -73,7 +73,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -92,7 +92,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -111,7 +111,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -130,7 +130,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:18:27 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -149,7 +149,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -168,7 +168,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -187,7 +187,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -206,7 +206,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:33 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -225,7 +225,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -244,7 +244,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -263,7 +263,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -282,7 +282,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:19:50 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -301,7 +301,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -320,7 +320,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -339,7 +339,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -358,7 +358,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:25 Notice: Notice (8): Undefined variable: markdown in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -377,7 +377,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -396,7 +396,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -415,7 +415,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -434,7 +434,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:21:55 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -453,7 +453,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -472,7 +472,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -491,7 +491,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -510,7 +510,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:22:42 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -529,7 +529,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -548,7 +548,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -567,7 +567,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -586,7 +586,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:03 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -605,7 +605,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -624,7 +624,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -643,7 +643,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -662,7 +662,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:19 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -681,7 +681,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -700,7 +700,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -719,7 +719,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -738,7 +738,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:23:36 Notice: Notice (8): Undefined variable: htmll in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -757,7 +757,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:26:04 Notice: Notice (8): Trying to get property of non-object in [/var/www/OranTicket/src/Controller/TicketsController.php, line 90]
+2015-10-28 18:26:04 Notice: Notice (8): Trying to get property of non-object in [/var/www/Ticki/src/Controller/TicketsController.php, line 90]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 90
@@ -768,7 +768,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:26:27 Notice: Notice (8): Undefined index: content in [/var/www/OranTicket/src/Controller/TicketsController.php, line 90]
+2015-10-28 18:26:27 Notice: Notice (8): Undefined index: content in [/var/www/Ticki/src/Controller/TicketsController.php, line 90]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 90
@@ -779,7 +779,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:02 Notice: Notice (8): Undefined index: content in [/var/www/OranTicket/src/Controller/TicketsController.php, line 88]
+2015-10-28 18:28:02 Notice: Notice (8): Undefined index: content in [/var/www/Ticki/src/Controller/TicketsController.php, line 88]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 88
@@ -790,7 +790,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:02 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:28:02 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -804,7 +804,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined index: content in [/var/www/OranTicket/src/Controller/TicketsController.php, line 88]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined index: content in [/var/www/Ticki/src/Controller/TicketsController.php, line 88]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 88
@@ -815,7 +815,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -829,7 +829,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -848,7 +848,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -867,7 +867,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -886,7 +886,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -905,7 +905,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:28:16 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -924,7 +924,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:40 Notice: Notice (8): Undefined variable: comment in [/var/www/OranTicket/src/Controller/TicketsController.php, line 88]
+2015-10-28 18:29:40 Notice: Notice (8): Undefined variable: comment in [/var/www/Ticki/src/Controller/TicketsController.php, line 88]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 88
@@ -935,7 +935,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:40 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:29:40 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -949,7 +949,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: comment in [/var/www/OranTicket/src/Controller/TicketsController.php, line 88]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: comment in [/var/www/Ticki/src/Controller/TicketsController.php, line 88]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 88
@@ -960,7 +960,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -974,7 +974,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -993,7 +993,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -1012,7 +1012,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -1031,7 +1031,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -1050,7 +1050,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/OranTicket/src/Template/Element/comment.ctp, line 64]
+2015-10-28 18:29:58 Notice: Notice (8): Undefined variable: commentaire in [/var/www/Ticki/src/Template/Element/comment.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Element/comment.ctp, line 64
@@ -1069,7 +1069,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:30:48 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:30:48 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -1083,7 +1083,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:31:17 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:31:17 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -1097,7 +1097,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:32:20 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:32:20 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -1111,7 +1111,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 18:36:46 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 18:36:46 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -1125,7 +1125,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 21:12:50 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 21:12:50 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -1139,7 +1139,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-28 21:12:57 Notice: Notice (8): Undefined variable: html in [/var/www/OranTicket/src/Template/Tickets/view.ctp, line 64]
+2015-10-28 21:12:57 Notice: Notice (8): Undefined variable: html in [/var/www/Ticki/src/Template/Tickets/view.ctp, line 64]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 include - APP/Template/Tickets/view.ctp, line 64
@@ -1153,7 +1153,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-30 23:57:17 Notice: Notice (8): Undefined index: id in [/var/www/OranTicket/src/Controller/TicketsController.php, line 101]
+2015-10-30 23:57:17 Notice: Notice (8): Undefined index: id in [/var/www/Ticki/src/Controller/TicketsController.php, line 101]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 101
@@ -1164,7 +1164,7 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
-2015-10-30 23:57:39 Notice: Notice (8): Undefined index: id in [/var/www/OranTicket/src/Controller/TicketsController.php, line 101]
+2015-10-30 23:57:39 Notice: Notice (8): Undefined index: id in [/var/www/Ticki/src/Controller/TicketsController.php, line 101]
 Trace:
 Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
 App\Controller\TicketsController::view() - APP/Controller/TicketsController.php, line 101

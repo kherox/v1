@@ -297,8 +297,8 @@ class UsersController extends AppController
                 ->profile('default')
                 ->template('forgotPassword', 'default')
                 ->emailFormat('html')
-                ->from(['contact@oranticket.fr' => 'Mot de passe oublié'])
-                ->subject(__('[OranTicket] Mot de passe oublié'))
+                ->from(['contact@Ticki.fr' => 'Mot de passe oublié'])
+                ->subject(__('[Ticki] Mot de passe oublié'))
                 ->to($user->mail)
                 ->viewVars($viewVars)
                 ->send();

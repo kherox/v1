@@ -28,7 +28,7 @@ class Installer
     protected static $_hostName = 'localhost';
     protected static $_userName = 'root';
     protected static $_password = '';
-    protected static $_databaseName = 'oranticket';
+    protected static $_databaseName = 'Ticki';
     protected static $_port = false;
     
 
@@ -215,7 +215,7 @@ class Installer
 
         $content = file_get_contents($config);
 
-        static::$_databaseName = $databaseName = $io->ask('What is your new database name ? [<comment>oranticket</comment>] ', 'oranticket');
+        static::$_databaseName = $databaseName = $io->ask('What is your new database name ? [<comment>Ticki</comment>] ', 'Ticki');
 
         $content = str_replace('_DATABASENAME_', $databaseName, $content, $count);
 
@@ -295,23 +295,23 @@ class Installer
 
     /**
      * generateDatabase
-     * Execute OranticketSql for application
+     * Execute TickiSql for application
      * @param string $dir The application's root directory.
      * @param \Composer\IO\IOInterface $io IO interface to write to console.
      * @return void
      */
     public static function generateDatabase($rootDir, $io)
     {
-        $installDatabase = $io->ask('Install OranTicket database automatically ? </info> [<comment>Y,n</comment>]? ', 'Y', 'Y');
+        $installDatabase = $io->ask('Install Ticki database automatically ? </info> [<comment>Y,n</comment>]? ', 'Y', 'Y');
 
         if($installDatabase !== 'N' || $installDatabase !== 'n') {
 
-            $oranTicketConfig = $rootDir . '/config/schema/Oranticket.sql';
-            $content = file_get_contents($oranTicketConfig);
+            $TickiConfig = $rootDir . '/config/schema/Ticki.sql';
+            $content = file_get_contents($TickiConfig);
 
             $content = str_replace('_DATABASE_', static::$_databaseName, $content);
 
-            $result = file_put_contents($oranTicketConfig, $content);
+            $result = file_put_contents($TickiConfig, $content);
             if (!$result) {
                 $io->write('Unable to update Database value on sql file.');
                 return;
@@ -334,7 +334,7 @@ class Installer
             }
 
             $mysqli->close();
-            $io->write('<info>Set up database Oranticket is a success.</info>');
+            $io->write('<info>Set up database Ticki is a success.</info>');
         }
     }
 }

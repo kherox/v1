@@ -17,11 +17,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `oranticket`
+-- Base de données :  `Ticki`
 --
 
-CREATE DATABASE IF NOT EXISTS `oranticket` CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `oranticket`;
+CREATE DATABASE IF NOT EXISTS `Ticki` CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `Ticki`;
 
 -- --------------------------------------------------------
 

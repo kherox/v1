@@ -140,8 +140,8 @@ class TicketsController extends AppController
                             ->profile('default')
                             ->template('ticket', 'default')
                             ->emailFormat('html')
-                            ->from(['contact@oranticket.fr' => 'Copie Ticket'])
-                            ->subject(__('[OranTicket] Copie Ticket'))
+                            ->from(['contact@Ticki.fr' => 'Copie Ticket'])
+                            ->subject(__('[Ticki] Copie Ticket'))
                             ->to($user->mail)
                             ->viewVars($viewVars)
                             ->send();

@@ -105,7 +105,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'support@oranticket.fr',
+            'from' => 'support@Ticki.fr',
             'charset' => 'utf-8',
             'headerCharset' => 'utf-8',
         ],
@@ -120,7 +120,7 @@ return [
             'port' => '',
             'username' => 'root',
             'password' => '',
-            'database' => 'oranticket',
+            'database' => 'Ticki',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
@@ -132,7 +132,7 @@ return [
             'host' => 'localhost',
             'username' => 'root',
             'password' => 'root',
-            'database' => 'oranticket'
+            'database' => 'Ticki'
         ],
 
         'test' => [

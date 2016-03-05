@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="logo grid-2 grid-m-3">
                     <a href="<?= $this->Url->build('/', true); ?>">
-                        <?= $this->Html->image('logo.png', ['width' => '190', 'alt' => 'Logo OranTicket']); ?>
+                        <?= $this->Html->image('logo.png', ['width' => '190', 'alt' => 'Logo Ticki']); ?>
                     </a>
                 </div>
 

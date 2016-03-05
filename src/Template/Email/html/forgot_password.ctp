@@ -47,7 +47,7 @@
 
 <div class="content">
     <header>
-        <h1>OranTicket</h1>
+        <h1>Ticki</h1>
     </header>
     <h2>Hey, <span><?= h($name) ?></span></h2>
     <p>
