@@ -5,8 +5,9 @@
 [![CakePHP 3](https://img.shields.io/badge/CakePHP 3-%E2%99%A5-44CB12.svg?style=flat-square)](http://cakephp.org)
 [!['By'](https://img.shields.io/badge/By-Gynidark-blue.svg?style=flat-square)](http://gynidark.github.io/)
 
-**Ticki** est un projet **CakePHP** afin d'aider les débutants avec ce framework **PHP**.
+> **Ticki** est un projet **CakePHP** afin d'aider les débutants avec ce framework **PHP**.
 
+## Ticki?
 Poster un ticket et des personnes y répondrons.
 
 ## Fonctionnalités
@@ -18,7 +19,7 @@ Poster un ticket et des personnes y répondrons.
 
 Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/***.
 
-***Ticki** fonctionnera à condition que vous ayez ajouté la base de données.*
+*Ticki fonctionnera à condition que vous ayez ajouté la base de données.*
 
 # Installation
 
@@ -44,4 +45,3 @@ Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans u
 ## Connexion
 - Compte **administrateur** : ```admin``` et le mot de passe ```admin```
 - Compte **membre** : ```member``` et le mot de passe ```member```
-
