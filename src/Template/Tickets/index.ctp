@@ -1,9 +1,67 @@
-<h1 class="page-title">
-    Tous les tickets
-</h1>
+<div class="ui four cards">
+    <?php foreach ($tickets as $ticket): ?>
+        <div class="ui card">
+            <div class="content">
+                <?= h($ticket->label == '0') ? '<i class="right floated empty star icon"></i>' : '<i class="right floated star icon"></i>' ?>
+                <?php
+                if(!$ticket->public == 0){
+                    echo'<i class="right floated lock icon"></i>';
+                }
+                ?>
 
-<div class="container">
+                <div class="header">
+                    <?= $ticket->subjects ?>
+                </div>
+                <div class="description">
+                    <p></p>
+                </div>
+            </div>
+            <div class="extra content">
+            <span class="left floated like" style="margin-top: 4px;">
+              <i class="unhide icon"></i>
+                <?=
+                $this->Html->link(
+                    "Voir le ticket",
+                    ['action' => 'view', $ticket->id]
+                );
+                ?>
+            </span>
+            <span class="right floated star">
+              <div class="right floated author">
+                  <?php
+                  foreach($users as $user) {
+                      if ($ticket->user_id == $user->id) {
+                          echo
+                          $this->Html->link(
+                              $this->Html->image($this->gravatar($user->mail), ['width' => '65', 'class' => 'ui avatar image']),
+                              [
+                                  'controller' => 'Users',
+                                  'action' => 'view',
+                                  $user->id
+                              ],
+                              ['escape' => false]
+                          );
+
+                          echo $user->username;
+                      }
+                  }
+                  ?>
+              </div>
+            </span>
+            </div>
+        </div>
+    <?php endforeach; ?>
+ </div>
+
+
+
+
+
+
+
+
 <?php
+/**
 foreach ($tickets as $ticket): ?>
     <ul class="tickets">
         <li class="ticket">
@@ -66,3 +124,4 @@ foreach ($tickets as $ticket): ?>
 <?php endforeach; ?>
 <?= $this->element('paginate', [], ['cache' => ['config' => 'paginate']]); ?>
 </div>
+ **/?>

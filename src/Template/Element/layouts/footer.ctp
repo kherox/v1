@@ -1,41 +1,27 @@
-<div class="ui inverted footer vertical segment center">
-    <div class="ui stackable center aligned page grid">
-        <div class="four column row">
-
-            <div class="column">
-                <h5 class="ui inverted header">Courses</h5>
+<div class="ui inverted vertical footer segment" style="margin-top: 20px;">
+    <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+                <h4 class="ui inverted header">About</h4>
                 <div class="ui inverted link list">
-                    <a class="item">Registration</a>
-                    <a class="item">Course Calendar</a>
-                    <a class="item">Professors</a>
+                    <a href="#" class="item">Sitemap</a>
+                    <a href="#" class="item">Contact Us</a>
+                    <a href="#" class="item">Religious Ceremonies</a>
+                    <a href="#" class="item">Gazebo Plans</a>
                 </div>
             </div>
-            <div class="column">
-                <h5 class="ui inverted header">Library</h5>
+            <div class="three wide column">
+                <h4 class="ui inverted header">Services</h4>
                 <div class="ui inverted link list">
-                    <a class="item">A-Z</a>
-                    <a class="item">Most Popular</a>
-                    <a class="item">Recently Changed</a>
+                    <a href="#" class="item">Banana Pre-Order</a>
+                    <a href="#" class="item">DNA FAQ</a>
+                    <a href="#" class="item">How To Access</a>
+                    <a href="#" class="item">Favorite X-Men</a>
                 </div>
             </div>
-            <div class="column">
-                <h5 class="ui inverted header">Community</h5>
-                <div class="ui inverted link list">
-                    <a class="item">BBS</a>
-                    <a class="item">Careers</a>
-                    <a class="item">Privacy Policy</a>
-                </div>
-            </div>
-
-            <div class="column">
-                <h5 class="ui inverted header">Designed By</h5>
-                <addr>
-                    <a class="item" href="http://scripteden.com"><img src="images/scripteden-logo-g.png" alt="Logo" style="height:20px"></a>  <br>
-                    <a href="http://scripteden.com/downloads/bootstrap/">Bootstrap Templates</a>           <br>
-                    <a href="http://scripteden.com/downloads/semantic-ui/">Semantic UI Templates</a>
-                </addr>
-
-
+            <div class="seven wide column">
+                <h4 class="ui inverted header">Footer Header</h4>
+                <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
             </div>
         </div>
     </div>

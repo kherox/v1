@@ -14,6 +14,11 @@ $("#report_btn").on('click', function(){
     $("#group_report").show("slow").fadeIn(250);
 });
 
+
 $('.ui.dropdown')
     .dropdown()
 ;
+
+$('.special.cards .image').dimmer({
+    on: 'hover'
+});
