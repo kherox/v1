@@ -6,7 +6,7 @@
 [!['By'](https://img.shields.io/badge/By-Gynidark-blue.svg?style=flat-square)](http://gynidark.github.io/)
 
 **Ticki** est un projet **CakePHP** afin d'aider les débutants avec ce framework **PHP**.
-
+## Ticki?
 Poster un ticket et des personnes y répondrons.
 
 ## Fonctionnalités
