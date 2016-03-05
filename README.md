@@ -17,7 +17,8 @@ Poster un ticket et des personnes y répondrons.
 
 
 Pour l'utiliser, rien de plus simple, vous l'ajouté sur votre hébergeur dans un dossier ***Ticket/***.
-**Ticki** fonctionnera à condition que vous ayez ajouté la base de données.
+
+***Ticki** fonctionnera à condition que vous ayez ajouté la base de données.*
 
 # Installation
 
