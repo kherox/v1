@@ -15,7 +15,8 @@
 
                 <div class="ui inline dropdown item">
                     <div class="text">
-                        <img class="ui avatar image" src="http://i.skyrock.net/7537/80537537/pics/3068945789_1_3_B1ZByw9w.jpg">
+                        <!-- <img class="ui avatar image" src="http://i.skyrock.net/7537/80537537/pics/3068945789_1_3_B1ZByw9w.jpg"> -->
+                        <i class="user icon"></i>
                         <?= $this->request->session()->read('Auth.User.username'); ?>
                     </div>
                     <i class="dropdown icon"></i>
@@ -23,6 +24,9 @@
                         <?php $profile_id = $this->request->session()->read('Auth.User.id'); ?>
                         <a class="item" href="<?= $this->Url->build('/', true); ?>users/profile/<?= $profile_id; ?>">Mon compte</a>
                         <a class="item" href="<?= $this->Url->build('/', true); ?>Tickets/me">Mes tickets</a>
+                        <?php if(!empty($this->request->session()->read('Auth.User.role'))): ?>
+                            <a class="item" href="<?= $this->Url->build('/', true); ?>admin/">Administration</a>
+                        <?php endif; ?>
                         <a class="item" href="<?= $this->Url->build('/', true); ?>deconnexion">Déconnexion</a>
                     </div>
                 </div>
