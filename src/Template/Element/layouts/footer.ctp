@@ -48,6 +48,7 @@
         'inc/sidebar.js',
         'inc/comment.js',
         'inc/profile.js',
+        'inc/semantic.js',
         'inc/modal.js',
         'inc/socket.js',
         'inc/markdown.js'
