@@ -1,9 +1,9 @@
 <h1 class="page-title">
-    Mes tickets<span class="label label-info"><?= $ticketsUser ?></span>
+    Mes tickets <div class="ui green circular label" style="margin-top: 6px;margin-left: 5px;position: absolute;"><?= $ticketsUser ?></div>
 </h1>
 
 <div class="container">
-    <table class="table">
+    <table class="ui fixed single line celled table">
         <thead>
         <tr>
             <th>Sujet</th>
@@ -21,7 +21,7 @@
                     <?= h($ticket->label == '0') ? '<span class="label label-success">Ouvert</span>' : '<span class="label label-danger">Fermé</span>' ?>
                 </td>
                 <td>
-                    <?= h($ticket->public == '0') ? '<span class="label label-success">Non</span>' : '<span class="label label-danger">Oui</span>' ?>
+                    <?= h($ticket->public == '0') ? '<span class="label label-success"><i class="unlock alternate icon"></i> Non</span>' : '<span class="label label-danger"><i class="lock icon"></i> Oui</span>' ?>
                 </td>
                 <td><?= $this->time($ticket->created) ?></td>
                 <td class="action">

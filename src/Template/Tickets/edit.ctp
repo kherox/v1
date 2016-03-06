@@ -1,41 +1,55 @@
-<h1 class="page-title">
-    Tickets - Édition du ticket
-</h1>
+<style type="text/css">
+    .column {
+        max-width: 450px;
+    }
+</style>
 
-<div class="container">
-    <div class="posts">
-        <div class="post">
-            <?= $this->Form->create($ticket) ?>
-            <div class="container">
-                <div class="grid-1">
-                    <h2>Sujet</h2>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2>Ajout d'un ticket</h2>
+        <?= $this->Flash->render('auth') ?>
+        <?= $this->Form->create($ticket) ?>
+        <div class="ui large form">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left input">
+                        <?= $this->Form->input(
+                            'subjects', [
+                            'templates' => [
+                                'inputContainer' => '{{content}}'
+                            ],
+                            'label' => false,
+                            'placeholder' => 'Votre sujet'
+                        ]); ?>
+                    </div>
                 </div>
-                <div class="grid-11">
-                    <?= $this->Form->input('subjects', ['class' => 'form', 'label' => false]); ?>
-                </div>
-                <div class="grid-1">
-                    <h2>Contenu</h2>
-                </div>
-                <div class="grid-11">
-                    <?= $this->Form->input('content',
-                        [
-                            'id'         => 'markdown-editor',
-                            'class'      => 'markdown-editor form emoji',
+
+                <div class="field">
+                    <div class="ui left input">
+
+                        <?= $this->Form->input(
+                            'content', [
+                            'templates' => [
+                                'inputContainer' => '{{content}}'
+                            ],
+                            'placeholder' => 'Votre contenu',
                             'spellcheck' => 'false',
                             'label'      => false,
                             'rows'       => '10'
-                        ]
-                    ); ?>
+                        ]); ?>
+                    </div>
                 </div>
 
-                <div class="grid-1">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <?= $this->Form->input('public', ['label' => false, 'options' => ['0' => 'Non', '1' => 'Oui'], 'class' => 'form'])?>
+                    </div>
+
                 </div>
-                <div class="grid-11">
-                    <input type="checkbox"> Recevoir une copie de votre contenu sur votre boîte mail.
-                </div>
+
+                <?= $this->Form->button(__("Modifier le ticket"), ['class' => 'ui fluid large teal submit button']) ?>
             </div>
-            <?= $this->Form->button(__('Édité'), ['class' => 'btn btn-success sendButton right']) ?>
-            <?= $this->Form->end() ?>
         </div>
+        <?= $this->Form->end() ?>
     </div>
 </div>

@@ -18,3 +18,5 @@ $('.icon')
         inline: true
     })
 ;
+// Checkbox
+$('.checkbox').checkbox('attach events', '.toggle.button');

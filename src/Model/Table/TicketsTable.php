@@ -56,7 +56,7 @@ class TicketsTable extends Table
             ->add('content', [
                 'length' => [
                     'rule' => ['minLength', 10],
-                    'message' => 'Votre contenu doit contenir au moins 5 caractères',
+                    'message' => 'Votre contenu doit contenir au moins 10 caractères',
                 ]
             ])
             ->notEmpty('content');
