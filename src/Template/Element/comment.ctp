@@ -1,79 +1,71 @@
-<div class="post-comments">
-    <div class="post-list">
-        <?php
-        foreach ($ticket->comments as $comment): ?>
-            <div class="container" id="comments">
-                <div class="grid-1">
-                    <?php
-                    foreach($users as $user){
-                        if($comment->user_id == $user->id){
-                            echo
-                            $this->Html->link(
-                                $this->Html->image(
-                                    $this->gravatar($user->mail),
-                                    ['width' => '55']
-                                ),
-                                [
-                                    'controller' => 'Users',
-                                    'action'     => 'view',
-                                    $user->id
-                                ],
-                                ['escape' => false]
-                            );
-                        }
+<div class="ui comments">
+    <h2>Commentaires</h2>
+    <?php foreach ($ticket->comments as $comment): ?>
+    <div class="comment">
+        <a class="avatar">
+            <?php
+            foreach($users as $user){
+                if($comment->user_id == $user->id){
+                    echo
+                        $this->Html->image(
+                            $this->gravatar($user->mail),
+                            ['width' => '55']
+                        );
+                }
+            }
+            ?>
+        </a>
+
+        <div class="content">
+            <a class="author">
+                <?php
+                foreach($users as $user){
+                    if($comment->user_id == $user->id){
+                        echo $user->username;
                     }
-                    ?>
-                </div>
-                <div class="grid-11">
-                    <h4 class="media-heading">
-                        <?php
-                        foreach($users as $user){
-                            if($comment->user_id == $user->id){
-                                echo $user->username;
-                            }
-                        }
-                        ?>
-                        |
-                        <small>
-                            <?=h($comment->modified->format('d/m/Y G:i:s')) ?>
-                        </small>
-
-                        <small style="display: inline-block">
-                            <?php
-                            if($comment->user_id == $this->request->session()->read('Auth.User.id') ||
-                                $this->request->session()->read('Auth.User.role') == 'admin'):
-
-                                    echo $this->Html->link(__('Éditer'), [
-                                        'controller' => 'Tickets',
-                                        'action' => 'editComment',
-                                        $comment->id
-                                    ], ['class' => 'btn-small btn-warning']);
-
-                                    echo $this->Form->postLink(__('Supprimer'), [
-                                        'controller' => 'Tickets',
-                                        'action' => 'deleteComment',
-                                        $comment->id
-                                    ],
-                                    [
-                                        'class' => 'btn-small btn-danger',
-                                        'confirm' => __('Voulez vous vraiment supprimer ce commentaire?')
-                                    ])
-                                ?>
-                            <?php endif; ?>
-                        </small>
-                    </h4>
-
-                    <p><?= $client->toImage($Parsedown->text(nl2br($comment['content']))); ?></p>
-                </div>
+                }
+                ?>
+            </a>
+            <div class="metadata">
+                <div class="date"><?=h($comment->modified->format('d/m/Y G:i:s')) ?></div>
             </div>
-        <?php endforeach; ?>
+            <div class="text">
+                <p><?= $client->toImage($Parsedown->text(nl2br($comment['content']))); ?></p>
+            </div>
+
+            <div class="actions">
+                <?php
+                if($comment->user_id == $this->request->session()->read('Auth.User.id') ||
+                    $this->request->session()->read('Auth.User.role') == 'admin'):
+
+                    echo $this->Html->link(__('Éditer'), [
+                        'controller' => 'Tickets',
+                        'action' => 'editComment',
+                        $comment->id
+                    ], ['class' => 'btn-small btn-warning']);
+
+                    echo $this->Form->postLink(__('Supprimer'), [
+                        'controller' => 'Tickets',
+                        'action' => 'deleteComment',
+                        $comment->id
+                    ],
+                        [
+                            'class' => 'btn-small btn-danger',
+                            'confirm' => __('Voulez vous vraiment supprimer ce commentaire?')
+                        ])
+                    ?>
+                <?php endif; ?>
+            </div>
+        </div>
     </div>
+    <?php endforeach; ?>
+</div>
 
     <?php
     if(!empty($this->request->session()->read('Auth.User'))){ ?>
         <!-- SI JE SUIS CONNECTE -->
         <?= $this->Form->create('Comments') ?>
-            <div class="form-group" style="margin-top: 30px;">
+            <div class="ui reply form">
                 <?php
                     echo $this->Form->input('user_id', ['type' => 'hidden']);
                     echo $this->Form->input('content',
@@ -84,12 +76,12 @@
                         'label'      => false,
                         'rows'       => '6',
                         'placeholder'=> 'Votre message...',
-                        'style' => 'margin-bottom: 5px'
+                        'style' => 'margin-bottom: 5px;width: 58%;display: block;'
                     ]
                 ); ?>
             </div>
             <?= $this->Form->button(__('Ajouter le commentaire'), [
-                'class' => 'btn btn-success sendButton',
+                'class' => 'ui primary submit button',
                 'id' => 'sendButton',
                 'onClick' => 'post_comment()'
             ]) ?>

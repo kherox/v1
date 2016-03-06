@@ -22,3 +22,9 @@ $('.ui.dropdown')
 $('.special.cards .image').dimmer({
     on: 'hover'
 });
+
+$('.icon')
+    .popup({
+        inline: true
+    })
+;
