@@ -1,40 +1,18 @@
-<div class="home-header">
-    <div class="container" style="margin-top: 30px;">
-        <div class="panel">
-            <div class="grid-6">
-                <div class="panel-content">
-                    <div class="container">
-                        <div class="grid-6 grid-m-6 center">
-                            <i class="fa fa-ticket fa-5x"></i>
-                        </div>
-                        <div class="grid-6 grid-m-6 center">
-                            <h1><?= $Tickets; ?></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="ui grid">
+    <div class="row">
+        <div class="column">
+            <div class="ui huge message page grid center aligned">
+                <h1 class="ui huge header">Ticki</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, laborum magnam minima nostrum possimus quaerat quasi sunt suscipit temporibus ullam. Eos, unde!</p>
 
-            <div class="grid-6">
-                <div class="panel-content">
-                    <div class="container">
-                        <div class="grid-4 grid-m-6 center">
-                            <i class="fa fa-users fa-5x"></i>
-                        </div>
-                        <div class="grid-8 grid-m-6 center">
-                            <h1><?= $Users; ?></h1>
-                        </div>
-                    </div>
-                </div>
+                <?= $this->Html->link(__('Tout les tickets'), [
+                    'controller' => 'Tickets',
+                    'action' => 'index'
+                ], ['class' => 'ui green button']);
+                ?>
             </div>
         </div>
     </div>
 </div>
 
-<div class="home-start">
-    <h2>Postez, recevez, validez</h2>
-    <?= $this->Html->link(__('Voir les tickets'), [
-            'controller' => 'Tickets',
-            'action' => 'index'
-        ]);
-    ?>
-</div>
+<div class="ui divider"></div>
