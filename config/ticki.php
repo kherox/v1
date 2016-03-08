@@ -21,6 +21,7 @@ return [
         ],
 
         'ticket' => [
+            'report' => false,
 
             'paginate' => [
                 // page ticketme
