@@ -1,3 +1,8 @@
+<h2>Tickets</h2>
+
+<a href="#" class="ui button green">Ajouter un ticket</a>
+
+
 <div class="ui four cards">
     <?php foreach ($tickets as $ticket): ?>
         <div class="ui card grid-m-6">
