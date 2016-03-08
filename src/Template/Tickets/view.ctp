@@ -68,8 +68,9 @@ if($ticket->user_id == $this->request->session()->read('Auth.User.id') ||
 			'class' => 'negative ui button',
 			'confirm' => __('Voulez vous vraiment supprimer ce ticket? '. "\n" . $ticket->subjects)
 		]); ?>
-
-		<a href="#" id="report_btn" class="negative ui button">Signaler</a>
+		<?php if($this->config('settings.ticket.report') == true):?>
+			<a href="#" id="report_btn" class="negative ui button">Signaler</a>
+		<?php endif; ?>
 	</div>
 <?php endif; ?>
 

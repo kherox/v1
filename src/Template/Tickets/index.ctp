@@ -6,8 +6,8 @@
         <div class="right floated column">
             <?=
             $this->Html->link(
-                "Ajouter un ticket",
-                ['controller' => 'Tickets', 'action' => 'add'],
+                "Mes tickets",
+                ['controller' => 'Tickets', 'action' => 'me'],
                 ['class' => 'ui button green right floated']
             );
             ?>

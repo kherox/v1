@@ -44,7 +44,6 @@
     $this->Html->script([
         'inc/app.js',
         'inc/global.js',
-        'inc/emojione.js',
         'inc/sidebar.js',
         'inc/comment.js',
         'inc/profile.js',
@@ -52,7 +51,13 @@
         'inc/modal.js',
         'inc/socket.js',
         'inc/markdown.js'
-    ]); ?>
+    ]);
+
+    if($this->config('settings.ticket.emojione') == true){
+        echo $this->Html->script('inc/emojione.js');
+    }
+
+    ?>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
     <script>

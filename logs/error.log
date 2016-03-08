@@ -1048,3 +1048,11 @@ Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHa
 
 
 
+2016-03-08 16:06:45 Error: Fatal Error (1): Call to undefined method App\Controller\TicketsController::config() in [C:\wamp\www\OranTicket\src\Controller\TicketsController.php, line 84]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 209
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 92
+[main] - [internal], line ??
+
+
+

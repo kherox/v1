@@ -81,8 +81,10 @@ class TicketsController extends AppController
         ]);
 
         // Emojione
-        $client = new Client(new Ruleset());
-        $client->imageType = 'svg';
+        if(Configure::read('settings.ticket.emojione') == true) {
+            $client = new Client(new Ruleset());
+            $client->imageType = 'svg';
+        }
 
         // Markdown
         $Parsedown = new Parsedown();

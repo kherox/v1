@@ -22,6 +22,7 @@ return [
 
         'ticket' => [
             'report' => false,
+            'emojione' => true,
 
             'paginate' => [
                 // page ticketme
