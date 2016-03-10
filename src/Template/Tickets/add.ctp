@@ -12,7 +12,7 @@
         <div class="ui large form">
             <div class="ui stacked segment">
                 <div class="field">
-                    <div class="ui left input">
+                    <div class="ui left input labeled corner">
                         <?= $this->Form->input(
                             'subjects', [
                             'templates' => [
@@ -21,11 +21,14 @@
                             'label' => false,
                             'placeholder' => 'Votre sujet'
                         ]); ?>
+                        <div class="ui corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
                     </div>
                 </div>
 
                 <div class="field">
-                    <div class="ui left input">
+                    <div class="ui left input labeled corner">
 
                         <?= $this->Form->input(
                             'content', [
@@ -37,6 +40,9 @@
                             'label'      => false,
                             'rows'       => '10'
                         ]); ?>
+                        <div class="ui corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
                     </div>
                 </div>
 
