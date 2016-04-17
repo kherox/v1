@@ -25,8 +25,6 @@ class UsersController extends AppController
         parent::initialize();
 
         $this->loadComponent('Flash');
-        $this->loadComponent('Recaptcha.Recaptcha');
-
     }
 
     /**
@@ -177,7 +175,7 @@ class UsersController extends AppController
         $comments_count = $this->Comments->find('all', ['conditions' => ['Comments.user_id' => $user['id']]])->count();
 
         $this->paginate = [
-            'limit' => 5,
+            'limit' => Configure::read('settings.ticket.paginate.profil'),
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
 

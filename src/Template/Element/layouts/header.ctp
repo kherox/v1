@@ -18,7 +18,7 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body style="<?php ""// h($this->request->session()->read('SiteWeb.background_body')) ?>">
+<body style="<?php ""// h($this->request->session()->read('SiteWeb.background_body')) ?>" class="content">
     <?= $this->element('layouts/menu'); ?>
     <?= ""// $this->element('layouts/menu', [], ['cache' => ['config' => 'menu']]); ?>
 

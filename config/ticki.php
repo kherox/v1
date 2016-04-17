@@ -16,6 +16,7 @@ return [
             ],
 
             'paginate' => [
+                // page index
                 'index' => 20,
             ]
         ],
@@ -30,7 +31,7 @@ return [
                 // page index
                 'index' =>10,
                 // page profil
-                'profil' => 30
+                'profil' => 5
             ]
         ]
     ]

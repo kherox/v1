@@ -1,4 +1,4 @@
-<div class="ui inverted vertical footer segment" style="margin-top: 20px;">
+<div class="ui inverted vertical footer segment" style="margin-top: 20px; padding: 50px;">
     <div class="ui container">
         <div class="ui stackable inverted divided equal height stackable grid">
             <div class="three wide column">
@@ -14,7 +14,7 @@
                     <a href="#" class="item">FAQ</a>
                 </div>
             </div>
-            <div class="seven wide column">
+            <div class="ten wide column">
                 <h4 class="ui inverted header">Pourquoi?</h4>
                 <p>Ticki à était réalisé afin d'apprendre CakePHP 3 mais aussi servir de base pour les débutants. Coté design, c'est Semantic-UI.</p>
             </div>
