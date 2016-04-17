@@ -150,18 +150,14 @@ class UsersController extends AppController
        }
 
        if ($this->request->is('post')) {
-           if ($this->Recaptcha->verify() || \Cake\Core\Configure::read('Site.debug') == false) {
-               $user = $this->Users->patchEntity($user, $this->request->data);
+           $user = $this->Users->patchEntity($user, $this->request->data);
 
-               if ($this->Users->save($user)) {
-                   $this->Flash->success(__('Votre compte à bien été créé.'));
+           if ($this->Users->save($user)) {
+               $this->Flash->success(__('Votre compte à bien été créé.'));
 
-                   return $this->redirect(['action' => 'index']);
-               } else {
-                   $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
-               }
+               return $this->redirect(['action' => 'index']);
            } else {
-               $this->Flash->error('Veuillez valider le Recaptcha');
+               $this->Flash->error(__('Votre compte n\'a pas plus être créé.'));
            }
        }
 

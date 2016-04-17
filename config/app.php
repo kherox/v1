@@ -120,7 +120,7 @@ return [
             'port' => '',
             'username' => 'root',
             'password' => '',
-            'database' => 'Ticki',
+            'database' => 'ticki',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

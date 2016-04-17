@@ -46,7 +46,7 @@ class TicketsController extends AppController
             ->find()
             ->contain(['Comments'])
             // Je n'affiche pas les tickets signalé
-            ->where(['report' => 0])
+            //->where(['report' => 0])
             ->order([
                 'created' => 'desc'
             ]);
@@ -75,9 +75,9 @@ class TicketsController extends AppController
 
         $ticket = $this->Tickets->get($id, [
             'contain' => ['Users', 'Comments'],
-            'conditions' => [
-                'Tickets.report' => 0
-            ]
+            //'conditions' => [
+            //    'Tickets.report' => 0
+            //]
         ]);
 
         // Emojione
