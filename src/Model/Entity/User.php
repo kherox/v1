@@ -11,6 +11,6 @@ class User extends Entity
     ];
 
     protected function _setPassword($password){
-        return (new DefaultPasswordHasher)->hash($password);
+        var_dump((new DefaultPasswordHasher)->hash('brandon'));
     }
 }
