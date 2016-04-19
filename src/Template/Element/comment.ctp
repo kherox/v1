@@ -89,19 +89,15 @@
 
     <?php }else{ ?>
         <!-- SI JE NE SUIS PAS CONNECTE -->
-        <div class="post-label">
-            <div id="flash-message" class="flash-message flash-error">
-                <button type="button" class="close"><i class="fa fa-times"></i></button>
-                <strong>Attention!</strong> Vous devez être connecté pour envoyer un commentaire.
-
-                <?= $this->Html->link(
-                    __('Se connecter'),[
-                        'controller' => 'Users',
-                        'action' => 'login'
-                    ], ['style' => 'color: #fff; font-weight: 800'])
-                ?>
-            </div>
+        <div class="ui warning message">
+            <i class="close icon"></i>
+            Vous devez être connecté pour envoyer un commentaire.
+            <?= $this->Html->link(
+                __('Se connecter'),[
+                'controller' => 'Users',
+                'action' => 'login'
+            ], ['style' => 'color: #fff; font-weight: 800'])
+            ?>
         </div>
-
     <?php } ?>
 </div>

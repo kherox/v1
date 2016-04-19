@@ -5,6 +5,9 @@ if (!empty($params['class'])) {
 }
 ?>
 
-<div class="ui message <?=trim($class)?>">
-    <p><?= h($message) ?></p>
+<div class="ui <?=trim($class)?> message">
+    <i class="close icon"></i>
+    <p>
+        <?= h($message) ?>
+    </p>
 </div>

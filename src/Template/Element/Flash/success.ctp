@@ -3,5 +3,7 @@
     <div class="header">
         Bravo!
     </div>
-    <p><?= h($message) ?></p>
+    <p>
+        <?= h($message) ?>
+    </p>
 </div>
