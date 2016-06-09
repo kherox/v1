@@ -1,4 +1,4 @@
-
+Bientôt une **V2** de Ticki.
 
 [![Github Issues](http://githubbadges.herokuapp.com/Ticki/Site-Web/issues.svg?style=flat-square)](https://github.com/Gynidark/Ticki/issues)
 [!['License'](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](http://gynidark.github.io/)
