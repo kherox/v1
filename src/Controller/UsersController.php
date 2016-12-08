@@ -61,13 +61,26 @@ class UsersController extends AppController
     {
         $userLogin = $this->Auth->identify();
 
+
+
         // Si l'utilisateur est déjà connecté
         if($this->Auth->user()){
             $this->Flash->error(__('Vous êtes déjà connecté'));
             return $this->redirect(['action' => 'profile']);
         }
+         if ($this->request->is('post')) {
+          debug($this->request->data);
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error(__('Pseudo ou mot de passe invalide'));
+        }
 
-        if ($userLogin) {
+        //cela ce sert a rien de faire tout cela
+
+        /*if ($userLogin) {
             // Si l'utilisateur n'a pas supprimé sont compte
             if(!$userLogin['is_deleted'] == true){
                 $this->Auth->setUser($userLogin);
@@ -91,7 +104,7 @@ class UsersController extends AppController
             }else{
                 $this->Flash->error(__('Ce compte à été supprimer'));
             }
-        }
+        }*/
     }
 
     /**
@@ -178,6 +191,7 @@ class UsersController extends AppController
             'limit' => Configure::read('settings.ticket.paginate.profil'),
             'conditions' => ['Tickets.user_id' => $user['id']]
         ];
+
 
         $this->set('tickets', $this->paginate($this->Tickets));
         $this->set(compact(['tickets_count', 'user', 'comments_count']));

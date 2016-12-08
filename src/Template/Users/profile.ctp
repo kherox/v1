@@ -1,13 +1,14 @@
+
 <div class="ui grid" style="margin-top: 20px;">
     <div class="four wide column">
         <h2 class="ui header">
             <?php
-            echo
-            $this->Html->image($this->gravatar($user->mail), ['class' => 'ui circular image', 'width' => '85', 'alt' => 'Photo de profil à '. $user->username]);
+          
+            $this->Html->image($this->gravatar($user['mail']), ['class' => 'ui circular image', 'width' => '85', 'alt' => 'Photo de profil à '. $user['username']]);
             ?>
             <div class="content">
-                <?= $user->username; ?> <i class="france flag"></i>
-                <div class="sub header"><?= $user->role; ?></div>
+                <?= $user['username'] ?> <i class="france flag"></i>
+                <div class="sub header"><?= $user['role']; ?></div>
             </div>
         </h2>
     </div>
@@ -17,7 +18,7 @@
                 <div class="column center">
                     <div class="ui olive small statistic">
                         <div class="value">
-                            <?= $comments_count?>
+                            <?= $comments_count ?>
                         </div>
                         <div class="label">
                             Commentaires
@@ -56,7 +57,7 @@
         $this->Html->link(__('Éditer mon compte'), [
             'controller' => 'Users',
             'action' => 'edit',
-            $user->id
+            $user['id']
         ],
             [
                 'class' => 'ui button olive',

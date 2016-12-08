@@ -43,10 +43,10 @@ class UsersTable extends Table
             ->requirePresence('password', 'create')
             ->notEmpty('password');
 
-        $validator
+        /*$validator
             ->requirePresence('website', 'create')
             ->notEmpty('website')
-            ->add('website', 'valid-url', ['rule' => 'url']);
+            ->add('website', 'valid-url', ['rule' => 'url']);*/
 
         $validator
             ->requirePresence('mail', 'create')
