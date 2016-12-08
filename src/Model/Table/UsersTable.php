@@ -34,8 +34,8 @@ class UsersTable extends Table
             ->notEmpty('username')
             ->add('username', [
                 'length' => [
-                    'rule' => ['maxLength', 13],
-                    'message' => 'Votre username doit avoir moins que 13 caractères',
+                    'rule' => ['maxLength', 5],
+                    'message' => 'Votre username doit avoir moins que 5 caractères',
                 ]
             ]);
 
